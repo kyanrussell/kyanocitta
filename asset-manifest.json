@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kyanocitta/static/css/main.67e52f2c.css",
-    "main.js": "/kyanocitta/static/js/main.c4e8c4a8.js",
+    "main.css": "/kyanocitta/static/css/main.e5cba1bc.css",
+    "main.js": "/kyanocitta/static/js/main.35569985.js",
     "static/js/453.f921b8c3.chunk.js": "/kyanocitta/static/js/453.f921b8c3.chunk.js",
     "index.html": "/kyanocitta/index.html",
-    "main.67e52f2c.css.map": "/kyanocitta/static/css/main.67e52f2c.css.map",
-    "main.c4e8c4a8.js.map": "/kyanocitta/static/js/main.c4e8c4a8.js.map",
+    "main.e5cba1bc.css.map": "/kyanocitta/static/css/main.e5cba1bc.css.map",
+    "main.35569985.js.map": "/kyanocitta/static/js/main.35569985.js.map",
     "453.f921b8c3.chunk.js.map": "/kyanocitta/static/js/453.f921b8c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67e52f2c.css",
-    "static/js/main.c4e8c4a8.js"
+    "static/css/main.e5cba1bc.css",
+    "static/js/main.35569985.js"
   ]
 }
