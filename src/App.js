@@ -1,22 +1,12 @@
 import React from "react";
 import BlogPost from "./BlogPost";
-
-const posts = [
-  {
-    title: "Snowy Plovers",
-    content: `
-    # How much markdown can I use?
-    Probably not much.
-    `,
-    imageUrl: "/kyanocitta/images/snpl.png",
-  },
-];
+import posts from "./posts";
 
 function App() {
   return (
-    <div className="w-screen h-screen">
+    <div className="blog-post-container">
       {posts.map((post, index) => (
-        <BlogPost key={index} {...post} />
+        <BlogPost key={index} post={post} />
       ))}
     </div>
   );
