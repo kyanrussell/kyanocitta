@@ -3,23 +3,26 @@ import './BlogPost.css';
 import styled from 'styled-components';
 
 const Title = styled.h1`
+  width: 75vw;
   font-family: 'Arial', sans-serif;
   color: darkgreen;
 `;
 
 const Heading = styled.h2`
+  width: 75vw;
   font-family: 'Arial', sans-serif;
   color: green;
 `;
 
 const Body = styled.p`
+  width: 75vw;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 16px;
 `;
 
 const Image = styled.img`
-  max-width: 100%;
+  width: 75vw;
   height: auto;
   display: block;
   margin: 1rem 0;
