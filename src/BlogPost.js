@@ -1,6 +1,12 @@
 import React from "react";
-import './BlogPost.css';
 import styled from 'styled-components';
+
+const BlogPostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+`
 
 const Title = styled.h1`
   width: 75vw;
@@ -21,6 +27,12 @@ const Body = styled.p`
   margin-bottom: 16px;
 `;
 
+const ImageContainer = styled.div`
+  width: 75vw;
+  object-it: scale-down;
+  object-position: center;
+`
+
 const Image = styled.img`
   width: 75vw;
   height: auto;
@@ -30,7 +42,7 @@ const Image = styled.img`
 
 const BlogPost = ({ post }) => {
   return (
-    <div>
+    <BlogPostContainer>
       {post.map((item, index) => {
         if (item.type === 'title') {
           return <Title key={index}>{item.content}</Title>;
@@ -42,12 +54,12 @@ const BlogPost = ({ post }) => {
           return <Body key={index}>{item.content}</Body>;
         }
         if (item.type === 'image') {
-          return <div className="image-container">
-              <Image key={index} src={item.src} alt={item.alt} />
-          </div>
+          return <ImageContainer key = {index}>
+              <Image src={item.src} alt={item.alt} />
+          </ImageContainer>
         }
       })}
-    </div>
+    </BlogPostContainer>
   );
 };
 
