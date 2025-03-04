@@ -3,6 +3,27 @@ const posts = [
 [
   {
     type: 'title',
+    content: 'Snipes in Flight',
+  },
+  {
+    type: 'body',
+    content: 'Compare the amount of barring on the underwing.',
+  },
+  {
+    type: 'image',
+    src: 'https://inaturalist-open-data.s3.amazonaws.com/photos/474023920/original.jpg',
+    alt: 'Wilson\'s Snipe',
+  },
+    {
+    type: 'image',
+    src: 'https://inaturalist-open-data.s3.amazonaws.com/photos/459007655/original.jpg',
+    alt: 'Common Snipe',
+  },
+],
+
+[
+  {
+    type: 'title',
     content: 'Lingering juvenile plumage in Nuttall\'s White-crowned sparrow',
   },
   {
