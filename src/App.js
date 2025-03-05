@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
     < Header />
-      <Routes basename={process.env.PUBLIC_URL}>
+      <Routes>
         <Route path="/" element={<Blog />} />
         <Route path="/midway" element={<Midway />} />
       </Routes>
