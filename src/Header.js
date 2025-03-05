@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const gitSha = process.env.REACT_APP_GIT_SHA || "unknown";
 
@@ -101,8 +102,8 @@ const Header = () => {
           <DropdownWrapper>
             <DropButton>Blog ▼</DropButton>
             <DropdownContent>
-              <li><a href="#">2025</a></li>
-              <li><a href="#">2024</a></li>
+              <li><Link to="/"> Blog </Link></li>
+              <li><Link to="/midway"> Midway </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
