@@ -110,15 +110,15 @@ const Header = () => {
           <DropdownWrapper>
             <DropButton>Resources ▼</DropButton>
             <DropdownContent>
-              <li><a href="#">Seawatch</a></li>
-              <li><a href="#">Identification</a></li>
+              <li><Link to="/Seawatch"> Seawatch </Link></li>
+              <li><Link to="/Identification"> Identification </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
           <DropdownWrapper>
             <DropButton>More ▼</DropButton>
             <DropdownContent>
-              <li><a href="#">About</a></li>
+              <li><Link to="/About"> About </Link></li>
             </DropdownContent>
           </DropdownWrapper>
         </NavList>
