@@ -1,6 +1,21 @@
 import BlogPost from "./BlogPost";
+import iNaturalistWidget from "./iNaturalist";
 
 const posts = [
+[
+  {
+    type: 'title',
+    content: 'The Watsonville Thick-billed Kingbird',
+  },
+  {
+    type: 'iNaturalist',
+    observation_id: 264731238,
+  },
+  {
+    type: 'body',
+    content: 'Last night I did a double-take while looking at recent iNaturalist observations for the Central Coast. A kingbird with a large bill.. Something that I\'d never seen in person before but spent hours studying and searching for in Arizona - specifically last May (2024) when we visited the Paton Center - a Thick-billed kingbird! I checked eBird and there it was - found by Max Ferrero on March 8, 2025 on Peckham Road. Funnily enough, I had just driven on this road the previous week on the way to Mount Madonna. We probably cruised right past it!',
+  },
+],
 [
   {
     type: 'title',

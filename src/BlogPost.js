@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import INaturalistWidget from './iNaturalist';
 
 const BlogPostContainer = styled.div`
   display: flex;
@@ -57,6 +58,9 @@ const BlogPost = ({ post }) => {
           return <ImageContainer key = {index}>
               <Image src={item.src} alt={item.alt} />
           </ImageContainer>
+        }
+        if (item.type === 'iNaturalist') {
+          return <INaturalistWidget observationId={item.observation_id} />
         }
       })}
     </BlogPostContainer>
