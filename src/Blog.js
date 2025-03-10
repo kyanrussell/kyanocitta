@@ -1,5 +1,4 @@
 import BlogPost from "./BlogPost";
-import iNaturalistWidget from "./iNaturalist";
 
 const posts = [
 [
