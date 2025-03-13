@@ -1,40 +1,41 @@
 import React from "react";
 import styled from 'styled-components';
 import INaturalistWidget from './iNaturalist';
+import EBirdAudio from './EBirdAudio';
 
-const BlogPostContainer = styled.div`
+export const BlogPostContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   width: 75vw;
   font-family: 'Arial', sans-serif;
   color: darkgreen;
 `;
 
-const Heading = styled.h2`
+export const Heading = styled.h2`
   width: 75vw;
   font-family: 'Arial', sans-serif;
   color: green;
 `;
 
-const Body = styled.p`
+export const Body = styled.p`
   width: 75vw;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 16px;
 `;
 
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   width: 75vw;
   object-it: scale-down;
   object-position: center;
 `
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 75vw;
   height: auto;
   display: block;
