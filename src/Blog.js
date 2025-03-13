@@ -4,6 +4,16 @@ const posts = [
 [
   {
     type: 'title',
+    content: 'Neighborhood GHOW Screech',
+  },
+  {
+    type: 'eBirdAudio',
+    media_url: 'https://macaulaylibrary.org/asset/631929683/embed',
+  },
+],
+[
+  {
+    type: 'title',
     content: 'The Watsonville Thick-billed Kingbird',
   },
   {

@@ -62,6 +62,9 @@ const BlogPost = ({ post }) => {
         if (item.type === 'iNaturalist') {
           return <INaturalistWidget observationId={item.observation_id} />
         }
+        if (item.type === 'eBirdAudio') {
+          return <EBirdAudio mediaUrl={item.media_url} />
+        }
       })}
     </BlogPostContainer>
   );
