@@ -4,6 +4,21 @@ const posts = [
 [
   {
     type: 'title',
+    content: "Variation in Facial Plumage of Murphy's Petrels",
+  },
+  {
+    type: 'image',
+    src: "/kyanocitta/images/mupe.jpg",
+    alt: 'Another image',
+  },
+  {
+    type: 'body',
+    content: "On a May 11th pelagic trip with Peter Pyle and Anchor Charters out of Fort Bragg, we had the opportunity to observe over 60 Murphy's petrels (Pterodroma ultima). These birds flew quite close to the boat, offering the chance to observe the variation in facial plumage. Most books I own show the white feathers being brightest on the chin, but the white feathers on some of these birds extended into the lores and even the forehead and behind the eye.",
+  },
+],
+[
+  {
+    type: 'title',
     content: 'Westerly at the Harbor',
   },
   {
