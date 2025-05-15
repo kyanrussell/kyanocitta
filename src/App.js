@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import Blog from "./Blog";
-import About from "./About";
-import Birds from "./Birds";
-import Identification from "./Identification";
-import Landscapes from "./Landscapes";
-import Midway from "./Midway";
-import Plants from "./Plants";
-import Seawatch from "./Seawatch";
+import Header from "components/Header";
+import Blog from "pages/Blog";
+import About from "pages/About";
+import Birds from "pages/Birds";
+import Identification from "pages/Identification";
+import Landscapes from "pages/Landscapes";
+import Midway from "pages/Midway";
+import Plants from "pages/Plants";
+import Seawatch from "pages/Seawatch";
 
 function App() {
   return (

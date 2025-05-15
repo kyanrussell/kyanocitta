@@ -1,4 +1,4 @@
-import BlogPost from './BlogPost';
+import BlogPost from 'components/BlogPost';
 
 function Seawatch() {
   return (

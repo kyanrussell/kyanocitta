@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import INaturalistWidget from './iNaturalist';
-import EBirdAudio from './EBirdAudio';
+import INaturalistWidget from 'components/iNaturalist';
+import EBirdAudio from 'components/EBirdAudio';
 
 export const BlogPostContainer = styled.div`
   display: flex;
