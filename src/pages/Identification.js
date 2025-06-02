@@ -1,8 +1,36 @@
+import BlogPost from 'components/BlogPost';
 
 function Identification() {
   return (
-    <div>
-    </div>
+    <BlogPost post={[
+	  {
+	    type: 'title',
+	    content: 'Snipes in Flight',
+	  },
+	  {
+	    type: 'body',
+	    content: 'Midway Atoll offered the unique opportunity to directly compare Wilson\'s and Common snipes in the field. Compare the amount of barring on the underwing in these flight shots.',
+	  },
+	  {
+	    type: 'image',
+	    src: 'https://inaturalist-open-data.s3.amazonaws.com/photos/474023920/original.jpg',
+	    alt: 'Wilson\'s Snipe',
+	  },
+	  {
+	    type: 'body',
+	    content: 'Wilson\'s snipe has significant amounts of barring which at a distance can appear quite dark.',
+	  },
+	    {
+	    type: 'image',
+	    src: 'https://inaturalist-open-data.s3.amazonaws.com/photos/459007655/original.jpg',
+	    alt: 'Common Snipe',
+	  },
+	  {
+	    type: 'body',
+	    content: 'Common snipe has a conspicuous white patch as well as a trailing white edge on the secondaries.',
+	  },
+	]}
+    />
   );
 }
 
