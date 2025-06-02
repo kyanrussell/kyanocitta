@@ -13,13 +13,13 @@ export const BlogPostContainer = styled.div`
 export const Title = styled.h1`
   width: 75vw;
   font-family: 'Arial', sans-serif;
-  color: darkgreen;
+  color: #1c3d5a;
 `;
 
 export const Heading = styled.h2`
   width: 75vw;
   font-family: 'Arial', sans-serif;
-  color: green;
+  color: #345d7e;
 `;
 
 export const Body = styled.p`
