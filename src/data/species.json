@@ -1,0 +1,101 @@
+[
+  {
+    "id": "common-murre",
+    "name": "Common Murre",
+    "family": "Alcids",
+    "scientificName": "Uria aalge",
+    "mainImageUrl": "/images/common-murre.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "A black-and-white auk that dives to great depths.",
+    "breedingRange": "Eastern Pacific and Western Atlantic",
+    "comparisonSpecies": ["pigeon-guillemot", "ancient-murrelet", "marbled-murrelet"]
+  },
+  {
+    "id": "pigeon-guillemot",
+    "name": "Pigeon Guillemot",
+    "family": "Alcids",
+    "scientificName": "Cepphus columba",
+    "mainImageUrl": "/images/pigeon-guillemot.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "A striking black seabird with red feet.",
+    "breedingRange": "Eastern Pacific",
+    "comparisonSpecies": ["common-murre"]
+  },
+  {
+    "id": "ancient-murrelet",
+    "name": "Ancient Murrelet",
+    "family": "Alcids",
+    "scientificName": "Synthliboramphus antiquus",
+    "mainImageUrl": "/images/ancient-murrelet.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "foo",
+    "breedingRange": "Northeastern Pacific",
+    "comparisonSpecies": ["common-murre", "pigeon-guillemot", "marbled-murrelet"]
+  },
+  {
+    "id": "scrippss-murrelet",
+    "name": "Scripps's Murrelet",
+    "family": "Alcids",
+    "scientificName": "Synthliboramphus scrippsi",
+    "mainImageUrl": "/images/scrippss-murrelet.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "foo",
+    "breedingRange": "Eastern Pacific",
+    "comparisonSpecies": ["common-murre", "pigeon-guillemot", "marbled-murrelet"]
+  },
+  {
+    "id": "marbled-murrelet",
+    "name": "Marbled Murrelet",
+    "family": "Alcids",
+    "scientificName": "Brachyramphus marmoratus",
+    "mainImageUrl": "/images/marbled-murrelet.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "foo",
+    "breedingRange": "Eastern Pacific",
+    "comparisonSpecies": ["common-murre", "pigeon-guillemot", "ancient-murrelet"]
+  },
+  {
+    "id": "manx-shearwater",
+    "name": "Manx Shearwater",
+    "family": "Shearwaters",
+    "scientificName": "Puffinus puffinus",
+    "mainImageUrl": "manx-shearwater.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "foo",
+    "breedingRange": "Eastern and Western Atlantic",
+    "comparisonSpecies": ["common-murre", "black-vented-shearwater"]
+  },
+    {
+    "id": "black-vented-shearwater",
+    "name": "Black-vented Shearwater",
+    "family": "Shearwaters",
+    "scientificName": "Puffinus opisthomelas",
+    "mainImageUrl": "black-vented-shearwater.jpg",
+    "flightPathImageUrl": "foo",
+    "description": "foo",
+    "breedingRange": "Eastern Pacific",
+    "comparisonSpecies": ["common-murre", "black-vented-shearwater"]
+  },
+  {
+    "id": "red-phalarope",
+    "name": "Red Phalarope",
+    "family": "Shorebirds",
+    "scientificName": "Phalaropus fulicarius",
+    "mainImageUrl": "/kyanocitta/images/red-phalarope-main.jpeg",
+    "flightPathImageUrl": "/kyanocitta/images/red-phalarope-flight-path.jpeg",
+    "description": "Red phalarope",
+    "breedingRange": "Northeastern Pacific",
+    "comparisonSpecies": ["fork-tailed-storm-petrel"]
+  },
+  {
+    "id": "fork-tailed-storm-petrel",
+    "name": "Fork-tailed Storm-petrel",
+    "family": "Storm-petrels",
+    "scientificName": "Oceanodroma furcata",
+    "mainImageUrl": "/kyanocitta/images/fork-tailed-storm-petrel-main.jpeg",
+    "flightPathImageUrl": "/kyanocitta/images/fork-tailed-storm-petrel-flight-path.jpeg",
+    "description": "Fork-tailed storm-petrel",
+    "breedingRange": "Eastern Pacific",
+    "comparisonSpecies": ["red-phalarope"]
+  }
+]

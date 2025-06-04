@@ -1,4 +1,4 @@
-import {Heading, Body, BlogPostContainer, Image} from 'components/BlogPost';
+import {Heading, Body, BlogPostContainer, Image} from 'components/Styles';
 
 function Midway() {
   return (
