@@ -69,7 +69,11 @@ const ComparePage = () => {
         />
       </DropdownRow>
 
-      <SpeciesComparison left={leftSpecies} right={rightSpecies} />
+      <SpeciesComparison
+        left={leftSpecies}
+        right={rightSpecies}
+        setRightId={setRightId}
+      />
     </BlogPostContainer>
   );
 };

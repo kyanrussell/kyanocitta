@@ -1,4 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledLink = styled.a`
+  color: #0077cc;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: #004499;
+  }
+`;
+
+export const CompareLink = ({ speciesId, setRightId, children }) => (
+  <StyledLink
+    href="#"
+    onClick={(e) => {
+      e.preventDefault();
+      setRightId(speciesId);
+    }}
+  >
+    {children}
+  </StyledLink>
+);
+
+
 
 export const speciesData = [
   {

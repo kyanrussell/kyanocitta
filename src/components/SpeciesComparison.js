@@ -28,7 +28,7 @@ const getPairKey = (id1, id2) => {
   return `${a}_vs_${b}`;
 };
 
-export const SpeciesComparison = ({ left, right }) => {
+export const SpeciesComparison = ({ left, right, setRightId }) => {
   return (
     <ComparisonGrid>
 
@@ -54,7 +54,12 @@ export const SpeciesComparison = ({ left, right }) => {
 
       <Label>Description</Label>
       <Cell>
-        {right ? pairDescriptions[getPairKey(left.id, right.id)] || left.description: left.description}
+        {(() => {
+          const pairKey = getPairKey(left.id, right?.id);
+          const desc = right ? pairDescriptions[pairKey] || left.description : left.description;
+
+          return typeof desc === 'function' ? desc({ setRightId }) : desc;
+        })()}
       </Cell>
 
     </ComparisonGrid>
