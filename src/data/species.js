@@ -8,7 +8,11 @@ export const speciesData = [
     scientificName: 'Uria aalge',
     mainImageUrl: '/images/common-murre.jpg',
     flightPathImageUrl: 'foo',
-    description: <>A black-and-white auk that dives to great depths.</>,
+    description: <>The "Flying Football." Looks pretty much like what you would picture from that moniker - a black and white football with stubby, whirring wings.
+    Up close, you can see its black head (in alternate) or contrasting facial pattern (basic). Black above and white below - underside of wings can be variable.
+    In harsh light - very white. In dim light - dusky to dark. Barring on the flanks (c.f. TBMU - clean flanks).
+    Their abundance and distinctive structure + flightstyle makes for useful comparisons with other species.
+    </>,
     breedingRange: 'Eastern Pacific and Western Atlantic',
     comparisonSpecies: ['pigeon-guillemot', 'ancient-murrelet', 'marbled-murrelet'],
   },
