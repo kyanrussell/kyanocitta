@@ -6,11 +6,15 @@ export const speciesData = [
     name: 'Common Murre',
     family: 'Alcids',
     scientificName: 'Uria aalge',
-    mainImageUrl: '/images/common-murre.jpg',
+    mainImageUrl: '/kyanocitta/images/common-murre-main.png',
     flightPathImageUrl: 'foo',
-    description: <>The "Flying Football." Looks pretty much like what you would picture from that moniker - a black and white football with stubby, whirring wings.
-    Up close, you can see its black head (in alternate) or contrasting facial pattern (basic). Black above and white below - underside of wings can be variable.
-    In harsh light - very white. In dim light - dusky to dark. Barring on the flanks (c.f. TBMU - clean flanks).
+    description: ({ setRightId }) => <>The "Flying Football." Looks pretty much like what you would picture from that moniker - a black and white football with stubby, whirring wings.
+    Look for its black head (in alternate) or contrasting facial pattern (basic). Black above and white below - underside of wings can be variable.
+    In harsh light - very white. In dim light - dusky to dark. Barring on the flanks (
+        <CompareLink speciesId="common-murre" setRightId={setRightId}>
+          c.f. TBMU
+        </CompareLink>
+     - clean flanks).
     Their abundance and distinctive structure + flightstyle makes for useful comparisons with other species.
     </>,
     breedingRange: 'Eastern Pacific and Western Atlantic',
@@ -21,7 +25,7 @@ export const speciesData = [
     name: 'Pigeon Guillemot',
     family: 'Alcids',
     scientificName: 'Cepphus columba',
-    mainImageUrl: '/images/pigeon-guillemot.jpg',
+    mainImageUrl: '/kyanocitta/images/pigeon-guillemot-main.png',
     flightPathImageUrl: 'foo',
     description: <>A striking black seabird with red feet.</>,
     breedingRange: 'Eastern Pacific',
@@ -32,7 +36,7 @@ export const speciesData = [
     name: 'Ancient Murrelet',
     family: 'Alcids',
     scientificName: 'Synthliboramphus antiquus',
-    mainImageUrl: '/images/ancient-murrelet.jpg',
+    mainImageUrl: '/kyanocitta/images/ancient-murrelet-main.png',
     flightPathImageUrl: 'foo',
     description: <>foo</>,
     breedingRange: 'Northeastern Pacific',
@@ -43,7 +47,7 @@ export const speciesData = [
     name: "Scripps's Murrelet",
     family: 'Alcids',
     scientificName: 'Synthliboramphus scrippsi',
-    mainImageUrl: '/images/scrippss-murrelet.jpg',
+    mainImageUrl: '/kyanocitta/images/scrippss-murrelet-main.png',
     flightPathImageUrl: 'foo',
     description: <>foo</>,
     breedingRange: 'Eastern Pacific',
@@ -54,7 +58,7 @@ export const speciesData = [
     name: 'Marbled Murrelet',
     family: 'Alcids',
     scientificName: 'Brachyramphus marmoratus',
-    mainImageUrl: '/images/marbled-murrelet.jpg',
+    mainImageUrl: '/kyanocitta/images/marbled-murrelet-main.png',
     flightPathImageUrl: 'foo',
     description: <>foo</>,
     breedingRange: 'Eastern Pacific',
@@ -65,8 +69,8 @@ export const speciesData = [
     name: 'Manx Shearwater',
     family: 'Shearwaters',
     scientificName: 'Puffinus puffinus',
-    mainImageUrl: 'manx-shearwater.jpg',
-    flightPathImageUrl: 'foo',
+    mainImageUrl: 'manx-shearwater-main.png',
+    flightPathImageUrl: '/kyanocitta/images/manx-shearwater-main.png',
     description: <>foo</>,
     breedingRange: 'Eastern and Western Atlantic',
     comparisonSpecies: ['common-murre', 'black-vented-shearwater'],
@@ -76,7 +80,7 @@ export const speciesData = [
     name: 'Black-vented Shearwater',
     family: 'Shearwaters',
     scientificName: 'Puffinus opisthomelas',
-    mainImageUrl: 'black-vented-shearwater.jpg',
+    mainImageUrl: '/kyanocitta/images/black-vented-shearwater-main.png',
     flightPathImageUrl: 'foo',
     description: <>foo</>,
     breedingRange: 'Eastern Pacific',
