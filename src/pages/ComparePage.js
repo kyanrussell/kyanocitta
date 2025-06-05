@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import speciesData from 'data/species.json';
+import { speciesData } from 'data/species';
 import { SpeciesSelect } from 'components/SpeciesSelect';
 import { SpeciesComparison } from 'components/SpeciesComparison';
 import { Title, BlogPostContainer } from 'components/Styles';

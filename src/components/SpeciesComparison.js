@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import pairDescriptions from 'data/descriptions.json';
+import { pairDescriptions } from 'data/species';
 
 const ComparisonGrid = styled.div`
   display: grid;
@@ -24,7 +24,6 @@ const Cell = styled.div`
 `;
 
 const getPairKey = (id1, id2) => {
-  // Normalize key order so the description is found regardless of order
   const [a, b] = [id1, id2].sort();
   return `${a}_vs_${b}`;
 };
