@@ -12,8 +12,9 @@ const HeaderContainer = styled.header`
 `;
 
 const Banner = styled.div`
+  position: relative;
   width: 100%;
-  height: 200px;
+  height: 25vh;
   overflow: hidden;
 `;
 
@@ -23,15 +24,30 @@ const BannerImage = styled.img`
   object-fit: cover;
 `;
 
+const BannerTitle = styled.h1`
+  color: aliceblue;
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  transform: translate(-100%, -50%);
+  font-size: 3rem;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin: 0;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    font-size: 1.8rem;
+  }
+`;
+
 const Nav = styled.nav`
   background-color: steelblue;
-  padding: 10px 0;
 `;
 
 const NavList = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   list-style: none;
   padding: 0;
 `;
@@ -88,9 +104,8 @@ const Header = () => {
       {/* Banner Image */}
       <Banner>
         <BannerImage src="https://inaturalist-open-data.s3.amazonaws.com/photos/429421290/original.jpeg" alt="Banner" />
+        <BannerTitle> kyanocitta </BannerTitle>
       </Banner>
-      <h1> kyanocitta </h1>
-      <p className="p-4 text-white text-left"> ver. {gitSha} </p>
 
       {/* Navigation Bar */}
       <Nav>

@@ -4,11 +4,12 @@ import { pairDescriptions } from 'data/species';
 
 const ComparisonGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
   align-items: start;
-  max-width: 50vh;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -41,8 +42,6 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
         </Cell>
       )}
 
-
-      <Label>Flight Path</Label>
       <Cell>
         <img src={left.flightPathImageUrl} alt={left.name} width="100%" />
       </Cell>
@@ -52,7 +51,6 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
         </Cell>
       )}
 
-      <Label>Description</Label>
       <Cell>
         {(() => {
           const pairKey = getPairKey(left.id, right?.id);

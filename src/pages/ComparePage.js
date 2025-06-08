@@ -49,32 +49,31 @@ const ComparePage = () => {
   const leftDropdownGroupings = familyGroupings;
 
   return (
-    <BlogPostContainer>
-      <Title>Compare Species</Title>
+      <BlogPostContainer>
+        <Title>Compare Species</Title>
+        <DropdownRow>
+          <SpeciesSelect
+            speciesList={speciesData}
+            value={leftId}
+            onChange={setLeftId}
+            groupings={leftDropdownGroupings}
+            hideNullOption={true}
+          />
+          <SpeciesSelect
+            speciesList={speciesData}
+            value={rightId}
+            onChange={setRightId}
+            groupings={rightDropdownGroupings}
+            hideNullOption={false}
+          />
+        </DropdownRow>
 
-      <DropdownRow>
-        <SpeciesSelect
-          speciesList={speciesData}
-          value={leftId}
-          onChange={setLeftId}
-          groupings={leftDropdownGroupings}
-          hideNullOption={true}
+        <SpeciesComparison
+          left={leftSpecies}
+          right={rightSpecies}
+          setRightId={setRightId}
         />
-        <SpeciesSelect
-          speciesList={speciesData}
-          value={rightId}
-          onChange={setRightId}
-          groupings={rightDropdownGroupings}
-          hideNullOption={false}
-        />
-      </DropdownRow>
-
-      <SpeciesComparison
-        left={leftSpecies}
-        right={rightSpecies}
-        setRightId={setRightId}
-      />
-    </BlogPostContainer>
+      </BlogPostContainer>
   );
 };
 
