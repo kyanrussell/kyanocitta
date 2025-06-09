@@ -10,6 +10,10 @@ const ComparisonGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  background-image: url('/kyanocitta/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
