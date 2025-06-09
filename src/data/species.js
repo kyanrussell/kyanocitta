@@ -517,6 +517,6 @@ export const speciesData = [
 
 export const pairDescriptions = {
   "COMU_vs_PIGU": "COMU vs PIGU",
-  "COMU_vs_manx-shearwater": "Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face. However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.",
-  "red-phalarope_vs_fork-tailed-storm-petrel": "REPH vs FTSP"
+  "COMU_vs_MASH": "Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face. However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.",
+  "REPH_vs_FTSP": "REPH vs FTSP"
 };
