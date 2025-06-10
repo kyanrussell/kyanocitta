@@ -16,7 +16,7 @@ const ComparisonGrid = styled.div`
   background-position: center;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -35,6 +35,7 @@ const getPairKey = (id1, id2) => {
 
 export const SpeciesComparison = ({ left, right, setRightId }) => {
   return (
+    <>
     <ComparisonGrid>
 
       <Cell>
@@ -46,24 +47,15 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
         </Cell>
       )}
 
-      <Cell>
-        <img src={left.flightPathImageUrl} alt={left.name} width="100%" />
-      </Cell>
-      {right && (
-        <Cell>
-          <img src={right.flightPathImageUrl} alt={right.name} width="100%" />
-        </Cell>
-      )}
-
-      <Cell>
-        {(() => {
-          const pairKey = getPairKey(left.id, right?.id);
-          const desc = right ? pairDescriptions[pairKey] || left.description : left.description;
-
-          return typeof desc === 'function' ? desc({ setRightId }) : desc;
-        })()}
-      </Cell>
-
     </ComparisonGrid>
+    <>
+    {(() => {
+      const pairKey = getPairKey(left.id, right?.id);
+      const desc = right ? pairDescriptions[pairKey] || left.description : left.description;
+
+      return typeof desc === 'function' ? desc({ setRightId }) : desc;
+    })()}
+    </>
+    </>
   );
 };

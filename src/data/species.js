@@ -552,7 +552,7 @@ export const pairDescriptions = {
   More helpful are differences in size and flightstyle. BUSH is larger and floats like a butterfly due to its low wing-loading. MASH is heavy-bodied and flaps frequently.
   </>,
   "HAPE_vs_MASH": <>
-  Both are similarly sized and proportioned\; both are dark above and white below - particularly in harsh light. However, they differ greatly in flightstyle. TBD
+  Both are similarly sized and proportioned; both are dark above and white below - particularly in harsh light. However, they differ greatly in flightstyle. TBD
   </>,
   "COMU_vs_MASH": <>
   Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face.
