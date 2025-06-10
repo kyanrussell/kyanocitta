@@ -535,8 +535,21 @@ export const pairDescriptions = {
   Distant birds can be difficult to distinguish between these two species, especially in poor lighting. Look for structural differences - TUPU being larger and plumper, with a hefty
   rounded bill. In good lighting, the white belly of RHAU is diagnostic for this species pair.
   </>,
-  "TUPU_vs_SUSC": <>
-  These species are similarly sized and colored. TUPU has almost no neck compared to SUSC.
+  "RHAU_vs_CAAU": <>
+  These birds are similarly colored, but differ in structure. CAAU is half the size of RHAU with a larger head relative to its size.
+  RHAU is slimmer and pointier. CAAU is a slower flier. CAAU is typically seen in singles or pairs, sometimes small groups.
+  RHAUs are more likely to be seen in small groups to large trains.
+  </>,
+  "CAAU_vs_ANMU": <>
+  Similarly sized and colored. Look for contrasting color between head and back of ANMU.
+  The breast is dusky on CAAU and blends into the belly, whereas the black hood of ANMU is sharply demarcated. CAAU is a smaller flier.
+  </>,
+  "BUSH_vs_MASH": <>
+  Both birds are gleaming white below - especially in harsh light. MASH is jet black above, while BUSH sports its distinctive black M pattern on a field of silver.
+  More helpful are differences in size and flightstyle. BUSH is larger and floats like a butterfly due to its low wing-loading. MASH is heavy-bodied and flaps frequently.
+  </>,
+  "MASH_vs_HAPE": <>
+  Both are similarly sized and proportioned; both are dark above and white below - particularly in harsh light. However, they differ greatly in flightstyle. TBD
   </>,
   "COMU_vs_MASH": "Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face. However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.",
   "REPH_vs_FTSP": "REPH vs FTSP"
