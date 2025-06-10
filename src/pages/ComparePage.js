@@ -9,7 +9,9 @@ const DropdownRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0rem;
   max-width: 100%;
   box-sizing: border-box;
   padding: 0 1rem;
@@ -50,7 +52,6 @@ const ComparePage = () => {
 
   return (
       <BlogPostContainer>
-        <Title>Compare Species</Title>
         <DropdownRow>
           <SpeciesSelect
             speciesList={speciesData}

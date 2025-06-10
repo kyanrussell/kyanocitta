@@ -27,6 +27,17 @@ export const CompareLink = ({ speciesId, setRightId, children }) => (
 
 export const speciesData = [
 // Waterfowl
+  {
+    id: 'SUSC',
+    name: 'Surf Scoter',
+    family: 'Waterfowl',
+    scientificName: 'Melanitta perspicillata',
+    mainImageUrl: '/kyanocitta/images/SUSC-main.png',
+    flightPathImageUrl: 'foo',
+    description: <>SUSC</>,
+    breedingRange: 'foo',
+    comparisonSpecies: ['COMU', 'TUPU'],
+  },
 // Cormorants
 // Loons
 // Grebes
@@ -517,6 +528,16 @@ export const speciesData = [
 
 export const pairDescriptions = {
   "COMU_vs_PIGU": "COMU vs PIGU",
+  "COMU_vs_RHAU": <>
+  The two most commonly encountered alcids. In dim light, both can appear all dark - in this case, look for structural differences. RHAU is slimmer with a shorter beak.
+  </>,
+  "RHAU_vs_TUPU": <>
+  Distant birds can be difficult to distinguish between these two species, especially in poor lighting. Look for structural differences - TUPU being larger and plumper, with a hefty
+  rounded bill. In good lighting, the white belly of RHAU is diagnostic for this species pair.
+  </>,
+  "TUPU_vs_SUSC": <>
+  These species are similarly sized and colored. TUPU has almost no neck compared to SUSC.
+  </>,
   "COMU_vs_MASH": "Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face. However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.",
   "REPH_vs_FTSP": "REPH vs FTSP"
 };
