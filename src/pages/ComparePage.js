@@ -19,7 +19,8 @@ const DropdownRow = styled.div`
 
 
 const ComparePage = () => {
-  const [leftId, setLeftId] = useState(speciesData[0].id);
+
+  const [leftId, setLeftId] = useState(speciesData[speciesData.length * Math.random() | 0].id);
   const [rightId, setRightId] = useState(null);
 
   const leftSpecies = speciesData.find((sp) => sp.id === leftId);

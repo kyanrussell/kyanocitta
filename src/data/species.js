@@ -223,7 +223,7 @@ export const speciesData = [
   //   flightPathImageUrl: '/kyanocitta/images/COPE-flight-path.png',
   //   description: <>Cook's Petrel</>,
   //   breedingRange: 'foo',
-  //   comparisonSpecies: ['BUSH', 'WEGU'],
+  //   comparisonSpecies: ['BUSW', 'WEGU'],
   // },
   // {
   //   id: 'MUPE',
@@ -254,7 +254,11 @@ export const speciesData = [
     scientificName: 'Ardenna grisea',
     mainImageUrl: '/kyanocitta/images/SOSH-main.png',
     flightPathImageUrl: '/kyanocitta/images/SOSH-flight-path.png',
-    description: <>Sooty Shearwater</>,
+    description: <>
+    Our most commonly seen shearwater gathers in the millions spring through autumn.
+    Heavy body with stiff, thin wings. Flaps hard and often. All dark above, but beware molting birds with white highlights.
+    Silver under wing gleams brightly in sun.
+    </>,
     breedingRange: 'foo',
     comparisonSpecies: ['STSH'],
   },
@@ -276,9 +280,11 @@ export const speciesData = [
     scientificName: 'Ardenna creatopus',
     mainImageUrl: '/kyanocitta/images/PFSH-main.png',
     flightPathImageUrl: '/kyanocitta/images/PFSH-flight-path.png',
-    description: <>Pink-footed Shearwater</>,
+    description: <>
+    Large, broad-winged shearwater flies lazily in large arcs. Infrequent flapping. White underside can gleam in sun, but look for smudgy marks under primaries.
+    </>,
     breedingRange: 'foo',
-    comparisonSpecies: ['SOSH', 'BUSH', 'BVSH', 'FFSH'],
+    comparisonSpecies: ['SOSH', 'BUSW', 'BVSH', 'FFSH'],
   },
   {
     id: 'FFSH',
@@ -292,12 +298,12 @@ export const speciesData = [
     comparisonSpecies: ['PFSH', 'SOSH'],
   },
   {
-    id: 'BUSH',
+    id: 'BUSW',
     name: "Buller's Shearwater",
     family: 'Tubenoses',
     scientificName: 'Ardenna bulleri',
-    mainImageUrl: '/kyanocitta/images/BUSH-main.png',
-    flightPathImageUrl: '/kyanocitta/images/BUSH-flight-path.png',
+    mainImageUrl: '/kyanocitta/images/BUSW-main.png',
+    flightPathImageUrl: '/kyanocitta/images/BUSW-flight-path.png',
     description: <>Buller's Shearwater</>,
     breedingRange: 'foo',
     comparisonSpecies: ['PFSH', 'BVSH', 'MASH'],
@@ -333,7 +339,7 @@ export const speciesData = [
   //   flightPathImageUrl: '/kyanocitta/images/WTSH-flight-path.png',
   //   description: <>Wedge-tailed Shearwater</>,
   //   breedingRange: 'foo',
-  //   comparisonSpecies: ['PFSH', 'BUSH'],
+  //   comparisonSpecies: ['PFSH', 'BUSW'],
   // },
   {
     id: 'WISP',
@@ -344,7 +350,7 @@ export const speciesData = [
     flightPathImageUrl: '/kyanocitta/images/WISP-flight-path.png',
     description: <>Wilson's Storm-Petrel</>,
     breedingRange: 'foo',
-    comparisonSpecies: ['LCSP'],
+    comparisonSpecies: ['LCSP', 'ASSP'],
   },
   // {
   //   id: 'LCSP',
@@ -548,12 +554,13 @@ export const pairDescriptions = {
   Similarly sized and colored. Look for contrasting color between head and back of ANMU.
   The breast is dusky on CAAU and blends into the belly, whereas the black hood of ANMU is sharply demarcated. CAAU is a smaller flier.
   </>,
-  "BUSH_vs_MASH": <>
-  Both birds are gleaming white below - especially in harsh light. MASH is jet black above, while BUSH sports its distinctive black M pattern on a field of silver.
-  More helpful are differences in size and flightstyle. BUSH is larger and floats like a butterfly due to its low wing-loading. MASH is heavy-bodied and flaps frequently.
+  "BUSW_vs_MASH": <>
+  Both birds are gleaming white below - especially in harsh light. MASH is jet black above, while BUSW sports its distinctive black M pattern on a field of silver.
+  More helpful are differences in size and flightstyle. BUSW is larger and floats like a butterfly due to its low wing-loading. MASH is heavy-bodied and flaps frequently.
   </>,
   "HAPE_vs_MASH": <>
-  Both are similarly sized and proportioned; both are dark above and white below - particularly in harsh light. However, they differ greatly in flightstyle. TBD
+  Both are similarly sized and proportioned; both are dark above and white below - particularly in harsh light. However, they differ greatly in flightstyle - the heavy-bodied 
+  MASH flaps frantically with short glides, while HAPE holds its wings crooked and glides in sharply turning arcs.
   </>,
   "COMU_vs_MASH": <>
   Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face.
