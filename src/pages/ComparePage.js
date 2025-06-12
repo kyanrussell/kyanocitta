@@ -68,8 +68,7 @@ const ComparePage = () => {
   }));
 
   const rightDropdownGroupings = [
-    { label: 'Similar species', species: similarSpecies },
-    ...familyGroupings,
+    { label: 'Similar species', species: similarSpecies }
   ];
   const leftDropdownGroupings = familyGroupings;
 
