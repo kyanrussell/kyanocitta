@@ -97,7 +97,7 @@ const ComparePage = () => {
               if (rightId != null) {
                 const temp = leftId;
                 setLeftId(rightId);
-                setRightId(temp);
+                setRightId("");
               }
             }}>
               ⇄

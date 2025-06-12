@@ -21,7 +21,8 @@ const ComparisonGrid = styled.div`
 `;
 
 const Label = styled.div`
-  font-weight: bold;
+  font-size: 0.75em;
+  margin: auto;
 `;
 
 const Cell = styled.div`
@@ -40,18 +41,23 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
 
       <Cell>
         <img src={left.mainImageUrl} alt={left.name} width="100%" />
+        <Label>{left.id}</Label>
       </Cell>
       {right && (
         <Cell>
           <img src={right.mainImageUrl} alt={right.name} width="100%" />
+          <Label>{right.id}</Label>
         </Cell>
       )}
 
     </ComparisonGrid>
     <>
+    <div style={{'font-weight': 'bold'}}>
+      {right ? `${left.name} vs ${right.name}` : left.name}
+    </div>
     {(() => {
       const pairKey = getPairKey(left.id, right?.id);
-      const desc = right ? pairDescriptions[pairKey] || left.description : left.description;
+      const desc = right ? pairDescriptions[pairKey] || `${left.id} vs ${right.id}` : left.description;
 
       return typeof desc === 'function' ? desc({ setRightId }) : desc;
     })()}
