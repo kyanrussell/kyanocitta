@@ -7,16 +7,38 @@ import { Title, BlogPostContainer } from 'components/Styles';
 
 const DropdownRow = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0rem;
-  max-width: 100%;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
   padding: 0 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+    align-items: stretch;
+  }
 `;
 
+const DropdownColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @media (min-width: 601px) {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+`;
+
+const SwitchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const ComparePage = () => {
 
@@ -52,22 +74,35 @@ const ComparePage = () => {
   const leftDropdownGroupings = familyGroupings;
 
   return (
-      <BlogPostContainer>
+    <>
         <DropdownRow>
-          <SpeciesSelect
-            speciesList={speciesData}
-            value={leftId}
-            onChange={setLeftId}
-            groupings={leftDropdownGroupings}
-            hideNullOption={true}
-          />
-          <SpeciesSelect
-            speciesList={speciesData}
-            value={rightId}
-            onChange={setRightId}
-            groupings={rightDropdownGroupings}
-            hideNullOption={false}
-          />
+          <DropdownColumn>
+            <SpeciesSelect
+              speciesList={speciesData}
+              value={leftId}
+              onChange={setLeftId}
+              groupings={leftDropdownGroupings}
+              hideNullOption={true}
+            />
+            <SpeciesSelect
+              speciesList={speciesData}
+              value={rightId}
+              onChange={setRightId}
+              groupings={rightDropdownGroupings}
+              hideNullOption={false}
+            />
+          </DropdownColumn>
+          <SwitchWrapper>
+            <button onClick={() => {
+              if (rightId != null) {
+                const temp = leftId;
+                setLeftId(rightId);
+                setRightId(temp);
+              }
+            }}>
+              ⇄
+            </button>
+          </SwitchWrapper>
         </DropdownRow>
 
         <SpeciesComparison
@@ -75,7 +110,7 @@ const ComparePage = () => {
           right={rightSpecies}
           setRightId={setRightId}
         />
-      </BlogPostContainer>
+        </>
   );
 };
 
