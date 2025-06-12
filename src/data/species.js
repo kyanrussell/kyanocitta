@@ -243,7 +243,11 @@ export const speciesData = [
     scientificName: 'Pterodroma sandwichensis',
     mainImageUrl: '/kyanocitta/images/HAPE-main.png',
     flightPathImageUrl: '/kyanocitta/images/HAPE-flight-path.png',
-    description: <>Hawaiian Petrel</>,
+    description: <>
+    Fabulously rare from shore but appears to be increasing. White forehead surprisingly visible at range.
+    Long narrow wings held crooked. Long tailed. In strong light, appears black above and white below.
+    Better views reveal the gray back with dark M pattern, and the black ulnar bar on the white underwing.
+    </>,
     breedingRange: 'foo',
     comparisonSpecies: ['MASH', 'SOSH', 'PFSH'],
   },
@@ -281,7 +285,8 @@ export const speciesData = [
     mainImageUrl: '/kyanocitta/images/PFSH-main.png',
     flightPathImageUrl: '/kyanocitta/images/PFSH-flight-path.png',
     description: <>
-    Large, broad-winged shearwater flies lazily in large arcs. Infrequent flapping. White underside can gleam in sun, but look for smudgy marks under primaries.
+    Large, broad-winged shearwater flies lazily in large arcs. Infrequent flapping. White underside can gleam in sun, 
+    but look for smudgy marks under primaries. Some birds show a dark M dorsal pattern on a field of dark gray.
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['SOSH', 'BUSW', 'BVSH', 'FFSH'],
@@ -566,7 +571,25 @@ export const pairDescriptions = {
   Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face.
   However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.
   </>,
+  "FFSH_vs_PFSH": <>
+  Some suggest these birds are conspecific. They are certainly identical in structure and flightstyle; distant, backlit birds may be best
+  left unidentified. If possible, look for differences in color - cold gray tones of PFSH vs the chocolate brown of FFSH. The white underside
+  of PFSH is diagnostic for this species pair.
+  </>,
+  "FFSH_vs_SOSH": <>
+  The silvery underwing of SOSH is diagnostic. Both birds can appear all-dark, especially if you don't see the underside. Look for differences in structure: broad wings in FFSH
+  vs narrow in SOSH. Differences in flightstyle are perhaps most obvious - FSSH is languid with large arcs and minimal flapping, vs the frantic flying of SOSH.
+  </>,
+  "PFSH_vs_SOSH": <>
+  In a cloud of SOSH, PFSH is typically the next most common shearwater. Look for its large, broad wings with white undersides. The belly is also white, whereas in
+  SOSH the white underside is limited to the wings. PFSH flaps infrequently with long glides - the period of its arcs appears longer than that of SOSH.
+  </>,
+  "BUSW_vs_PFSH": <>
+  When looking for BUSW, it's best to make sure you're not looking at a PFSH. Especially heed PFSH with dark M patterns - this pattern is much higher contrast on BUSW.
+  The underside of PFSH can appear quiet bright in harsh light, but isn't as neatly bordered as in BUSW. Both birds appear languid in flight compared to heavier-bodied species,
+  but BUSW appears much floatier, with more irregular arcing. BUSW is also slightly smaller.
+  </>,
   "FTSP_vs_REPH": <>
   REPH vs FTSP
-  </>,
+  </>
 };
