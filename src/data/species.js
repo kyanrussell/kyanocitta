@@ -586,7 +586,7 @@ export const pairDescriptions = {
   </>,
   "BUSW_vs_PFSH": <>
   When looking for BUSW, it's best to make sure you're not looking at a PFSH. Especially heed PFSH with dark M patterns - this pattern is much higher contrast on BUSW.
-  The underside of PFSH can appear quiet bright in harsh light, but isn't as neatly bordered as in BUSW. Both birds appear languid in flight compared to heavier-bodied species,
+  The underside of PFSH can appear quite bright in harsh light, but isn't as neatly bordered as in BUSW. Both birds appear languid in flight compared to heavier-bodied species,
   but BUSW appears much floatier, with more irregular arcing. BUSW is also slightly smaller.
   </>,
   "FTSP_vs_REPH": <>
