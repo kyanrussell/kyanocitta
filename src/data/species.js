@@ -264,7 +264,7 @@ export const speciesData = [
     Silver under wing gleams brightly in sun.
     </>,
     breedingRange: 'foo',
-    comparisonSpecies: ['STSH'],
+    comparisonSpecies: ['STSH', 'NOFU'],
   },
   // {
   //   id: 'STSH',
