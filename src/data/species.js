@@ -23,6 +23,30 @@ export const CompareLink = ({ speciesId, setRightId, children }) => (
   </StyledLink>
 );
 
+const BellyColor = {
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
+const FlightStyle = {
+  DIRECT: 'direct',
+  ARCING: 'arcing',
+  VERSATILE: 'versatile'
+};
+
+const FlightHeight = {
+  LOW: 'low',
+  MEDIUM: 'medium',
+  HIGH: 'high'
+};
+
+const Size = {
+  XS: 'extra-small',
+  S: 'small',
+  M: 'medium',
+  L: 'large',
+  XL: 'extra-large'
+};
 
 
 export const speciesData = [
@@ -37,6 +61,10 @@ export const speciesData = [
     description: <>SUSC</>,
     breedingRange: 'foo',
     comparisonSpecies: ['COMU', 'TUPU'],
+    bellyColor: [BellyColor.DARK, BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW, FlightHeight.MEDIUM, FlightHeight.HIGH],
+    size: [Size.S],
   },
 // Cormorants
 // Loons
@@ -60,6 +88,10 @@ export const speciesData = [
     </>,
     breedingRange: 'Eastern Pacific and Western Atlantic',
     comparisonSpecies: ['RHAU', 'MASH', 'SCMU', 'MAMU', 'LTDU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.S],
   },
   // {
   //   id: 'TBMU',
@@ -87,6 +119,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['RHAU', 'SUSC'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.L],
   },
   {
     id: 'CAAU',
@@ -98,6 +134,10 @@ export const speciesData = [
     description: <>Cassin's Auklet</>,
     breedingRange: 'foo',
     comparisonSpecies: ['RHAU', 'ANMU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   {
     id: 'RHAU',
@@ -113,6 +153,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['COMU', 'CAAU', 'TUPU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.S],
   },
   {
     id: 'PIGU',
@@ -129,6 +173,10 @@ export const speciesData = [
     </>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'CAAU'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   {
     id: 'ANMU',
@@ -141,6 +189,10 @@ export const speciesData = [
     In dim lighting, can appear all dark above. The diagnostic white bill is surprisingly visible even at range. Singles to small groups.</>,
     breedingRange: 'Northeastern Pacific',
     comparisonSpecies: ['COMU', 'MAMU', 'SCMU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   {
     id: 'SCMU',
@@ -152,6 +204,10 @@ export const speciesData = [
     description: <>foo</>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'MAMU', 'ANMU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   {
     id: 'MAMU',
@@ -168,6 +224,10 @@ export const speciesData = [
     </>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'ANMU', 'SCMU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.DIRECT],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
 // Tubenoses
   // {
@@ -191,6 +251,10 @@ export const speciesData = [
     description: <>Black-footed Albatross</>,
     breedingRange: 'foo',
     comparisonSpecies: ['BRPE', 'PFSH'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.HIGH],
+    size: [Size.XL],
   },
   // {
   //   id: 'STAL',
@@ -217,6 +281,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['WEGU', 'SOSH', 'STSH'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.M],
   },
   // {
   //   id: 'COPE',
@@ -254,6 +322,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['MASH', 'SOSH', 'PFSH'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.HIGH],
+    size: [Size.M],
   },
   {
     id: 'SOSH',
@@ -269,6 +341,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['STSH', 'NOFU'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.M],
   },
   {
     id: 'STSH',
@@ -280,6 +356,10 @@ export const speciesData = [
     description: <>Short-tailed Shearwater</>,
     breedingRange: 'foo',
     comparisonSpecies: ['SOSH', 'NOFU'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.M],
   },
   {
     id: 'PFSH',
@@ -294,6 +374,10 @@ export const speciesData = [
     </>,
     breedingRange: 'foo',
     comparisonSpecies: ['SOSH', 'BUSW', 'BVSH', 'FFSH'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.L],
   },
   {
     id: 'FFSH',
@@ -305,6 +389,10 @@ export const speciesData = [
     description: <>Flesh-footed Shearwater</>,
     breedingRange: 'foo',
     comparisonSpecies: ['PFSH', 'SOSH'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.L],
   },
   {
     id: 'BUSW',
@@ -316,6 +404,10 @@ export const speciesData = [
     description: <>Buller's Shearwater</>,
     breedingRange: 'foo',
     comparisonSpecies: ['PFSH', 'BVSH', 'MASH'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.M],
   }, 
   {
     id: 'MASH',
@@ -327,6 +419,10 @@ export const speciesData = [
     description: <>foo</>,
     breedingRange: 'foo',
     comparisonSpecies: ['BVSH', 'COMU'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.ARCING],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.M],
   },
   // {
   //   id: 'BVSH',
@@ -360,6 +456,10 @@ export const speciesData = [
     description: <>Wilson's Storm-Petrel</>,
     breedingRange: 'foo',
     comparisonSpecies: ['LCSP', 'ASSP'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   // {
   //   id: 'LCSP',
@@ -382,6 +482,10 @@ export const speciesData = [
     description: <>Fork-tailed Storm-Petrel</>,
     breedingRange: 'foo',
     comparisonSpecies: ['REPH', 'RNPH', 'ASSP'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   {
     id: 'ASSP',
@@ -393,6 +497,10 @@ export const speciesData = [
     description: <>Ashy Storm-Petrel</>,
     breedingRange: 'foo',
     comparisonSpecies: ['BLSP'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   },
   // {
   //   id: 'BLSP',
@@ -437,6 +545,10 @@ export const speciesData = [
     description: <>Cocos Booby</>,
     breedingRange: 'foo',
     comparisonSpecies: [],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.L],
   },
   // {
   //   id: 'MABO',
@@ -539,6 +651,10 @@ export const speciesData = [
     description: <>Red phalarope</>,
     breedingRange: 'Northeastern Pacific',
     comparisonSpecies: ['FTSP'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.LOW],
+    size: [Size.XS],
   }
 ];
 
