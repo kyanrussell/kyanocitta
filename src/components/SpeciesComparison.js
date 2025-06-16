@@ -8,11 +8,7 @@ const DescriptionText = styled.div`
   align-items: center;
   width: 80vw;
   margin: 0 auto;
-  font-size: 1rem;
-  @media (max-width: 800px) {
-  width: 90vw;
-     font-size: 1.5rem;
-  }
+  font-size: 1.5rem;
 `;
 
 const ComparisonGrid = styled.div`
