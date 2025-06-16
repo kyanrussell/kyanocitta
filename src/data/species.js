@@ -210,9 +210,13 @@ export const speciesData = [
     scientificName: 'Fulmarus glacialis',
     mainImageUrl: '/kyanocitta/images/NOFU-main.png',
     flightPathImageUrl: 'foo',
-    description: <>Northern Fulmar</>,
+    description: <>
+    This species is wide on all ends - the wings are broad-tipped, the head is blocky, and the tail is squared.
+    Color forms may be distinct species - dark morph much more common. The contrast between the beak and facial plumage is often visible at a distance.
+    Tends to wander in loose arcs, rather than repeatedly arcing in the same direction. More likely to double back than shearwaters. Stiff wingbeats, as if "flicking a fly off their wingtips."
+    </>,
     breedingRange: 'foo',
-    comparisonSpecies: ['WEGU', 'SOSH'],
+    comparisonSpecies: ['WEGU', 'SOSH', 'STSH'],
   },
   // {
   //   id: 'COPE',
@@ -266,17 +270,17 @@ export const speciesData = [
     breedingRange: 'foo',
     comparisonSpecies: ['STSH', 'NOFU'],
   },
-  // {
-  //   id: 'STSH',
-  //   name: 'Short-tailed Shearwater',
-  //   family: 'Tubenoses',
-  //   scientificName: 'Ardenna tenuirostris',
-  //   mainImageUrl: '/kyanocitta/images/STSH-main.png',
-  //   flightPathImageUrl: '/kyanocitta/images/STSH-flight-path.png',
-  //   description: <>Short-tailed Shearwater</>,
-  //   breedingRange: 'foo',
-  //   comparisonSpecies: ['SOSH'],
-  // },
+  {
+    id: 'STSH',
+    name: 'Short-tailed Shearwater',
+    family: 'Tubenoses',
+    scientificName: 'Ardenna tenuirostris',
+    mainImageUrl: '/kyanocitta/images/STSH-main.png',
+    flightPathImageUrl: '/kyanocitta/images/STSH-flight-path.png',
+    description: <>Short-tailed Shearwater</>,
+    breedingRange: 'foo',
+    comparisonSpecies: ['SOSH', 'NOFU'],
+  },
   {
     id: 'PFSH',
     name: 'Pink-footed Shearwater',
@@ -547,6 +551,9 @@ export const pairDescriptions = {
   The two most commonly encountered alcids. In dim light, both can appear all dark - in this case, look for structural differences. RHAU is slimmer with a shorter beak.
   </>,
   "RHAU_vs_TUPU": <>
+  These birds are similarly sized and colored. TUPU has almost no neck compared to SUSC, and is stockier with a heftier bill.
+  </>,
+  "SUSC_vs_TUPU": <>
   Distant birds can be difficult to distinguish between these two species, especially in poor lighting. Look for structural differences - TUPU being larger and plumper, with a hefty
   rounded bill. In good lighting, the white belly of RHAU is diagnostic for this species pair.
   </>,
@@ -570,6 +577,14 @@ export const pairDescriptions = {
   "COMU_vs_MASH": <>
   Manx shearwaters can look surprisingly like Common murres - both are dark above and light below, with contrasting patterns on the face.
   However, a murre will never glide, whereas the fast, direct flapping of a Manx shearwater is typically interspersed with short glides.
+  </>,
+  "COMU_vs_MAMU": <>
+  MAMU is half as big and twice as fast as COMU. Basic plumage COMU have a similar facial pattern to MAMU, but with a black collar instead of white.
+  Black underwing and white scapulars of MAMU are distinctive.
+  </>,
+  "ANMU_vs_MAMU": <>
+  Marbled murrelet distinctively flies twice as fast as similarly sized alcids. Look for the black underwings and white scapulars of MAMU.
+  Both species feature a black face with white collar, but MAMU shows more white in front of the eye. Breeding plumage ANMU have a white eyebrow.
   </>,
   "FFSH_vs_PFSH": <>
   Some suggest these birds are conspecific. They are certainly identical in structure and flightstyle; distant, backlit birds may be best
