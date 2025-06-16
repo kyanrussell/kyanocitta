@@ -534,7 +534,7 @@ export const speciesData = [
     name: 'Red Phalarope',
     family: 'Shorebirds',
     scientificName: 'Phalaropus fulicarius',
-    mainImageUrl: '/kyanocitta/images/REPH-main.jpeg',
+    mainImageUrl: '/kyanocitta/images/REPH-main.png',
     flightPathImageUrl: '/kyanocitta/images/REPH-flight-path.jpeg',
     description: <>Red phalarope</>,
     breedingRange: 'Northeastern Pacific',
@@ -562,7 +562,7 @@ export const pairDescriptions = {
   RHAU is slimmer and pointier. CAAU is a slower flier. CAAU is typically seen in singles or pairs, sometimes small groups.
   RHAUs are more likely to be seen in small groups to large trains.
   </>,
-  "CAAU_vs_ANMU": <>
+  "ANMU_vs_CAAU": <>
   Similarly sized and colored. Look for contrasting color between head and back of ANMU.
   The breast is dusky on CAAU and blends into the belly, whereas the black hood of ANMU is sharply demarcated. CAAU is a smaller flier.
   </>,
