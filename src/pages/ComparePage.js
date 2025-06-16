@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { speciesData } from 'data/species';
 import { SpeciesSelect } from 'components/SpeciesSelect';
 import { SpeciesComparison } from 'components/SpeciesComparison';
-import { Title, BlogPostContainer } from 'components/Styles';
 
 const DropdownRow = styled.div`
   display: flex;
@@ -74,7 +73,6 @@ const ComparePage = () => {
 
   return (
     <>
-       <BlogPostContainer>
         <DropdownRow>
           <DropdownColumn>
             <SpeciesSelect
@@ -110,7 +108,6 @@ const ComparePage = () => {
           right={rightSpecies}
           setRightId={setRightId}
         />
-        </BlogPostContainer>
     </>
   );
 };

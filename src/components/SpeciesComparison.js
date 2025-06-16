@@ -2,6 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { pairDescriptions } from 'data/species';
 
+const DescriptionText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+`;
+
 const ComparisonGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,7 +24,7 @@ const ComparisonGrid = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -52,6 +61,7 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
 
     </ComparisonGrid>
     <>
+       <DescriptionText>
     <div style={{'font-weight': 'bold'}}>
       {right ? `${left.name} vs ${right.name}` : left.name}
     </div>
@@ -61,6 +71,7 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
 
       return typeof desc === 'function' ? desc({ setRightId }) : desc;
     })()}
+       </DescriptionText>
     </>
     </>
   );

@@ -34,8 +34,12 @@ export const ImageContainer = styled.div`
 `
 
 export const Image = styled.img`
-  width: 75vw;
+  width: 50vw;
   height: auto;
   display: block;
-  margin: 1rem 0;
+  margin: 0 auto;
+  
+  @media (max-width: 600px) {
+    width: 75vw;
+  }
 `;
