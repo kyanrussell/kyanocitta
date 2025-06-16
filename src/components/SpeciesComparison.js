@@ -6,9 +6,13 @@ const DescriptionText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  @media (max-width: 800px) {
+  width: 90vw;
+     font-size: 1.5rem;
+  }
 `;
 
 const ComparisonGrid = styled.div`
