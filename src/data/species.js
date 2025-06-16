@@ -5,6 +5,7 @@ const StyledLink = styled.a`
   color: #0077cc;
   text-decoration: underline;
   cursor: pointer;
+  whitespace: no-wrap;
 
   &:hover {
     color: #004499;
@@ -79,11 +80,7 @@ export const speciesData = [
     flightPathImageUrl: 'foo',
     description: ({ setRightId }) => <>The "Flying Football." Looks pretty much like what you would picture from that moniker - a black and white football with stubby, whirring wings.
     Look for its black head (in alternate) or contrasting facial pattern (basic). Black above and white below - underside of wings can be variable.
-    In harsh light - very white. In dim light - dusky to dark. Barring on the flanks (
-        <CompareLink speciesId="TBMU" setRightId={setRightId}>
-          c.f. TBMU
-        </CompareLink>
-     - clean flanks).
+    In harsh light - very white. In dim light - dusky to dark. Barring on the flanks (c.f. <CompareLink speciesId="TBMU" setRightId={setRightId}>TBMU</CompareLink> - clean flanks).
     Their abundance and distinctive structure + flightstyle makes for useful comparisons with other species.
     </>,
     breedingRange: 'Eastern Pacific and Western Atlantic',
@@ -680,7 +677,7 @@ export const pairDescriptions = {
   </>,
   "ANMU_vs_CAAU": <>
   Similarly sized and colored. Look for contrasting color between head and back of ANMU.
-  The breast is dusky on CAAU and blends into the belly, whereas the black hood of ANMU is sharply demarcated. CAAU is a smaller flier.
+  The breast is dusky on CAAU and blends into the belly, whereas the black hood of ANMU is sharply demarcated. CAAU is a slower flier.
   </>,
   "BUSW_vs_MASH": <>
   Both birds are gleaming white below - especially in harsh light. MASH is jet black above, while BUSW sports its distinctive black M pattern on a field of silver.

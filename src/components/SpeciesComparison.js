@@ -2,10 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { pairDescriptions } from 'data/species';
 
+const DescriptionTitle= styled.div`
+  text-align: center;
+  width: 80vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
 const DescriptionText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: auto;
   width: 80vw;
   margin: 0 auto;
   font-size: 1.5rem;
@@ -62,15 +68,15 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
     </ComparisonGrid>
     <>
        <DescriptionText>
-    <div style={{'font-weight': 'bold'}}>
-      {right ? `${left.name} vs ${right.name}` : left.name}
-    </div>
-    {(() => {
-      const pairKey = getPairKey(left.id, right?.id);
-      const desc = right ? pairDescriptions[pairKey] || `${left.id} vs ${right.id}` : left.description;
+          <DescriptionTitle>
+            {right ? `${left.name} vs ${right.name}` : left.name}
+          </DescriptionTitle>
+          {(() => {
+            const pairKey = getPairKey(left.id, right?.id);
+            const desc = right ? pairDescriptions[pairKey] || `${left.id} vs ${right.id}` : left.description;
 
-      return typeof desc === 'function' ? desc({ setRightId }) : desc;
-    })()}
+            return typeof desc === 'function' ? desc({ setRightId }) : desc;
+          })()}
        </DescriptionText>
     </>
     </>
