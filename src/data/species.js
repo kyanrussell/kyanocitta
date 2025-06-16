@@ -666,10 +666,10 @@ export const pairDescriptions = {
   "COMU_vs_RHAU": <>
   The two most commonly encountered alcids. In dim light, both can appear all dark - in this case, look for structural differences. RHAU is slimmer with a shorter beak.
   </>,
-  "RHAU_vs_TUPU": <>
+  "SUSC_vs_TUPU": <>
   These birds are similarly sized and colored. TUPU has almost no neck compared to SUSC, and is stockier with a heftier bill.
   </>,
-  "SUSC_vs_TUPU": <>
+  "RHAU_vs_TUPU": <>
   Distant birds can be difficult to distinguish between these two species, especially in poor lighting. Look for structural differences - TUPU being larger and plumper, with a hefty
   rounded bill. In good lighting, the white belly of RHAU is diagnostic for this species pair.
   </>,
