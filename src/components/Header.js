@@ -119,16 +119,17 @@ const Header = () => {
           </DropdownWrapper>
 
           <DropdownWrapper>
-            <DropButton>Resources ▼</DropButton>
+            <DropButton>Seawatch ▼</DropButton>
             <DropdownContent>
-              <li><Link to="/Seawatch"> Seawatch </Link></li>
-              <li><Link to="/Identification"> Identification </Link></li>
+              <li><Link to="/ComparePage"> Compare Species </Link></li>
+              <li><Link to="/Seawatch"> Gallery </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
           <DropdownWrapper>
             <DropButton>Gallery ▼</DropButton>
             <DropdownContent>
+              <li><Link to="/Identification"> Identification </Link></li>
               <li><Link to="/Birds"> Birds </Link></li>
               <li><Link to="/Plants"> Plants </Link></li>
               <li><Link to="/Landscapes"> Landscapes </Link></li>

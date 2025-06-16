@@ -4,7 +4,6 @@ import CompareSpecies from 'pages/ComparePage';
 function Seawatch() {
   return (
     <>
-      <CompareSpecies />
       <BlogPost post={[
             {
               type: 'title',

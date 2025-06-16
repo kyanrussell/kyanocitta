@@ -9,6 +9,7 @@ import Landscapes from "pages/Landscapes";
 import Midway from "pages/Midway";
 import Plants from "pages/Plants";
 import Seawatch from "pages/Seawatch";
+import CompareSpecies from 'pages/ComparePage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/midway" element={<Midway />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/seawatch" element={<Seawatch />} />
+        <Route path="/ComparePage" element={<CompareSpecies />} />
       </Routes>
     </div>
   );

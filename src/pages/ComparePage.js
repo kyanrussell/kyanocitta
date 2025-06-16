@@ -74,6 +74,7 @@ const ComparePage = () => {
 
   return (
     <>
+       <BlogPostContainer>
         <DropdownRow>
           <DropdownColumn>
             <SpeciesSelect
@@ -109,7 +110,8 @@ const ComparePage = () => {
           right={rightSpecies}
           setRightId={setRightId}
         />
-        </>
+        </BlogPostContainer>
+    </>
   );
 };
 
