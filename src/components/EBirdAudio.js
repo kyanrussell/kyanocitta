@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const AudioContainer = styled.div`
+  width: 75vw;
+  margin: 0 auto;
 `;
 
 const EBirdAudio = ({ mediaUrl }) => {
@@ -11,7 +13,7 @@ const EBirdAudio = ({ mediaUrl }) => {
         src={mediaUrl}
         title="eBird Audio Recording"
         height="431"
-        width="640"
+        width="100%"
         frameborder="0"
         allowfullscreen
       ></iframe>
