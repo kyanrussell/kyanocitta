@@ -58,7 +58,7 @@ const Container = styled.div`
   vertical-align: center;
   gap: 0.5rem;
   max-width: 100vw;
-  max-height: 60vw;
+  max-height: 70vw;
   padding: 0 1rem;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -72,12 +72,17 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
   border-style: dotted;
-  max-width: calc((100vw - 3 * 0.25rem - 2rem) / 4);
+  max-width: calc((100vw - 3 * rem - 2rem) / ${props => props.num_images});
   transform: scale(${props => props.scale});
   transform-origin: center center;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 600px) {
+    max-width: ${({ num_images }) =>
+      `calc((100vw - ${(num_images - 1)} * 0.75rem - 1rem) / ${num_images})`};
+  }
 `;
 
 const Img = styled.img`
@@ -108,7 +113,7 @@ export default function FourImagesRow({ images }) {
   return (
     <Container>
       {images.map(({ src, alt }, i) => (
-        <ImageContainer key={i} scale={scale}>
+        <ImageContainer key={i} scale={scale} num_images={images.length}>
           <Img src={src} alt={alt} />
         </ImageContainer>
       ))}
