@@ -128,7 +128,11 @@ export const speciesData = [
     scientificName: 'Ptychoramphus aleuticus',
     mainImageUrl: '/kyanocitta/images/CAAU-main.png',
     flightPathImageUrl: '/kyanocitta/images/CAAU-flight-path.png',
-    description: <>Cassin's Auklet</>,
+    description: <>
+    Tiny and dumpy. Looks much like a RHAU in coloration but half the size. More similar to COMU in shape - rounded vs pointed look of RHAU.
+    Dusky above and white below, gray of head blends into breast. Up close, the white eyebrow is sometimes visible. The head shape is distinctively angled with
+    a sharply rising forehead - somewhat like a hump. Not a very fast flier. Singles to small groups.
+    </>,
     breedingRange: 'foo',
     comparisonSpecies: ['RHAU', 'ANMU'],
     bellyColor: [BellyColor.LIGHT],
