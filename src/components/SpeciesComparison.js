@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { pairDescriptions } from 'data/species';
 
@@ -49,23 +50,96 @@ const getPairKey = (id1, id2) => {
   return `${a}_vs_${b}`;
 };
 
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  gap: 0.5rem;
+  max-width: 100vw;
+  max-height: 60vw;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  background-image: url('/kyanocitta/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+`;
+
+const ImageContainer = styled.div`
+  border-style: dotted;
+  max-width: calc((100vw - 3 * 0.25rem - 2rem) / 4);
+  transform: scale(${props => props.scale});
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Img = styled.img`
+  display: block;
+  border-style: solid;
+`;
+
+export default function FourImagesRow({ images }) {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    Promise.all(
+      images.map(({ src }) => {
+        return new Promise(resolve => {
+          const img = new Image();
+          img.onload = () => resolve(img.naturalWidth);
+          img.src = src;
+        });
+      })
+    ).then(widths => {
+      const totalWidth = widths.reduce((sum, w) => sum + w, 0);
+      const maxAvailableWidth = window.innerWidth - 150; // 100vw - padding
+      const scaleFactor = Math.min(1, maxAvailableWidth / totalWidth);
+      setScale(scaleFactor);
+    });
+  }, [images]);
+
+  return (
+    <Container>
+      {images.map(({ src, alt }, i) => (
+        <ImageContainer key={i} scale={scale}>
+          <Img src={src} alt={alt} />
+        </ImageContainer>
+      ))}
+    </Container>
+  );
+}
+
+const imageUrls=[
+  {'src': '/kyanocitta/images/SOSH-dorsal.png', alt: 'foo'},
+  {'src': '/kyanocitta/images/SOSH-ventral.png', alt: 'foo'},
+  {'src': '/kyanocitta/images/SCMU-dorsal.png', alt: 'foo'},
+  {'src': '/kyanocitta/images/SCMU-ventral.png', alt: 'foo'}
+];
+
 export const SpeciesComparison = ({ left, right, setRightId }) => {
   return (
     <>
-    <ComparisonGrid>
 
-      <Cell>
-        <img src={left.mainImageUrl} alt={left.name} width="100%" />
-        <Label>{left.id}</Label>
-      </Cell>
-      {right && (
-        <Cell>
-          <img src={right.mainImageUrl} alt={right.name} width="100%" />
-          <Label>{right.id}</Label>
-        </Cell>
-      )}
+    <FourImagesRow
+      images={[
+        { src: `/kyanocitta/images/${left.id}-dorsal.png`, alt: 'foo' },
+        { src: `/kyanocitta/images/${left.id}-ventral.png`, alt: 'foo' },
+        ...(right
+          ? [
+              { src: `/kyanocitta/images/${right.id}-dorsal.png`, alt: 'foo' },
+              { src: `/kyanocitta/images/${right.id}-ventral.png`, alt: 'foo' },
+            ]
+          : [])
+      ]}
+    />
 
-    </ComparisonGrid>
     <>
        <DescriptionText>
           <DescriptionTitle>
