@@ -71,7 +71,6 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  border-style: dotted;
   max-width: calc((100vw - 3 * rem - 2rem) / ${props => props.num_images});
   transform: scale(${props => props.scale});
   transform-origin: center center;
@@ -87,7 +86,6 @@ const ImageContainer = styled.div`
 
 const Img = styled.img`
   display: block;
-  border-style: solid;
 `;
 
 export default function FourImagesRow({ images }) {
