@@ -30,10 +30,6 @@ const ComparisonGrid = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-  }
 `;
 
 const Label = styled.div`
@@ -54,11 +50,8 @@ const getPairKey = (id1, id2) => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  vertical-align: center;
-  gap: 0.5rem;
+
   max-width: 100vw;
-  max-height: 70vw;
   padding: 0 1rem;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -71,17 +64,21 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  max-height: 60vh;
   border-style: dotted;
-  max-width: calc((100vw - 3 * rem - 2rem) / ${props => props.num_images});
+  max-width: ${({ num_images }) =>
+    `calc((100vw - ${(num_images - 1)} * 1rem - 2rem) / ${num_images})`};
   transform: scale(${props => props.scale});
   transform-origin: center center;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 
   @media (max-width: 600px) {
+  max-height: 50vh;
     max-width: ${({ num_images }) =>
-      `calc((100vw - ${(num_images - 1)} * 0.75rem - 1rem) / ${num_images})`};
+      `calc((100vw - ${(num_images - 1)} * 0.01rem - 1rem) / ${num_images})`};
   }
 `;
 
@@ -98,14 +95,22 @@ export default function FourImagesRow({ images }) {
       images.map(({ src }) => {
         return new Promise(resolve => {
           const img = new Image();
-          img.onload = () => resolve(img.naturalWidth);
+          img.onload = () =>
+            resolve({ width: img.naturalWidth, height: img.naturalHeight });
           img.src = src;
         });
       })
-    ).then(widths => {
-      const totalWidth = widths.reduce((sum, w) => sum + w, 0);
-      const maxAvailableWidth = window.innerWidth - 150; // 100vw - padding
-      const scaleFactor = Math.min(1, maxAvailableWidth / totalWidth);
+    ).then(dimensions => {
+      const totalWidth = dimensions.reduce((sum, { width }) => sum + width, 0);
+      const maxHeight = Math.max(...dimensions.map(d => d.height));
+
+      const maxAvailableWidth = window.innerWidth - 150; // account for padding
+      const maxAvailableHeight = window.innerHeight * 0.5; // or whatever your container allows
+
+      const scaleByWidth = maxAvailableWidth / totalWidth;
+      const scaleByHeight = maxAvailableHeight / maxHeight;
+
+      const scaleFactor = Math.min(1, scaleByWidth, scaleByHeight);
       setScale(scaleFactor);
     });
   }, [images]);
@@ -120,13 +125,6 @@ export default function FourImagesRow({ images }) {
     </Container>
   );
 }
-
-const imageUrls=[
-  {'src': '/kyanocitta/images/SOSH-dorsal.png', alt: 'foo'},
-  {'src': '/kyanocitta/images/SOSH-ventral.png', alt: 'foo'},
-  {'src': '/kyanocitta/images/SCMU-dorsal.png', alt: 'foo'},
-  {'src': '/kyanocitta/images/SCMU-ventral.png', alt: 'foo'}
-];
 
 export const SpeciesComparison = ({ left, right, setRightId }) => {
   return (
