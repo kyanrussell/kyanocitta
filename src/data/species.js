@@ -119,7 +119,7 @@ export const speciesData = [
     bellyColor: [BellyColor.DARK],
     flightStyle: [FlightStyle.DIRECT],
     flightHeight: [FlightHeight.LOW],
-    size: [Size.L],
+    size: [Size.S],
   },
   {
     id: 'CAAU',
@@ -283,7 +283,7 @@ export const speciesData = [
     breedingRange: 'foo',
     comparisonSpecies: ['WEGU', 'SOSH', 'STSH'],
     bellyColor: [BellyColor.DARK],
-    flightStyle: [FlightStyle.VERSATILE],
+    flightStyle: [FlightStyle.VERSATILE, FlightStyle.ARCING],
     flightHeight: [FlightHeight.MEDIUM],
     size: [Size.M],
   },
@@ -317,7 +317,7 @@ export const speciesData = [
     mainImageUrl: '/kyanocitta/images/HAPE-main.png',
     flightPathImageUrl: '/kyanocitta/images/HAPE-flight-path.png',
     description: <>
-    Fabulously rare from shore but appears to be increasing. White forehead surprisingly visible at range.
+    Fabulously rare from shore (or anywhere, really) but appears to be increasing. White forehead surprisingly visible at range.
     Long narrow wings held crooked. Long tailed. In strong light, appears black above and white below.
     Better views reveal the gray back with dark M pattern, and the black ulnar bar on the white underwing.
     </>,
