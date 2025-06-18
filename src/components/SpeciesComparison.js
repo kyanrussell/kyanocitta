@@ -65,7 +65,6 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
   max-height: 60vh;
-  border-style: dotted;
   max-width: ${({ num_images }) =>
     `calc((100vw - ${(num_images - 1)} * 1rem - 2rem) / ${num_images})`};
   transform: scale(${props => props.scale});
@@ -84,7 +83,6 @@ const ImageContainer = styled.div`
 
 const Img = styled.img`
   display: block;
-  border-style: solid;
 `;
 
 export default function FourImagesRow({ images }) {
