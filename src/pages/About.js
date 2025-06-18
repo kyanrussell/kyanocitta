@@ -14,7 +14,7 @@ function About() {
 		    I serve on the board of Monterey Audubon Society, for which I also lead birding field trips.
 		</Body>
 	    <Body>
-	    	Questions or feedback can be directed to kyansrussell@gmail.com.
+	    	Questions or feedback can be directed to <a href="mailto:kyansrussell@gmail.com">kyansrussell@gmail.com</a> .
 	    </Body>
     </BlogPostContainer>
   );
