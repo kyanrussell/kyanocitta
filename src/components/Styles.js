@@ -20,6 +20,12 @@ export const Heading = styled.h2`
   color: #345d7e;
 `;
 
+export const H3 = styled.h3`
+  width: 75vw;
+  font-family: 'Arial', sans-serif;
+  color: #345d7e;
+`;
+
 export const Body = styled.p`
   width: 75vw;
   font-size: 1rem;

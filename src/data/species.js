@@ -571,6 +571,7 @@ export const speciesData = [
   //   description: <>Nazca Booby</>,
   //   breedingRange: 'foo',
   //   comparisonSpecies: [],
+  //   mediaUrl: "https://macaulaylibrary.org/asset/626817584",
   // },
   // {
   //   id: 'BFBO',

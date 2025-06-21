@@ -113,7 +113,7 @@ const Header = () => {
           <DropdownWrapper>
             <DropButton>Blog ▼</DropButton>
             <DropdownContent>
-              <li><Link to="/"> Blog </Link></li>
+              <li><Link to="/blog"> Blog </Link></li>
               <li><Link to="/midway"> Midway </Link></li>
             </DropdownContent>
           </DropdownWrapper>
@@ -121,25 +121,27 @@ const Header = () => {
           <DropdownWrapper>
             <DropButton>Seawatch ▼</DropButton>
             <DropdownContent>
+              <li><Link to="/seawatch/guide"> Guide </Link></li>
               <li><Link to="/seawatch/compare"> Compare Species </Link></li>
               <li><Link to="/seawatch/calendar"> Calendar </Link></li>
+              <li><Link to="/seawatch/hall-of-fame"> Hall of Fame </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
           <DropdownWrapper>
             <DropButton>Gallery ▼</DropButton>
             <DropdownContent>
-              <li><Link to="/Identification"> Identification </Link></li>
-              <li><Link to="/Birds"> Birds </Link></li>
-              <li><Link to="/Plants"> Plants </Link></li>
-              <li><Link to="/Landscapes"> Landscapes </Link></li>
+              <li><Link to="/identification"> Identification </Link></li>
+              <li><Link to="/birds"> Birds </Link></li>
+              <li><Link to="/plants"> Plants </Link></li>
+              <li><Link to="/landscapes"> Landscapes </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
           <DropdownWrapper>
             <DropButton>More ▼</DropButton>
             <DropdownContent>
-              <li><Link to="/About"> About </Link></li>
+              <li><Link to="/about"> About </Link></li>
             </DropdownContent>
           </DropdownWrapper>
         </NavList>
