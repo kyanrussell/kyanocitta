@@ -170,7 +170,6 @@ export const speciesData = [
           COMU
         </CompareLink> and murrelets. Plump-bodied with a tapered head. Bright red feet in all plumages visible when close. White wing patches visible in all plumages even at a distance.
         Otherwise all black in alternate; smudgy black and white in basic. Singles to small groups.
-
     </>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'CAAU'],
