@@ -121,8 +121,8 @@ const Header = () => {
           <DropdownWrapper>
             <DropButton>Seawatch ▼</DropButton>
             <DropdownContent>
-              <li><Link to="/ComparePage"> Compare Species </Link></li>
-              <li><Link to="/Seawatch"> Gallery </Link></li>
+              <li><Link to="/seawatch/compare"> Compare Species </Link></li>
+              <li><Link to="/seawatch/calendar"> Calendar </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
