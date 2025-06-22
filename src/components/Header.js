@@ -18,6 +18,12 @@ const Banner = styled.div`
   overflow: hidden;
 `;
 
+const Logo = styled.img`
+  object-fit: scale-down;
+  margin-right: 1rem;
+  height: 100%;
+`;
+
 const BannerImage = styled.img`
   width: 100%;
   height: 100%;
@@ -25,15 +31,16 @@ const BannerImage = styled.img`
 `;
 
 const BannerTitle = styled.h1`
+  display: flex;
+  align-items: center;
   color: aliceblue;
   position: absolute;
-  top: 75%;
-  left: 45%;
-  transform: translate(-100%, -50%);
-  font-size: 3rem;
+  height: 40%;
+  bottom: 5%;
+  font-size: xxx-large;
   text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  margin: 0;
   text-align: center;
+  margin: 0 0 0 10%;
 
   @media (max-width: 600px) {
     font-size: 1.8rem;
@@ -104,7 +111,10 @@ const Header = () => {
       {/* Banner Image */}
       <Banner>
         <BannerImage src="https://inaturalist-open-data.s3.amazonaws.com/photos/429421290/original.jpeg" alt="Banner" />
-        <BannerTitle> kyanocitta </BannerTitle>
+        <BannerTitle>
+          <Logo src="/kyanocitta/images/stja_round.png" alt="Logo" />
+          kyanocitta
+        </BannerTitle>
       </Banner>
 
       {/* Navigation Bar */}
