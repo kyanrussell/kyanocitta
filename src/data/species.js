@@ -170,7 +170,6 @@ export const speciesData = [
           COMU
         </CompareLink> and murrelets. Plump-bodied with a tapered head. Bright red feet in all plumages visible when close. White wing patches visible in all plumages even at a distance.
         Otherwise all black in alternate; smudgy black and white in basic. Singles to small groups.
-
     </>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'CAAU'],
@@ -545,10 +544,10 @@ export const speciesData = [
     flightPathImageUrl: '/kyanocitta/images/COBO-flight-path.png',
     description: <>Cocos Booby</>,
     breedingRange: 'foo',
-    comparisonSpecies: [],
+    comparisonSpecies: ['NABO'],
     bellyColor: [BellyColor.DARK],
     flightStyle: [FlightStyle.VERSATILE],
-    flightHeight: [FlightHeight.LOW],
+    flightHeight: [FlightHeight.MEDIUM],
     size: [Size.L],
   },
   // {
@@ -562,17 +561,22 @@ export const speciesData = [
   //   breedingRange: 'foo',
   //   comparisonSpecies: [],
   // },
-  // {
-  //   id: 'NABO',
-  //   name: 'Nazca Booby',
-  //   family: 'Sulids',
-  //   scientificName: 'Sula granti',
-  //   mainImageUrl: '/kyanocitta/images/NABO-main.png',
-  //   flightPathImageUrl: '/kyanocitta/images/NABO-flight-path.png',
-  //   description: <>Nazca Booby</>,
-  //   breedingRange: 'foo',
-  //   comparisonSpecies: [],
-  // },
+  {
+    id: 'NABO',
+    name: 'Nazca Booby',
+    family: 'Sulids',
+    scientificName: 'Sula granti',
+    mainImageUrl: '/kyanocitta/images/NABO-main.png',
+    flightPathImageUrl: '/kyanocitta/images/NABO-flight-path.png',
+    description: <>Nazca Booby</>,
+    breedingRange: 'foo',
+    comparisonSpecies: ['COBO'],
+    bellyColor: [BellyColor.LIGHT],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.MEDIUM],
+    size: [Size.L],
+    mediaUrl: "https://macaulaylibrary.org/asset/626817584",
+  },
   // {
   //   id: 'BFBO',
   //   name: 'Blue-footed Booby',

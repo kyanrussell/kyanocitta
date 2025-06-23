@@ -1,5 +1,4 @@
 import BlogPost from 'components/BlogPost';
-import CompareSpecies from 'pages/ComparePage';
 
 function Seawatch() {
   return (

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { speciesData } from 'data/species';
 import { SpeciesSelect } from 'components/SpeciesSelect';
 import { SpeciesComparison } from 'components/SpeciesComparison';
+import EBirdVideo from 'components/EBirdVideo'
 
 const DropdownRow = styled.div`
   display: flex;

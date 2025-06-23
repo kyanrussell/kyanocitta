@@ -9,7 +9,10 @@ import Landscapes from "pages/Landscapes";
 import Midway from "pages/Midway";
 import Plants from "pages/Plants";
 import Seawatch from "pages/Seawatch";
-import CompareSpecies from 'pages/ComparePage';
+import Guide from 'pages/seawatch/Guide';
+import CompareSpecies from 'pages/seawatch/ComparePage';
+import Calendar from 'pages/seawatch/Calendar';
+import HallOfFame from 'pages/seawatch/HallOfFame';
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
     < Header />
       <Routes>
         <Route path="/" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/birds" element={<Birds />} />
         <Route path="/identification" element={<Identification />} />
@@ -24,7 +28,10 @@ function App() {
         <Route path="/midway" element={<Midway />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/seawatch" element={<Seawatch />} />
-        <Route path="/ComparePage" element={<CompareSpecies />} />
+        <Route path="/seawatch/guide" element={<Guide />} />
+        <Route path="/seawatch/compare" element={<CompareSpecies />} />
+        <Route path="/seawatch/calendar" element={<Calendar />} />
+        <Route path="/seawatch/hall-of-fame" element={<HallOfFame />} />
       </Routes>
     </div>
   );
