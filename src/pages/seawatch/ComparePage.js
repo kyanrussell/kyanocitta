@@ -11,12 +11,12 @@ const DropdownRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   padding: 0 1rem;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0.25rem auto;
   box-sizing: border-box;
 
   @media (max-width: 600px) {
@@ -48,6 +48,7 @@ const ComparisonGrid = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 0.5rem;
@@ -125,6 +126,11 @@ function ComparePage(props) {
   return (
     <>
         <DropdownRow>
+          <SwitchWrapper>
+            <button onClick={props.backToGrid}>
+              🔙
+            </button>
+          </SwitchWrapper>
           <DropdownColumn>
             <SpeciesSelect
               speciesList={speciesData}
@@ -171,9 +177,16 @@ const Page = () => {
   const [rightId, setRightId] = useState(null);
 
   const handleClick = (speciesId) => {
-    setShowParent(false); // Hide the parent component
-    setShowChild(true);   // Show the child component
+    setShowParent(false);
+    setShowChild(true);
     setLeftId(speciesId);
+  };
+
+  const backToGrid = () => {
+    setShowParent(true);
+    setShowChild(false);
+    setLeftId(null);
+    setRightId(null);
   };
 
   const [filters, setFilters] = useState({
@@ -246,7 +259,7 @@ const Page = () => {
     </>
       )}
 
-      {showChild && <ComparePage leftId={leftId} setLeftId = {setLeftId} rightId={rightId} setRightId={setRightId} />}
+      {showChild && <ComparePage backToGrid={backToGrid} leftId={leftId} setLeftId = {setLeftId} rightId={rightId} setRightId={setRightId} />}
     </>
   );
 }
