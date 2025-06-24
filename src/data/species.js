@@ -24,24 +24,24 @@ export const CompareLink = ({ speciesId, setRightId, children }) => (
   </StyledLink>
 );
 
-const BellyColor = {
+export const BellyColor = {
   DARK: 'dark',
   LIGHT: 'light',
 };
 
-const FlightStyle = {
+export const FlightStyle = {
   DIRECT: 'direct',
   ARCING: 'arcing',
-  VERSATILE: 'versatile'
+  VERSATILE: 'variable'
 };
 
-const FlightHeight = {
+export const FlightHeight = {
   LOW: 'low',
   MEDIUM: 'medium',
   HIGH: 'high'
 };
 
-const Size = {
+export const Size = {
   XS: 'extra-small',
   S: 'small',
   M: 'medium',
@@ -52,21 +52,21 @@ const Size = {
 
 export const speciesData = [
 // Waterfowl
-  {
-    id: 'SUSC',
-    name: 'Surf Scoter',
-    family: 'Waterfowl',
-    scientificName: 'Melanitta perspicillata',
-    mainImageUrl: '/kyanocitta/images/SUSC-main.png',
-    flightPathImageUrl: 'foo',
-    description: <>SUSC</>,
-    breedingRange: 'foo',
-    comparisonSpecies: ['COMU', 'TUPU'],
-    bellyColor: [BellyColor.DARK, BellyColor.LIGHT],
-    flightStyle: [FlightStyle.DIRECT],
-    flightHeight: [FlightHeight.LOW, FlightHeight.MEDIUM, FlightHeight.HIGH],
-    size: [Size.S],
-  },
+  // {
+  //   id: 'SUSC',
+  //   name: 'Surf Scoter',
+  //   family: 'Waterfowl',
+  //   scientificName: 'Melanitta perspicillata',
+  //   mainImageUrl: '/kyanocitta/images/SUSC-main.png',
+  //   flightPathImageUrl: 'foo',
+  //   description: <>SUSC</>,
+  //   breedingRange: 'foo',
+  //   comparisonSpecies: ['COMU', 'TUPU'],
+  //   bellyColor: [BellyColor.DARK, BellyColor.LIGHT],
+  //   flightStyle: [FlightStyle.DIRECT],
+  //   flightHeight: [FlightHeight.LOW, FlightHeight.MEDIUM, FlightHeight.HIGH],
+  //   size: [Size.S],
+  // },
 // Cormorants
 // Loons
 // Grebes
@@ -173,7 +173,7 @@ export const speciesData = [
     </>,
     breedingRange: 'Eastern Pacific',
     comparisonSpecies: ['COMU', 'CAAU'],
-    bellyColor: [BellyColor.DARK],
+    bellyColor: [BellyColor.DARK, BellyColor.LIGHT],
     flightStyle: [FlightStyle.DIRECT],
     flightHeight: [FlightHeight.LOW],
     size: [Size.XS],

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { speciesData } from 'data/species';
+import { useSearchParams } from "react-router";
+
+import { speciesData, BellyColor, FlightStyle, FlightHeight, Size } from 'data/species';
 import { SpeciesSelect } from 'components/SpeciesSelect';
 import { SpeciesComparison } from 'components/SpeciesComparison';
-import EBirdVideo from 'components/EBirdVideo'
+import EBirdVideo from 'components/EBirdVideo';
 
 const DropdownRow = styled.div`
   display: flex;
@@ -40,10 +42,49 @@ const SwitchWrapper = styled.div`
   justify-content: center;
 `;
 
-const ComparePage = () => {
+const ComparisonGrid = styled.div`
+  background-image: url('/kyanocitta/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.5rem;
+`;
 
-  const [leftId, setLeftId] = useState(speciesData[speciesData.length * Math.random() | 0].id);
-  const [rightId, setRightId] = useState(null);
+const Plate = styled.div`
+  background-color: rgba(0, 0, 300, .1);
+  padding: 0.5rem 0.5rem;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const Caption = styled.div`
+  font-size: 0.9em;
+  text-align: center;
+`
+const ImageWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const ImageContainer = styled.img`
+  max-width: 100px;
+  padding: 0.1rem 0.1rem;
+`;
+
+function ComparePage(props) {
+  const leftId = props.leftId;
+  const rightId = props.rightId;
+  const setLeftId = props.setLeftId;
+  const setRightId = props.setRightId;
 
   const leftSpecies = speciesData.find((sp) => sp.id === leftId);
   const rightSpecies = speciesData.find((sp) => sp.id === rightId) || null;
@@ -113,4 +154,92 @@ const ComparePage = () => {
   );
 };
 
-export default ComparePage;
+const Page = () => {
+  const [showParent, setShowParent] = useState(true); // State to control parent visibility
+  const [showChild, setShowChild] = useState(false); // State to control child visibility
+
+  const [leftId, setLeftId] = useState(speciesData[speciesData.length * Math.random() | 0].id);
+  const [rightId, setRightId] = useState(null);
+
+  const handleClick = (speciesId) => {
+    setShowParent(false); // Hide the parent component
+    setShowChild(true);   // Show the child component
+    setLeftId(speciesId);
+  };
+
+  const [filters, setFilters] = useState({
+    bellyColor: '',
+    flightStyle: '',
+    flightHeight: '',
+    size: '',
+  });
+
+  const handleFilterChange = (key, value) => {
+    setFilters(prev => ({ ...prev, [key]: value }));
+  };
+
+  const filteredSpecies = speciesData.filter(species => {
+    return (
+      (!filters.bellyColor || species.bellyColor?.includes(filters.bellyColor)) &&
+      (!filters.flightStyle || species.flightStyle?.includes(filters.flightStyle)) &&
+      (!filters.flightHeight || species.flightHeight?.includes(filters.flightHeight)) &&
+      (!filters.size || species.size?.includes(filters.size))
+    );
+  });
+
+
+  return (
+    <>
+      {showParent && (
+    <>
+        <select style={{'width': '25%', 'margin': 'auto'}} value={filters.bellyColor} onChange={e => handleFilterChange('bellyColor', e.target.value)}>
+          <option value="">Belly color</option>
+          {Object.values(BellyColor).map(value => (
+            <option key={value} value={value}>{value}</option>
+          ))}
+        </select>
+
+        <select style={{'width': '25%', 'margin': 'auto'}} value={filters.flightStyle} onChange={e => handleFilterChange('flightStyle', e.target.value)}>
+          <option value="">Flight Style</option>
+          {Object.values(FlightStyle).map(value => (
+            <option key={value} value={value}>{value}</option>
+          ))}
+        </select>
+
+        <select style={{'width': '25%', 'margin': 'auto'}} value={filters.flightHeight} onChange={e => handleFilterChange('flightHeight', e.target.value)}>
+          <option value="">Flight Height</option>
+          {Object.values(FlightHeight).map(value => (
+            <option key={value} value={value}>{value}</option>
+          ))}
+        </select>
+
+        <select style={{'width': '25%', 'margin': 'auto'}} value={filters.size} onChange={e => handleFilterChange('size', e.target.value)}>
+          <option value="">Size</option>
+          {Object.values(Size).map(value => (
+            <option key={value} value={value}>{value}</option>
+          ))}
+        </select>
+    <ComparisonGrid>
+        {
+          filteredSpecies.map(
+            (species) => (
+              <Plate onClick={() => handleClick(species.id)}>
+              <ImageWrapper>
+                <ImageContainer src={`/kyanocitta/images/${species.id}-dorsal.png`} />
+                <ImageContainer src={`/kyanocitta/images/${species.id}-ventral.png`} />              
+              </ImageWrapper>
+              <Caption>{species.name}</Caption>
+              </Plate>
+            )
+          )
+        }
+    </ComparisonGrid>
+    </>
+      )}
+
+      {showChild && <ComparePage leftId={leftId} setLeftId = {setLeftId} rightId={rightId} setRightId={setRightId} />}
+    </>
+  );
+}
+
+export default Page;

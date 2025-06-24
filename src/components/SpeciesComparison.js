@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { pairDescriptions } from 'data/species';
+import { ComparePage } from 'pages/seawatch/ComparePage';
 
 const DescriptionTitle= styled.div`
   text-align: center;
@@ -85,9 +86,9 @@ const Img = styled.img`
   display: block;
 `;
 
-export default function FourImagesRow({ images }) {
+export function FourImagesRow({ images }) {
   const [scale, setScale] = useState(1);
-
+  
   useEffect(() => {
     Promise.all(
       images.map(({ src }) => {
