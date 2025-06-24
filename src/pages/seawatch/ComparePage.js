@@ -69,6 +69,11 @@ const Plate = styled.div`
 const Caption = styled.div`
   font-size: 0.9em;
   text-align: center;
+
+  @media (max-width: 600px) {
+    max-width: 100px;
+    font-size: 0.5em;
+  }
 `
 const ImageWrapper = styled.div`
   display: flex;
@@ -78,6 +83,10 @@ const ImageWrapper = styled.div`
 const ImageContainer = styled.img`
   max-width: 100px;
   padding: 0.1rem 0.1rem;
+
+  @media (max-width: 600px) {
+    max-width: 40px;
+  }
 `;
 
 function ComparePage(props) {
