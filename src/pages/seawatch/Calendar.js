@@ -28,13 +28,17 @@ const calendar = [
 	{
 		month: <Heading>May</Heading>,
 		content: <Body>
-			Hawaiian petrels.
+			Spring storms can bring in petrels - think Cook's, Murphy's, and Hawaiian. Red-necked phalaropes
+			are on the move and can sometimes be seen in large numbers.
 		</Body>
 	},
 	{
 		month: <Heading>June</Heading>,
 		content: <Body>
-			Puffins, petrels, sooty shearwaters, subadult jaegers.			
+			Tends to be largely quiet as we move into summer. Mornings are foggy, but generally clear by mid-day.
+			Some spring storms still pass through. Local breeders (gulls, cormorants, guillemots) abound.
+			Wintering sooty shearwaters congregate in the thousands and move about the bay.
+			Watch for puffins, petrels, and subadult jaegers.			
 		</Body>
 	},
 	{

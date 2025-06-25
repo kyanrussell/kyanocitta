@@ -633,17 +633,22 @@ export const speciesData = [
   //   breedingRange: 'foo',
   //   comparisonSpecies: [],
   // },
-  // {
-  //   id: 'SPSK',
-  //   name: 'South Polar Skua',
-  //   family: 'Skuas',
-  //   scientificName: 'Stercorarius maccormicki',
-  //   mainImageUrl: '/kyanocitta/images/SPSK-main.png',
-  //   flightPathImageUrl: '/kyanocitta/images/SPSK-flight-path.png',
-  //   description: <>South Polar Skua</>,
-  //   breedingRange: 'foo',
-  //   comparisonSpecies: [],
-  // },
+  {
+    id: 'SPSK',
+    name: 'South Polar Skua',
+    family: 'Skuas',
+    scientificName: 'Stercorarius maccormicki',
+    mainImageUrl: '/kyanocitta/images/SPSK-main.png',
+    flightPathImageUrl: '/kyanocitta/images/SPSK-flight-path.png',
+    description: <>South Polar Skua</>,
+    breedingRange: 'foo',
+    comparisonSpecies: [],
+    comparisonSpecies: ['POJA'],
+    bellyColor: [BellyColor.DARK],
+    flightStyle: [FlightStyle.VERSATILE],
+    flightHeight: [FlightHeight.HIGH],
+    size: [Size.L],
+  },
 // Gulls and Terns
 // Shorebirds
   {
