@@ -4,7 +4,7 @@ import { BlogPostContainer, Title, Heading, H3, Body} from 'components/Styles'
 function HallOfFame() {
   return (
     <BlogPostContainer>
-    <Title> Hall of Fame </Title>
+    <Title> Highlights </Title>
 
 	    <Heading> Five Hawaiian Petrels </Heading>
 	    <H3> 2025-05-24 </H3>

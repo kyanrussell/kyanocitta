@@ -134,7 +134,7 @@ const Header = () => {
               <li><Link to="/seawatch/guide"> Guide </Link></li>
               <li><Link to="/seawatch/compare"> Compare Species </Link></li>
               <li><Link to="/seawatch/calendar"> Calendar </Link></li>
-              <li><Link to="/seawatch/hall-of-fame"> Hall of Fame </Link></li>
+              <li><Link to="/seawatch/highlights"> Highlights </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 

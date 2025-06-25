@@ -12,7 +12,7 @@ import Seawatch from "pages/Seawatch";
 import Guide from 'pages/seawatch/Guide';
 import CompareSpecies from 'pages/seawatch/ComparePage';
 import Calendar from 'pages/seawatch/Calendar';
-import HallOfFame from 'pages/seawatch/HallOfFame';
+import Highlights from 'pages/seawatch/HallOfFame';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
         <Route path="/seawatch/guide" element={<Guide />} />
         <Route path="/seawatch/compare" element={<CompareSpecies />} />
         <Route path="/seawatch/calendar" element={<Calendar />} />
-        <Route path="/seawatch/hall-of-fame" element={<HallOfFame />} />
+        <Route path="/seawatch/highlights" element={<Highlights />} />
       </Routes>
     </div>
   );
