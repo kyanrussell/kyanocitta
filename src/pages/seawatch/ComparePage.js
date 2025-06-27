@@ -76,7 +76,8 @@ export const Caption = styled.div`
     max-width: 100px;
     font-size: 0.5em;
   }
-`
+`;
+
 export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
