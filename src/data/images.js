@@ -146,7 +146,7 @@ export const imageData = [
     }
   },
   {
-    filepath: "/kyanocitta/images/gallery/BLWA.jpeg",
+    filepath: "/kyanocitta/images/gallery/blwa.jpeg",
     caption: "",
     tags: {
         location: [],
@@ -155,7 +155,7 @@ export const imageData = [
     }
   },
   {
-    filepath: "/kyanocitta/images/gallery/BRAC.jpeg",
+    filepath: "/kyanocitta/images/gallery/brac.jpeg",
     caption: "",
     tags: {
         location: [],
