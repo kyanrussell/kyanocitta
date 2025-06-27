@@ -27,7 +27,7 @@ const ComparisonGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-  background-image: url('/kyanocitta/images/background.png');
+  background-image: url('/kyanocitta/images/seawatch/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,7 +58,7 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
 
-  background-image: url('/kyanocitta/images/background.png');
+  background-image: url('/kyanocitta/images/seawatch/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -131,12 +131,12 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
 
     <FourImagesRow
       images={[
-        { src: `/kyanocitta/images/${left.id}-dorsal.png`, alt: 'foo' },
-        { src: `/kyanocitta/images/${left.id}-ventral.png`, alt: 'foo' },
+        { src: `/kyanocitta/images/seawatch/${left.id}-dorsal.png`, alt: `${left.id} dorsal` },
+        { src: `/kyanocitta/images/seawatch/${left.id}-ventral.png`, alt: `${left.id} ventral` },
         ...(right
           ? [
-              { src: `/kyanocitta/images/${right.id}-dorsal.png`, alt: 'foo' },
-              { src: `/kyanocitta/images/${right.id}-ventral.png`, alt: 'foo' },
+              { src: `/kyanocitta/images/seawatch/${right.id}-dorsal.png`, alt: `${right.id} dorsal` },
+              { src: `/kyanocitta/images/seawatch/${right.id}-ventral.png`, alt: `${right.id} ventral` },
             ]
           : [])
       ]}

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { BlogPostContainer, Title, Heading, Body} from 'components/Styles'
+
 const VideoContainer = styled.div`
   width: 75vw;
   margin: 0 auto;
@@ -7,6 +9,8 @@ const VideoContainer = styled.div`
 
 const EBirdVideo = ({ mediaUrl }) => {
   return (mediaUrl &&
+    <>
+    <Heading> Video </Heading>
     <VideoContainer>
       <iframe
         src={mediaUrl}
@@ -17,6 +21,7 @@ const EBirdVideo = ({ mediaUrl }) => {
         allowfullscreen
       ></iframe>
     </VideoContainer>
+    </>
   );
 };
 

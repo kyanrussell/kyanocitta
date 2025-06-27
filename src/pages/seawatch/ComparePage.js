@@ -42,8 +42,8 @@ const SwitchWrapper = styled.div`
   justify-content: center;
 `;
 
-const ComparisonGrid = styled.div`
-  background-image: url('/kyanocitta/images/background.png');
+export const ComparisonGrid = styled.div`
+  background-image: url('/kyanocitta/images/seawatch/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -54,7 +54,7 @@ const ComparisonGrid = styled.div`
   gap: 0.5rem 0.5rem;
 `;
 
-const Plate = styled.div`
+export const Plate = styled.div`
   background-color: rgba(0, 0, 300, .1);
   padding: 0.5rem 0.5rem;
   align-items: center;
@@ -68,7 +68,7 @@ const Plate = styled.div`
   }
 `;
 
-const Caption = styled.div`
+export const Caption = styled.div`
   font-size: 0.9em;
   text-align: center;
 
@@ -77,12 +77,12 @@ const Caption = styled.div`
     font-size: 0.5em;
   }
 `
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const ImageContainer = styled.img`
+export const ImageContainer = styled.img`
   max-width: 100px;
   padding: 0.1rem 0.1rem;
 
@@ -166,6 +166,7 @@ function ComparePage(props) {
           right={rightSpecies}
           setRightId={setRightId}
         />
+        <EBirdVideo mediaUrl={leftSpecies.mediaUrl}></EBirdVideo>
     </>
   );
 };
@@ -248,8 +249,8 @@ const Page = () => {
             (species) => (
               <Plate onClick={() => handleClick(species.id)}>
               <ImageWrapper>
-                <ImageContainer src={`/kyanocitta/images/${species.id}-dorsal.png`} />
-                <ImageContainer src={`/kyanocitta/images/${species.id}-ventral.png`} />              
+                <ImageContainer src={`/kyanocitta/images/seawatch/${species.id}-dorsal.png`} />
+                <ImageContainer src={`/kyanocitta/images/seawatch/${species.id}-ventral.png`} />
               </ImageWrapper>
               <Caption>{species.name}</Caption>
               </Plate>
