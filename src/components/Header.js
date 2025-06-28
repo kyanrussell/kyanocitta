@@ -53,10 +53,11 @@ const Nav = styled.nav`
 
 const NavList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
   list-style: none;
   padding: 0;
+  margin: 0 0 0 10%;
 `;
 
 const DropButton = styled.button`

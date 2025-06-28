@@ -6,6 +6,7 @@ export const BlogPostContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  background-color: aliceblue;
 `
 
 export const Title = styled.h1`
