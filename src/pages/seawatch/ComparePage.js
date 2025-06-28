@@ -86,6 +86,7 @@ export const ImageWrapper = styled.div`
 export const ImageContainer = styled.img`
   max-width: 100px;
   padding: 0.1rem 0.1rem;
+  pointer-events: none;
 
   @media (max-width: 600px) {
     max-width: 40px;
