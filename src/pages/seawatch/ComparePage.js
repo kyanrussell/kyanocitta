@@ -154,7 +154,7 @@ function ComparePage(props) {
               if (rightId != null) {
                 const temp = leftId;
                 setLeftId(rightId);
-                setRightId("");
+                setRightId(null);
               }
             }}>
               ⇄
@@ -167,7 +167,7 @@ function ComparePage(props) {
           right={rightSpecies}
           setRightId={setRightId}
         />
-        <EBirdVideo mediaUrl={leftSpecies.mediaUrl}></EBirdVideo>
+        <EBirdVideo mediaUrl={leftSpecies?.mediaUrl}></EBirdVideo>
     </>
   );
 };

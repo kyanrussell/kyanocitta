@@ -19,19 +19,6 @@ const DescriptionText = styled.div`
   font-size: 1.5rem;
 `;
 
-const ComparisonGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-image: url('/kyanocitta/images/seawatch/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
 
 const Label = styled.div`
   font-size: 0.75em;
@@ -46,7 +33,6 @@ const getPairKey = (id1, id2) => {
   const [a, b] = [id1, id2].sort();
   return `${a}_vs_${b}`;
 };
-
 
 const Container = styled.div`
   display: flex;
@@ -131,12 +117,12 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
 
     <FourImagesRow
       images={[
-        { src: `/kyanocitta/images/seawatch/${left.id}-dorsal.png`, alt: `${left.id} dorsal` },
-        { src: `/kyanocitta/images/seawatch/${left.id}-ventral.png`, alt: `${left.id} ventral` },
+        { src: `/kyanocitta/images/seawatch/${left?.id}-dorsal.png`, alt: `${left?.id} dorsal` },
+        { src: `/kyanocitta/images/seawatch/${left?.id}-ventral.png`, alt: `${left?.id} ventral` },
         ...(right
           ? [
-              { src: `/kyanocitta/images/seawatch/${right.id}-dorsal.png`, alt: `${right.id} dorsal` },
-              { src: `/kyanocitta/images/seawatch/${right.id}-ventral.png`, alt: `${right.id} ventral` },
+              { src: `/kyanocitta/images/seawatch/${right?.id}-dorsal.png`, alt: `${right?.id} dorsal` },
+              { src: `/kyanocitta/images/seawatch/${right?.id}-ventral.png`, alt: `${right?.id} ventral` },
             ]
           : [])
       ]}
@@ -145,11 +131,11 @@ export const SpeciesComparison = ({ left, right, setRightId }) => {
     <>
        <DescriptionText>
           <DescriptionTitle>
-            {right ? `${left.name} vs ${right.name}` : left.name}
+            {right ? `${left?.name} vs ${right?.name}` : left?.name}
           </DescriptionTitle>
           {(() => {
-            const pairKey = getPairKey(left.id, right?.id);
-            const desc = right ? pairDescriptions[pairKey] || `${left.id} vs ${right.id}` : left.description;
+            const pairKey = getPairKey(left?.id, right?.id);
+            const desc = right ? pairDescriptions[pairKey] || `${left?.id} vs ${right?.id}` : left?.description;
 
             return typeof desc === 'function' ? desc({ setRightId }) : desc;
           })()}
