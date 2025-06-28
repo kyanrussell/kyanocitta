@@ -15,9 +15,8 @@ const ComparisonGrid = styled.div`
   background-color: rgba(11, 23, 87, 0.8);
   align-items: center;
 
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 `;
 
