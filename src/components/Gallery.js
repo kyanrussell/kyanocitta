@@ -17,6 +17,7 @@ const ComparisonGrid = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 `;
 
