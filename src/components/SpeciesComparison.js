@@ -60,6 +60,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  pointer-events: none;
 
   @media (max-width: 600px) {
   max-height: 50vh;
