@@ -194,15 +194,6 @@ export const imageData = [
     }
   },
   {
-    filepath: "/kyanocitta/images/gallery/brant.jpeg",
-    caption: "",
-    tags: {
-        location: [],
-        species: [Taxa.BRAN],
-        categories: [Categories.BIRD],
-    }
-  },
-  {
     filepath: "/kyanocitta/images/gallery/brcr.jpeg",
     caption: "",
     tags: {
@@ -212,29 +203,20 @@ export const imageData = [
     }
   },
   {
+    filepath: "/kyanocitta/images/gallery/brant.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.BRAN],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
     filepath: "/kyanocitta/images/gallery/brdi.jpeg",
     caption: "",
     tags: {
         location: [Location.JAPAN],
         species: [Taxa.BRDI],
-        categories: [Categories.BIRD],
-    }
-  },
-  {
-    filepath: "/kyanocitta/images/gallery/brpe_surf.jpeg",
-    caption: "",
-    tags: {
-        location: [],
-        species: [Taxa.BRPE],
-        categories: [Categories.BIRD],
-    }
-  },
-  {
-    filepath: "/kyanocitta/images/gallery/brpe_wharf.jpeg",
-    caption: "",
-    tags: {
-        location: [],
-        species: [Taxa.BRPE],
         categories: [Categories.BIRD],
     }
   },
@@ -253,6 +235,24 @@ export const imageData = [
     tags: {
         location: [],
         species: [Taxa.BTYW],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/brpe_wharf.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.BRPE],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/brpe_surf.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.BRPE],
         categories: [Categories.BIRD],
     }
   },

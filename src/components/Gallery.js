@@ -5,7 +5,7 @@ import { imageData, Categories } from 'data/images';
 
 const ComparisonGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-template-rows: masonry;
   gap: 0.1rem;
   align-items: start;
