@@ -8,7 +8,6 @@ import Identification from "pages/Identification";
 import Landscapes from "pages/Landscapes";
 import Midway from "pages/Midway";
 import Plants from "pages/Plants";
-import Seawatch from "pages/Seawatch";
 import Guide from 'pages/seawatch/Guide';
 import CompareSpecies from 'pages/seawatch/ComparePage';
 import Calendar from 'pages/seawatch/Calendar';
@@ -27,7 +26,6 @@ function App() {
         <Route path="/landscapes" element={<Landscapes />} />
         <Route path="/midway" element={<Midway />} />
         <Route path="/plants" element={<Plants />} />
-        <Route path="/seawatch" element={<Seawatch />} />
         <Route path="/seawatch/guide" element={<Guide />} />
         <Route path="/seawatch/compare" element={<CompareSpecies />} />
         <Route path="/seawatch/calendar" element={<Calendar />} />
