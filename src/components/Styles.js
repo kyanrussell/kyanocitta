@@ -21,6 +21,12 @@ export const Heading = styled.h2`
   color: #345d7e;
 `;
 
+export const DateHeading = styled.h3`
+  width: 75vw;
+  font-family: 'Arial', sans-serif;
+  color: DarkSlateGrey;
+`;
+
 export const H3 = styled.h3`
   width: 75vw;
   font-family: 'Arial', sans-serif;
@@ -41,7 +47,7 @@ export const ImageContainer = styled.div`
 `
 
 export const Image = styled.img`
-  width: 50vw;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;

@@ -8,6 +8,9 @@ import Identification from "pages/Identification";
 import Landscapes from "pages/Landscapes";
 import Midway from "pages/Midway";
 import Plants from "pages/Plants";
+import Japan from "pages/Japan";
+import SierraNevada from "pages/SierraNevada";
+import Hawaii from "pages/Hawaii";
 import Guide from 'pages/seawatch/Guide';
 import CompareSpecies from 'pages/seawatch/ComparePage';
 import Calendar from 'pages/seawatch/Calendar';
@@ -26,6 +29,9 @@ function App() {
         <Route path="/landscapes" element={<Landscapes />} />
         <Route path="/midway" element={<Midway />} />
         <Route path="/plants" element={<Plants />} />
+        <Route path="/japan" element={<Japan />} />
+        <Route path="/hawaii" element={<Hawaii />} />
+        <Route path="/sierra-nevada" element={<SierraNevada />} />
         <Route path="/seawatch/guide" element={<Guide />} />
         <Route path="/seawatch/compare" element={<CompareSpecies />} />
         <Route path="/seawatch/calendar" element={<Calendar />} />

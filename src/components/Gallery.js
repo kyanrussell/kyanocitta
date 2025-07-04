@@ -56,6 +56,29 @@ export const ImageContainer = styled.img`
 `;
 
 
+
+export function LocationGallery(location) {
+  return (
+      <>
+        <ComparisonGrid>
+        {
+          imageData.filter(image => image.tags.location.includes(location))
+          .map(
+            (image) => (
+              <Plate>
+              <ImageWrapper>
+                <ImageContainer src={image.filepath} />
+              </ImageWrapper>
+              <Caption>{image.caption}</Caption>
+              </Plate>
+            )
+          )
+        }
+        </ComparisonGrid>
+      </>
+  );
+}
+
 function Gallery(category) {
   return (
       <>

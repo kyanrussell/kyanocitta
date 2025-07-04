@@ -77,6 +77,15 @@ export const imageData = [
     }
   },
   {
+    filepath: "/kyanocitta/images/gallery/awma.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.AWMA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
     filepath: "/kyanocitta/images/gallery/bbhu.jpeg",
     caption: "",
     tags: {
@@ -173,6 +182,15 @@ export const imageData = [
         location: [],
         species: [Taxa.BLTE],
         categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/blte.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [],
+        categories: [Categories.BUG, Categories.IDENTIFICATION],
     }
   },
   {
@@ -419,6 +437,105 @@ export const imageData = [
     }
   },
   {
+    filepath: "/kyanocitta/images/gallery/gwgu.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.GWGU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/heeg.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.HEEG],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/hoffmann.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.SIERRA_NEVADA],
+        species: [],
+        categories: [Categories.LANDSCAPE],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/hola.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.HOLA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/home.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.HOME],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/hoor.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.HOOR],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/jizo.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.JAPAN],
+        species: [Taxa.VATI],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/juniper.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.SIERRA_NEVADA],
+        species: [],
+        categories: [Categories.PLANT],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/kirby_park.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.BNST, Taxa.AMAV],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/kuaihelani.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.HAWAII],
+        species: [Taxa.WHTE, Taxa.LAAL],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/labu.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.LABU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
     filepath: "/kyanocitta/images/gallery/scoters.jpeg",
     caption: "",
     tags: {
@@ -434,6 +551,24 @@ export const imageData = [
         location: [],
         species: [],
         categories: [Categories.MAMMAL],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/swha.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.SWHA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/sparrows.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [],
+        categories: [Categories.BIRD, Categories.IDENTIFICATION],
     }
   },
 ]

@@ -146,6 +146,9 @@ const Header = () => {
               <li><Link to="/birds"> Birds </Link></li>
               <li><Link to="/plants"> Plants </Link></li>
               <li><Link to="/landscapes"> Landscapes </Link></li>
+              <li><Link to="/japan"> Japan </Link></li>
+              <li><Link to="/sierra-nevada"> Sierra Nevada </Link></li>
+              <li><Link to="/hawaii"> Hawaii </Link></li>
             </DropdownContent>
           </DropdownWrapper>
 
