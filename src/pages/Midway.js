@@ -213,20 +213,22 @@ function Midway() {
 	</Body>
 
 	<Heading> 2024-12-28 </Heading>
-	<H3> 2013 </H3>
-	<Body>
-	Forgot to mention we checked out the BOPE dance party last night. There were perhaps 3x as many as last time. Two flew at my headlamp and landed on me - one perched on my shoulder for a few minutes.
-	So cute. Today was CBC day. As was previously hinted, I was assigned catchment by Jon. Lisa and I were successful in photographing the COSN! Lisa walked around while I sat with the sun at my back with camera ready.
-	We then walked out to Frigate Point with Jon, Nikki, Ken. Beautiful "albatross highway" - constant stream along the beach. We then went to Eastern Island after brunch. Dan + Anna saw a first-cycle gull
-	at the spit on Friday so that was on everyone's minds. We saw a pair of RTTRs displaying (also a pair selecting a nest site right outside Clipper House during lunch!).
-	</Body>
-
-	<Heading> 2024-12-29 </Heading>
 	<H3> 2050 </H3>
 	<Body>
 	Another incredibly full day. Very tired. Ken + Bob finished up Sector 6 while the rest of us did 5 - through the ironwoods. Very long and slow passes. I drew the lines - felt good about paint use
 	as the leaders are worried about running out. Pam did our swim + snorkel test (as former refuge manager). Then we snorkeled! So cool! Really hit home that we are way out in the Pacific. Needlefish, lobster,
 	imperial nudibranch - blue, yellow, white, some sort of Toby. Capped it all off with some dives off Cargo Pier. Water gets very deep very quickly. CBC tomorrow!
+	</Body>
+
+	<Heading> 2024-12-29 </Heading>
+	<H3> 2013 </H3>
+	<Body>
+	Forgot to mention we checked out the BOPE dance party last night. There were perhaps 3x as many as last time. Two flew at my headlamp and landed on me - one perched on my shoulder for a few minutes.
+	So cute. Today was CBC day. As was previously hinted, I was assigned catchment by Jon. Lisa and I were successful in photographing the COSN! Lisa walked around while I sat with the sun at my back with camera ready.
+	We then walked out to Frigate Point with Jon, Nikki, Ken. Beautiful "albatross highway" - constant stream along the beach. We then went to Eastern Island after brunch. Dan + Anna saw a first-cycle gull
+	at the spit on Friday so that was on everyone's minds. We saw a pair of RTTRs displaying (also a pair selecting a nest site right outside Clipper House during lunch!). We saw a flock of Sanderlings - Hunakai - fly by
+	the beach. On our way to the seep, we startled a Pueo! SEOW was in the naupaka. Flew off and movved by WHTE. Such a cool find! Saw some BRBO imms. being fed, a MABO chick, RFBO (dark morphs). Lots of GRFRs.
+	Later we heard that the gull was seen on North Beach Sand island...
 	</Body>
 
     </BlogPostContainer>
