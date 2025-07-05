@@ -46,9 +46,15 @@ export const ImageContainer = styled.div`
   object-position: center;
 `
 
+export const Caption = styled.h4`
+  width: 75vw;
+  font-family: 'Arial', sans-serif;
+  color: Grey;
+  text-align: center;
+`;
+
 export const Image = styled.img`
-  width: 100%;
-  height: auto;
+max-height: 400px;
   display: block;
   margin: 0 auto;
   

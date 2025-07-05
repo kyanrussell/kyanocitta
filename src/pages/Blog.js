@@ -111,7 +111,7 @@ function Blog() {
         <Body>
         One of the birds I wanted to see the most on my first birding trip to the East Coast was an Ovenbird. Being pretty skulky
         warblers that typically stay low to the ground, I wasn't expecting great views. Yet, as we walked along Shindagin Hollow Road,
-        we saw this bird at eye level in a tree. It stayed in one spot, walking along the branch and constantly chipping and flairing
+        we saw this bird at eye level in a tree. It stayed in one spot, walking along the branch and constantly chipping and flaring
         its crest - which I definitely didn't expect to see! Later, I found out we must have been near its nest, and it was attempting
         to distract us. It certainly worked!
         </Body>

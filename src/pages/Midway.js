@@ -1,13 +1,27 @@
-import {Heading, Body, BlogPostContainer, Image, ImageContainer, H3 } from 'components/Styles';
+import {Heading, Body, BlogPostContainer, Image, ImageContainer, Caption, H3 } from 'components/Styles';
 
 function Midway() {
   return (
     <BlogPostContainer>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page2_kuaihelani.png"></Image>
+		<Caption>
+		Kuaihelani - Midway Atoll
+		</Caption>
+	</ImageContainer>
+
 	<Heading> Introduction </Heading>
 	<Body>
 	In the winter of 2024 I was fortunate enough to participate as a volunteer counter for the annual albatross census on Midway Atoll. The following is an account of my 6-week experience on the largest albatross colony on Earth.
 	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page1_list.png"></Image>
+		<Caption>
+		Packing list
+		</Caption>
+	</ImageContainer>
 
 
 	<Heading> 2024-12-17 </Heading>
@@ -16,15 +30,15 @@ function Midway() {
 	</Body>
 
 	<ImageContainer>
-		<Image src="/kyanocitta/images/page1_pagp.png"></Image>
+		<Image src="/kyanocitta/images/midway/page1_pagp.png"></Image>
 	</ImageContainer>
 
-	<Body>Moonrise behind us</Body>
-		<Body>waning gibbous</Body>
-			<Body>burnt orange under clouds</Body>
+	<Body style={{'textAlign': 'left'}}>Moonrise behind us</Body>
+		<Body style={{'textAlign': 'center'}}>waning gibbous</Body>
+			<Body style={{'textAlign': 'right'}}>burnt orange under clouds</Body>
 
 	<ImageContainer>
-		<Image src="/kyanocitta/images/page1_window_view.png"></Image>
+		<Image src="/kyanocitta/images/midway/page1_window_view.png"></Image>
 	</ImageContainer>
 
 	<Body>
@@ -35,13 +49,22 @@ function Midway() {
 	After landing:
 	</Body>
 	<Body>
-	Feels like a fever dream. First the descent - plane pointed down after sharp bank. Runway lights out of nowhere. albatross like rows of tombstones off runway. Got off the plane - BOPE overhead like bats glowing in moonlight. Whinnying of LAAL. Bill clacks. Golf cart through the colony to Charlie barracks. Welcome from staff and counters.</Body>
+	Feels like a fever dream. First the descent - plane pointed down after sharp bank. Runway lights out of nowhere. albatross like rows of tombstones off runway. Got off the plane - BOPE overhead like bats glowing in moonlight. Whinnying of LAAL. Bill clacks. Golf cart through the colony to Charlie barracks. Welcome from staff and counters.
+	</Body>
 	<Body>
 	Meet at 6:20 in lobby with headlamps.
 	</Body>
 
 
     <Heading> 2024-12-18 </Heading>
+	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page2_clipper.png"></Image>
+		<Caption>
+		View of breakfast from the barracks
+		</Caption>
+	</ImageContainer>
+
 	<Body>
 	Sunrise is much later than I thought. It's 7:45AM now and light out, but the sun isn't up yet. We met at 6:20 + walked to the Clipper House. BOPE overhead in the dark.
 	Delicious breakfast and chats about wild boars at Kilauea. Granted leisure time til 8:15 - we (the newbies) slowly walked back to the barracks.
@@ -50,22 +73,37 @@ function Midway() {
 	Bikes have been assigned - fixies. Just saw a moli trip over a BOPE burrow - glad to know even the locals do it.
 	</Body>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page2_moli_nest.png"></Image>
+		<Caption>
+		First moli study
+		</Caption>
+	</ImageContainer>
+
 
     <Heading> 2024-12-19 </Heading>
-	<Body>
 	<H3> 1220 </H3>
-	Sitting at Captain Brooks lanai. Heard wolf whistle - BTCU. Tried 'ulu for the first time - delicious. Steamed (?) w/ coconut sauce. Today was our first count. The leaders had us do a practice count - sight count followed by dot count, where the dot count is the source of truth. 131, 87 -> 133, 91. Leaders were happy w/ the !1% error rate on LAAL but wanted more practice w/ the 4% BFAL error. We aim for 2-3% error rate. We were at Sector 48 where the STALs are. Returning after lunch. 
+	<Body>
+	Sitting at Captain Brooks lanai. Heard wolf whistle - BTCU. Tried 'ulu for the first time - delicious. Steamed (?) w/ coconut sauce. Today was our first count. The leaders had us do a practice count - sight count followed by dot count, where the dot count is the source of truth. 131, 87 -> 133, 91. Leaders were happy w/ the !1% error rate on LAAL but wanted more practice w/ the 4% BFAL error. We aim for 2-3% error rate. We were at Sector 48 where the STALs are. Returning after lunch.
+	</Body>
+
 	<H3> 1823 </H3>
+	<Body>
 	The extreme happiness is hard to contain. Walking on the most beautiful beach. Stopped by monk seal. BTCU photo session - heard something walk past - moli. Sky rose pink, water aqua, white sand. bliss
+	</Body>
+
 	<H3> 2100 </H3>
+	<Body>
 	It's late and I should sleep. A lot happened today so let's go through it quick - first full day of counting - sector 48. We started with a practice round w/ dot verification.
 	We performed satisfactorily so we continued w/ the normal count. Bob + Caren (leaders) have a hilarious worried mom/ effusive dad dynamic.
 	Working near Bob is good for the ego  - lots of praise. Constant criticism (constructive) from Caren. I decided to stick to Caren as much as possible - gratified to hear fewer comments.
 	Compliments at the end. As a reward ( we really got much more comfortable) - they showed us the STAL nest. Geraldine + 1 juv. nearby. Jon gave talk in evening.
 	We chatted about Brian Sullivan - "Sully" - old roommates (Jon was his boss) on San Clemente island. GTTA tip: check brackish seep SE side! Time for a quick shower - so sweaty.
 	</Body>
+
 	<Body>
 	Random sights:
+	</Body>
 	<ul>
 		<li>gooseneck barnacles on a helmet</li>
 		<li>Laysan ducks on roof</li>
@@ -75,17 +113,16 @@ function Midway() {
 		<li>BLNO vs. BRNO (like FOTE vs ELTE)</li>
 		<li>bike pedal fell off</li>
 	</ul>
-	</Body>
 
 
     <Heading> 2024-12-20 </Heading>
-	<Body>
 	<H3> 0614 </H3>
+	<Body>
 	It's very windy - not a storm. Bit nervous about today's count. Slightly toasted by sun from yday even through buff.
 	Still figuring appropriate amount of food to eat - a little over-full today.
-	
-	<Body>[walked to breakfast in a trance - moonlight + birds]</Body>
 	</Body>
+
+	<Body>[walked to breakfast in a trance - moonlight + birds]</Body>
 
 	<H3> 1936 </H3>
 	<Body>
@@ -208,7 +245,7 @@ function Midway() {
 	<H3> 1905 </H3>
 	<Body>
 	Very long day as predicted. We finished Sector 8 on Eastern and got most of 9 done with just a sliver left. Hopefully we can go back on Sunday to bird. Saw a MABO chick all on its own.
-	One hybrid albatross. One GRFR w/ armpit tabs, plus a young bird in a naupaka. Tried some pickleweed leaves on Caren's suggestion - surprisingly delicious (and salty. The front of the boat
+	One hybrid albatross. One GRFR w/ armpit tabs, plus a young bird in a naupaka. Tried some pickleweed leaves on Caren's suggestion - surprisingly delicious (and salty). The front of the boat
 	we took folds out for wet landings - fun. An old sentry gun greeted us at the dock. Also found the WTTR chick Nikki told us about (in a tree cavity near her house).
 	</Body>
 
@@ -229,6 +266,42 @@ function Midway() {
 	at the spit on Friday so that was on everyone's minds. We saw a pair of RTTRs displaying (also a pair selecting a nest site right outside Clipper House during lunch!). We saw a flock of Sanderlings - Hunakai - fly by
 	the beach. On our way to the seep, we startled a Pueo! SEOW was in the naupaka. Flew off and movved by WHTE. Such a cool find! Saw some BRBO imms. being fed, a MABO chick, RFBO (dark morphs). Lots of GRFRs.
 	Later we heard that the gull was seen on North Beach Sand island...
+	</Body>
+
+	<Heading> 2024-12-30 </Heading>
+	<H3> 1913 </H3>
+	<Body>
+	Everyone was grouchy today, maybe mostly me. We were supposed to go to Eastern and just as we were loading our bags onto the boat we were told the counters are going tomorrow instead. Not sure why. We counted Sector 7
+	and a bit of 50. 7 was full of deep burrows = we set a record for crashes. We ate lunch on the beach since we were all packed for Eastern. Very relaxing - and we needed it. Simone found a RTRT chick - Jon said they're
+	the only species that nests in Naupaka; WTTR are basically reliant on the ironwoods here.
+	</Body>
+
+	<Body>
+	"A large black bird the size of a turkey, found mostly on the islands of Nihoa and Kaula. A kind of fishing eagle."
+	</Body>
+	<Body>
+	- Parker 1922
+	</Body>
+
+	<Heading> 2024-12-31 </Heading>
+	<H3> 1750 </H3>
+	<Body>
+	Very long day on Eastern. The leaders moved Ken onto the other team and I think everyone on our team was happier for it. He's difficult to work with - don't want to add much more than that. We finishedoff the sliver of
+	Sector 9 (ended up taking an hour - larger than expected). We then worked on Sector 2. We tackled it along with the other team from opposite sides. I was drawing the line when we met. We decided to make a mega-team to
+	finish it off. We ended up in a tricky situation where we were following two lines I drew. The lines were pretty squirrelly and people got really foncused. Luckily I had the big picture in my head and tried to stay confident
+	- and it worked out. Everyone congratulated me for keeping things under control. Greg said I make a natural count leader.
+	</Body>
+
+	<H3> 1802 </H3>
+	<Body>
+	Also, we saw a gull on Eastern! Notably this was not the same gull spotted by Anna on Friday (which had a dark bill - this one had a bicolored bill). Hopefully we can identify it. I also spotted a pair of BBPL in a flock of
+	PAGP. Pretty funny since it's the opposite of what I usually look for in California.
+	</Body>
+
+	<Heading> 2025-01-01 </Heading>
+	<H3> 0842 </H3>
+	<Body>
+	
 	</Body>
 
     </BlogPostContainer>
