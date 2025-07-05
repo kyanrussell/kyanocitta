@@ -81,7 +81,44 @@ function Midway() {
 	</ImageContainer>
 
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page5_manuoku.png"></Image>
+		<Caption>
+		Manu o ku
+		</Caption>
+	</ImageContainer>
+
+	<Body>
+	So much to write about... How about reverse chronological order? I'm currently sitting on the gym bleachers watching Jon, Caren, Louise, Lisa, and Nikki play pickleball.
+	There is a cool sign against the far wall.
+	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page5_map.png"></Image>
+		<Caption>
+		Copied from sign in gym
+		</Caption>
+	</ImageContainer>
+
+	<Body>
+	I met the (a?) IT guy - named Po (sp.?). He said "you drink?" "yeah" "Friday" points at me. This was at dusk, with 2 million BOPEs flying overhead. Absolutely amazing.
+	Spent an hour walking around and drinking it in. Before that was dinner - pork loin, pad thai, etc. Castella cream sandwich for dessert. Talked with Nikki at dinner - 
+	she did an internship in Karuizawa working with black bears. Showed pictures pulling ticks. We talked about Tonbo no Yuu.
+	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page5_bope.png"></Image>
+	</ImageContainer>
+
     <Heading> 2024-12-19 </Heading>
+	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page6_moli.png"></Image>
+		<Caption>
+		Dance of the moli
+		</Caption>
+	</ImageContainer>
+
 	<H3> 1220 </H3>
 	<Body>
 	Sitting at Captain Brooks lanai. Heard wolf whistle - BTCU. Tried 'ulu for the first time - delicious. Steamed (?) w/ coconut sauce. Today was our first count. The leaders had us do a practice count - sight count followed by dot count, where the dot count is the source of truth. 131, 87 -> 133, 91. Leaders were happy w/ the !1% error rate on LAAL but wanted more practice w/ the 4% BFAL error. We aim for 2-3% error rate. We were at Sector 48 where the STALs are. Returning after lunch.
@@ -91,6 +128,13 @@ function Midway() {
 	<Body>
 	The extreme happiness is hard to contain. Walking on the most beautiful beach. Stopped by monk seal. BTCU photo session - heard something walk past - moli. Sky rose pink, water aqua, white sand. bliss
 	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page6_gear.png"></Image>
+		<Caption>
+		Counting gear
+		</Caption>
+	</ImageContainer>
 
 	<H3> 2100 </H3>
 	<Body>
@@ -205,7 +249,7 @@ function Midway() {
 	<H3> 2035 </H3>
 	<Body>
 	Got back from the office (wifi). Linda has been at the vet ER with Goose for the last 3-4 hours for dizziness. Finally heard back that it's an inner ear infection. I feel relieved for now.
-	While I was waiting 4 cockroaches crawled on my legs. On the way back I saw my first centiped - seemed a foot long but was probably more like 8in. Also a ~4in black slug.
+	While I was waiting 4 cockroaches crawled on my legs. On the way back I saw my first centipede - seemed a foot long but was probably more like 8in. Also a ~4in black slug.
 	I also stopped at the generators to see the BOPE "dance party" (per Anna the biologist). Apparently they like the vibes, so there are just BOPEs everywhere around the generators.
 	</Body>
 
@@ -286,7 +330,7 @@ function Midway() {
 	<Heading> 2024-12-31 </Heading>
 	<H3> 1750 </H3>
 	<Body>
-	Very long day on Eastern. The leaders moved Ken onto the other team and I think everyone on our team was happier for it. He's difficult to work with - don't want to add much more than that. We finishedoff the sliver of
+	Very long day on Eastern. The leaders moved Ken onto the other team and I think everyone on our team was happier for it. He's difficult to work with - don't want to add much more than that. We finished off the sliver of
 	Sector 9 (ended up taking an hour - larger than expected). We then worked on Sector 2. We tackled it along with the other team from opposite sides. I was drawing the line when we met. We decided to make a mega-team to
 	finish it off. We ended up in a tricky situation where we were following two lines I drew. The lines were pretty squirrelly and people got really foncused. Luckily I had the big picture in my head and tried to stay confident
 	- and it worked out. Everyone congratulated me for keeping things under control. Greg said I make a natural count leader.
@@ -301,8 +345,41 @@ function Midway() {
 	<Heading> 2025-01-01 </Heading>
 	<H3> 0842 </H3>
 	<Body>
-	
+	Coffee made with tissues - no filters. NYE party at Midway Bowl - ping pong, Bingo, Pyramid, Jenga. Dancing + BBQ. Champagne + poppers - off to Cargo Pier for polar plunge. Swim to shore under headlamps. Water felt better than
+	the lukewarm hot tub that followed. Resolutions - do what I want - on rec of Nikki/Ashley. Woke up to rainbow being eaten by yellow cloud on dark blue sky. Madeleines for breakfast. Snyder puts me in thoughtful mood. Day off -
+	hope to take a break from birding/photography and paint instead.
 	</Body>
+
+	<H3> 1530 </H3>
+
+	<H3> 1700 </H3>
+	<Body>
+	Hangover gradually went away, thanks to Ashley's ibuprofen. Called family in the afternoon. Snuck in a seawatch off SE point looking south - strong southerlies today. Spotted WTSH - nice! Long-tailed, easy flight. Writing at
+	Clipper House with Thai tea + canaries - waiting for others. Took a walk to Frigate Roost. WHTEs kept flying in front of my scope while I was trying to seawatch.
+	</Body>
+
+	<Heading> 2025-01-02 </Heading>
+	<H3> 1638 </H3>
+	<Body>
+	Rain off and on all day today. Counted Sector 34 (and completed it!). Pretty sad - lots of dead birds (~20?). The mice in this specific area have begun biting the moli for food (not sure if eating flesh or drinking blood - or both).
+	I'm not sure what kills the birds - infection, blood loss, etc? In any case there was an unsuccessful mouse eradication project (last year?). This is the first case since then. The team was pretty rattled, especially Bob + Caren.
+	But we got the sector done.  I'm looking forward to tonight's presentations re: Rwenzori + Antarctic as topics by Caroline, Joe, Carrie. 
+	</Body>
+
+	<Heading> 2025-01-03 </Heading>
+	<H3> 1944 </H3>
+	<Body>
+	Teams were switched around again today. We completed Sectors 34, 40, and worked on 37. All near the inner harbor - "the armpit of the island" per Louise. Generator + fuel tanks loud + smelly.	Simone was pretty sure she saw a PEFA
+	chase some shorebirds today near Clipper House. I'm inclined to trust her completely dsince she's a falconer... We spent all our breaks looking for it unsuccessfully. Looking forward to seeing it...!
+	</Body>
+
+	<Heading> 2025-01-04 </Heading>
+	<H3> 1650 </H3>
+	<Body>
+	Coutned Sectors 37, 42, + 50. 37 + 42 complete. Saw a silvery moli and a patchy one. There were lots of ka'upu in 42 nowhere near the shore - I was told that that section used to be the shoreline before the landfill was added to expand
+	the runway. Racial memory - site fidelity.
+	</Body>
+
 
     </BlogPostContainer>
   );
