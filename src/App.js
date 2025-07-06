@@ -6,6 +6,7 @@ import About from "pages/About";
 import Birds from "pages/Birds";
 import Identification from "pages/Identification";
 import Landscapes from "pages/Landscapes";
+import Photography from "pages/Photography";
 import Midway from "pages/Midway";
 import Plants from "pages/Plants";
 import Japan from "pages/Japan";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/birds" element={<Birds />} />
         <Route path="/identification" element={<Identification />} />
         <Route path="/landscapes" element={<Landscapes />} />
+        <Route path="/photography" element={<Photography />} />
         <Route path="/midway" element={<Midway />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/japan" element={<Japan />} />

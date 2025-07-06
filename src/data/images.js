@@ -13,12 +13,15 @@ export const Categories = {
   HERP: "Herps",
   LANDSCAPE: "Landscapes",
   IDENTIFICATION: "Identification",
+  PHOTOGRAPHY: "Photography",
 };
 
 export const Location  = {
   SIERRA_NEVADA: "Sierra Nevada",
   HAWAII: "Hawaii",
   JAPAN: "Japan",
+  ARIZONA: "Arizona",
+  PNW: "Pacific Northwest",
 };
 
 export const imageData = [
@@ -44,7 +47,7 @@ export const imageData = [
     filepath: "/kyanocitta/images/gallery/ansel.jpeg",
     caption: "",
     tags: {
-        location: [],
+        location: [Location.SIERRA_NEVADA],
         species: [],
         categories: [Categories.LANDSCAPE],
     }
@@ -536,6 +539,186 @@ export const imageData = [
     }
   },
   {
+    filepath: "/kyanocitta/images/gallery/lizard_brain.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.ARIZONA],
+        species: [],
+        categories: [Categories.HERP],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/loon_lake.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.SIERRA_NEVADA],
+        species: [],
+        categories: [Categories.LANDSCAPE],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/ltdu.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.LTDU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/ltja.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.LTJA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/luwa.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.LUWA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/mamu.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.MAMU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/marmot.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [],
+        categories: [Categories.MAMMAL],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/mgwa.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.MGWA],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/midway_tubenoses.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.HAWAII],
+        species: [Taxa.LAAL, Taxa.WTSH, Taxa.BOPE],
+        categories: [Categories.BIRD, Categories.IDENTIFICATION],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/moli_chick.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.HAWAII],
+        species: [Taxa.LAAL],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/moli_sketch.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.HAWAII],
+        species: [Taxa.LAAL],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/moqu.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.MOQU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/mt_ellinor.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [],
+        categories: [Categories.LANDSCAPE],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/mussel.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.WHIM],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/nabo.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.NABO],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/nene.jpeg",
+    caption: "",
+    tags: {
+        location: [Location.HAWAII],
+        species: [Taxa.NENE],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/nofl.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.NOFL],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/nunulu_plate.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.NUNULU],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/orchids.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [],
+        categories: [Categories.PLANT, Categories.IDENTIFICATION],
+    }
+  },
+  {
+    filepath: "/kyanocitta/images/gallery/oror.jpeg",
+    caption: "",
+    tags: {
+        location: [],
+        species: [Taxa.OROR],
+        categories: [Categories.BIRD],
+    }
+  },
+  {
     filepath: "/kyanocitta/images/gallery/scoters.jpeg",
     caption: "",
     tags: {
@@ -559,7 +742,7 @@ export const imageData = [
     tags: {
         location: [],
         species: [Taxa.SWHA],
-        categories: [Categories.BIRD],
+        categories: [Categories.BIRD, Categories.PHOTOGRAPHY],
     }
   },
   {
