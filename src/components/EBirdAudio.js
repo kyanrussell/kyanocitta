@@ -15,7 +15,7 @@ const EBirdAudio = ({ mediaUrl }) => {
         height="431"
         width="100%"
         frameborder="0"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </AudioContainer>
   );

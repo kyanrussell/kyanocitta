@@ -56,7 +56,7 @@ export const imageData = [
     filepath: "/kyanocitta/images/gallery/apapane.jpeg",
     caption: "",
     tags: {
-        location: [],
+        location: [Location.HAWAII],
         species: [Taxa.APAP],
         categories: [Categories.BIRD],
     }
