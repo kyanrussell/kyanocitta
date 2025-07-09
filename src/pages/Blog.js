@@ -8,6 +8,7 @@ import { BlogPostContainer, Title, Heading, DateHeading, Body, ImageContainer, I
 
 export const Caption = styled.div`
   font-size: 1em;
+  font-style: oblique;
   text-align: center;
 
   @media (max-width: 600px) {
@@ -23,8 +24,8 @@ function Blog() {
         <Title>Sargent's Cypress on the South Coast</Title>
         <DateHeading>2025-07-07</DateHeading>
         <Body>
-        We set out for the South Coast with only the vague goal of seeing Sargent's Cypress to guide our way. We trusted that this would be enough
-        to see us through some spectacular habitat and indeed it was! Because of the Hwy 1 landslide, the only way south is via Nacimiento-Ferguson
+        Bill, Francis, and I set out for the South Coast with only the vague goal of seeing Sargent's Cypress to guide our way. We trusted that this would be enough
+        to see us through some spectacular habitat. Because of the Hwy 1 landslide, the only way south is via Nacimiento-Ferguson
         Rd. This recently reopened road takes you through oak savannah, into lush Nacimiento cañon, then up and over the Santa Lucias through burned foothills. The road
         crests at the shoulder of Cone Peak, and spits you out at the mouth of Kirk Creek. Driving a few miles south takes you to the foot of Will
         Creek Road, which takes you up the hills where it eventually intersects with the South Coast Ridge Road. Heading south takes you along the
@@ -62,20 +63,37 @@ function Blog() {
         </Caption>
 
         <Body>
-        Sargent, mistletoe, hairstreak, calochortus, serpentine
+        We eventually arrived at the grove after an hour on the narrow, dusty, overgrown, and occasionally steep and slippery road. It lay upon a saddle connecting two
+        ridges. The divide was entirely comprised of serpentine in various colors - green where freshly exposed, sunbaked blueish-black, and burnt red crumbling to dust.
+        There were a few large trees in pyramidal form but the majority comprised what could be a single-age stand, reminding me of the pygmy forests of Gowan's cypress in Del Monte Forest, Monterey, or those of Pygmy Cypress in Mendocino County. Cypresses are prone to edaphic speciation - each of these species (and many others) grow in distinct soil types - all containing few nutrients. Sargent's Cypress is endemic to serpentine exposures, and has a comparatively large but scattered range across coastal California.
         </Body>
         <INaturalistGallery widgets = {[
-            <INaturalistWidget observationId={296016399}/>,
             <INaturalistWidget observationId={296016429}/>,
             <INaturalistWidget observationId={296016430}/>,
             <INaturalistWidget observationId={296016403}/>,
+        ]}
+        ></INaturalistGallery>
+
+        <Body>
+        We explored the grove via the road that cut straight through it along the high point of the saddle. A small, distinct ecosystem like this rewards attention, so we scattered and looked at everything. The cypresses themselves had pale green foliage, and bore both yellow pollen cones and seed cones of all ages, ranging from waxy chestnut-colored young cones, gray woody mature cones, and some dried cones with seeds scattered. We noticed many were "afflicted" with leafy mistletoes. I had only seen this genus on oaks and creosotes before, but it turned out this particular species specializes on cypresses and junipers. Bill commented "Great Blue Hairstreak caterpillars feed on mistletoe," and lo - we saw an adult male a few minutes later! It fluttered from treetop to treetop, and eventually settled in a tree where we couldn't see it. I was able to snap a photo before we lost it, and you can see the "false head" in the photo above in an example of automimicry.
+        </Body>
+        <Body>
+        We eventually tore ourselves away from the grove. We three each felt the quiet majesty of this tiny population of trees clinging to this remote sun-baked ridgetop. The cool ocean wind blew in from the west, carrying the voices of ash-throated flycatchers calling from the drainage below us. We spoke of the place as an altar, and promised to visit again.
+        </Body>
+
+        <Body>
+        We rolled on to the Lion's Den Spring Botanical Area. We hiked out to the campsite, and I was amazed to find alders shading the spring in the middle of the dry golden hills. The spring was not much more than a trickly seep lined with rushes. Yet in the cold, clear water were caddisfly larvae and a dragonfly nymph. Bright blue Vivid dancers hovered nearby. The trail itself was thick with adult Western whiptails, showing a surprising variation in color ranging from dull brown to bright orange. I'm not sure if this is individual variation or if they are prone to color changes - I wouldn't be surprised if it were the latter. A flower I was happily surpised to see was Calochortus fimbriatus - a species I had heard of being present in South County - however, I hadn't realized that we would be in their country! Stunning golden orange, with dark maroon hairs fringing the edges and interior of the perianth, these flowers seemed to associate with Chaparral yucca. Most were found nearby yucca, or even resting upon but not quite twining along their spines. I wonder what, if anything, eats them?
+        </Body>
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={296016399}/>,
             <INaturalistWidget observationId={296016388}/>,
             <INaturalistWidget observationId={296016396}/>,
         ]}
         ></INaturalistGallery>
 
         <Body>
-        redwood grove
+        By now the heat and dry was getting to me. I was happy to get back down to sea level - the temperature dropped at least thirty degrees as we descended. Towards the bottom, we stopped in a redwood grove in the crook of the road. Immediately, the orange jellyfish flowers of a leopard lily jumped out at us amidst the green. The roots of a large redwood lining the creek were exposed by erosion, and I crawled into the space below the tree. Looking up, I saw stars. There were several large reddish growths on the underside of the redwood bole, each sporting an array of bright points. I wonder if they could be root tips?
+        We rumbled on past a roadcut, and Bill said "this is now the habitat I look for Platanthera orchids in" - and immediately I said "stop the car!!" Indeed, we found some orchids poking out the exposed cut - Platanthera transversa!
         </Body>
         <INaturalistGallery widgets = {[
             <INaturalistWidget observationId={296016368}/>,
@@ -87,7 +105,7 @@ function Blog() {
         ></INaturalistGallery>
 
         <Body>
-        dipper
+        On our way down the coast, I briefly spotted an American Dipper as we drove past the mouth of Mill Creek. We returned here in the afternoon to see if it was still there. We didn't see it at first, but as we explored the rocky beach, Francis spotted it perched up on a sandstone bluff. It then flew down to where the creek emptied into the sea, and seemed quite at home foraging only a few meters from crashing waves. Quite an odd sight!
         </Body>
         <EBirdVideo mediaUrl='https://macaulaylibrary.org/asset/638591962'></EBirdVideo>
 
