@@ -56,8 +56,7 @@ function Blog() {
             <INaturalistWidget observationId={296016406}/>,
             <INaturalistWidget observationId={296016380}/>,
             <INaturalistWidget observationId={296016372}/>,
-        ]}
-        ></INaturalistGallery>
+        ]}/>
         <Caption>
         Pollinators were abundant on Eriogonum fields.
         </Caption>
@@ -71,8 +70,7 @@ function Blog() {
             <INaturalistWidget observationId={296016429}/>,
             <INaturalistWidget observationId={296016430}/>,
             <INaturalistWidget observationId={296016403}/>,
-        ]}
-        ></INaturalistGallery>
+        ]}/>
 
         <Body>
         We explored the grove via the road that cut straight through it along the high point of the saddle. A small, distinct ecosystem like this rewards attention, so we scattered and looked at everything. The cypresses themselves had pale green foliage, and bore both yellow pollen cones and seed cones of all ages, ranging from waxy chestnut-colored young cones, gray woody mature cones, and some dried cones with seeds scattered. We noticed many were "afflicted" with leafy mistletoes. I had only seen this genus on oaks and creosotes before, but it turned out this particular species specializes on cypresses and junipers. Bill commented "Great Blue Hairstreak caterpillars feed on mistletoe," and lo - we saw an adult male a few minutes later! It fluttered from treetop to treetop, and eventually settled in a tree where we couldn't see it. I was able to snap a photo before we lost it, and you can see the "false head" in the photo above in an example of automimicry.
@@ -88,8 +86,7 @@ function Blog() {
             <INaturalistWidget observationId={296016399}/>,
             <INaturalistWidget observationId={296016388}/>,
             <INaturalistWidget observationId={296016396}/>,
-        ]}
-        ></INaturalistGallery>
+        ]}/>
 
         <Body>
         By now the heat and dry was getting to me. I was happy to get back down to sea level - the temperature dropped at least thirty degrees as we descended. Towards the bottom, we stopped in a redwood grove in the crook of the road. Immediately, the orange jellyfish flowers of a leopard lily jumped out at us amidst the green. The roots of a large redwood lining the creek were exposed by erosion, and I crawled into the space below the tree. Looking up, I saw stars. There were several large reddish growths on the underside of the redwood bole, each sporting an array of bright points. I wonder if they could be root tips?
@@ -101,8 +98,7 @@ function Blog() {
             <INaturalistWidget observationId={296016360}/>,
             <INaturalistWidget observationId={296016363}/>,
             <INaturalistWidget observationId={296016371}/>,
-        ]}
-        ></INaturalistGallery>
+        ]}/>
 
         <Body>
         On our way down the coast, I briefly spotted an American Dipper as we drove past the mouth of Mill Creek. We returned here in the afternoon to see if it was still there. We didn't see it at first, but as we explored the rocky beach, Francis spotted it perched up on a sandstone bluff. It then flew down to where the creek emptied into the sea, and seemed quite at home foraging only a few meters from crashing waves. Quite an odd sight!
@@ -119,6 +115,18 @@ function Blog() {
         its crest - which I definitely didn't expect to see! Later, I found out we must have been near its nest, and it was attempting
         to distract us. It certainly worked!
         </Body>
+        
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={294903328}/>,
+            <INaturalistWidget observationId={294903335}/>,
+            <INaturalistWidget observationId={294903332}/>,
+            <INaturalistWidget observationId={294903345}/>,
+            <INaturalistWidget observationId={294903284}/>,
+            <INaturalistWidget observationId={294903330}/>,
+            <INaturalistWidget observationId={294903315}/>,
+            <INaturalistWidget observationId={294903309}/>,
+            <INaturalistWidget observationId={294903310}/>,
+        ]}/>
 
         <Title>Variation in Facial Plumage of Murphy's Petrels</Title>
         <DateHeading>2025-05-11</DateHeading>
@@ -131,6 +139,16 @@ function Blog() {
         the variation in facial plumage. Most books I own show the white feathers being brightest on the chin, but the white
         feathers on some of these birds extended into the lores and even the forehead and behind the eye.
         </Body>
+
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={285371038}/>,
+            <INaturalistWidget observationId={285371002}/>,
+            <INaturalistWidget observationId={285370967}/>,
+            <INaturalistWidget observationId={285370963}/>,
+            <INaturalistWidget observationId={285370929}/>,
+            <INaturalistWidget observationId={285370879}/>,
+            <INaturalistWidget observationId={285370927}/>,
+        ]}/>
 
         <Title>Watsonville Thick-billed Kingbird</Title>
         <DateHeading>2025-03-09</DateHeading>
