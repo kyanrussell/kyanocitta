@@ -115,7 +115,7 @@ function Blog() {
         its crest - which I definitely didn't expect to see! Later, I found out we must have been near its nest, and it was attempting
         to distract us. It certainly worked!
         </Body>
-        
+
         <INaturalistGallery widgets = {[
             <INaturalistWidget observationId={294903328}/>,
             <INaturalistWidget observationId={294903335}/>,
@@ -160,6 +160,73 @@ function Blog() {
         found by Max Ferrero on March 8, 2025 on Peckham Road. Funnily enough, I had just driven on this road the previous week on
         the way to Mount Madonna. We probably cruised right past it!
         </Body>
+
+        <Title>Heart of Ventana</Title>
+        <DateHeading>2025-04-03</DateHeading>
+        <Body>
+        The Ventana Wilderness is a maze of ridges and creeks. Yet the crest of the Double Cone, the central and tallest peak of the Wilderness, remains visible from all of the other ridges. Having seen it from practically all angles, I began to wonder how I might visualize the landscape differently. I had previously been thinking of it as a series of mountains - instead, I sought to see it from the perspective of its waters.
+        </Body>
+        <Body>
+        I first found some USGS elevation data online, and charted it with matplotlib. I found a library for calculating watersheds, and applied it to produce the following chart.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/water_graph.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        I tinkered with the colors and z-levels of the contours to simplify the visual data.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/water_topo_chart.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        As a bonus, I manually shaded the different watersheds of the Big Sur (green), Little Sur (red), Carmel (blue), and Salinas (yellow) rivers, with the red lines marking the divides.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/color_watershed.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        I then loosely copied the image onto paper with a felt tip pen.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/pen.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        I scanned the image and colored the rivers.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/light_final.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        A value-swapped version.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/dark_final.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        The Pine Ridge Trail is shown in red, with peaks in pink.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/map_with_camps.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        I then wondered if different tree species could be mapped to distinct elevations and watersheds. I grabbed observation data from iNaturalist of a few different conifer species, and plotted them against the topographic map.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/tree_chart.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        Plotting the observation counts against elevation data produces the following, revealing the preferences of certain species.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/tree_line_chart.jpeg' alt="" />
+        </ImageContainer>
+        <Body>
+        Finally, I drafted a sketch of a graphic that could better illustrate the altitudinal spread of each species.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ventana_maps/tree_graph.jpeg' alt="" />
+        </ImageContainer>
+
 
       </BlogPostContainer>
   );
