@@ -145,6 +145,10 @@ function Midway() {
 	We chatted about Brian Sullivan - "Sully" - old roommates (Jon was his boss) on San Clemente island. GTTA tip: check brackish seep SE side! Time for a quick shower - so sweaty.
 	</Body>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page7_geraldine.png"></Image>
+	</ImageContainer>
+
 	<Body>
 	Random sights:
 	</Body>
@@ -166,6 +170,10 @@ function Midway() {
 	Still figuring appropriate amount of food to eat - a little over-full today.
 	</Body>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page7_noddies.png"></Image>
+	</ImageContainer>
+
 	<Body>[walked to breakfast in a trance - moonlight + birds]</Body>
 
 	<H3> 1936 </H3>
@@ -173,6 +181,10 @@ function Midway() {
 	Another day packed full of interesting things - gov shutdown announced yesterday was possibly going to make us work on Sunday, but just heard it was resolved.
 	Today we worked on sectors 39 - Parade Grounds - and 29 - inner harbor. Both had a bit of interesting terrain to spice things up - ironwoods and concrete walls + buildings, respectively.
 	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page8_green_wall.png"></Image>
+	</ImageContainer>
 	
 	<Body>
 	Today we witnessed "the green wall." A rainstorm came in quick right at the end of the count. Morgan (FWS?) told us that Midway is called Kuaihelani - "backbone of the sky" - referring
@@ -186,20 +198,33 @@ function Midway() {
 	I wonder what Elaine sees in me since we've barely met. Maybe just excited about having new faces around.
 	</Body>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page8_banded_hybrid.png"></Image>
+	</ImageContainer>
+
 
     <Heading> 2024-12-21 </Heading>
+
 	<H3> 0714 </H3>
 	
 	<Body>
 	Caren showed us the "Trispies" (TRSP). Sound like CAQU or "Mickey Mouse chuckling." Flew right over our heads - ~10 birds. Four days in?
 	Feels like a month - only just found the bathroom light switch...
 	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page9_moli.png"></Image>
+	</ImageContainer>
 	
 	<H3> 1625 </H3>
 	<Body>
 	We did sector 3 - first bit of real tricky terrain. Naupaka mazes + ironwood/hau trees. Plus real sandy burrow-ridden hills. We did super well though!!
 	First covered the flat - after lunch we did the tricky bits. Dot counting in the mazes was very satisfying - like dungeon crawling - marking off your path with lines.
 	</Body>
+
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page9_maze.png"></Image>
+	</ImageContainer>
 	
 	<H3> 1700 </H3>
 	<Body>
@@ -221,6 +246,9 @@ function Midway() {
 
 
     <Heading> 2024-12-22 </Heading>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page10_radar.png"></Image>
+	</ImageContainer>
 	<H3> 1959 </H3>
 	<Body>
 	Spent all day birding - exhausted. Pre-dawn for Trispies @ "Ave Maria" (the old church) - nothing.  Moonlit - yesterday cloudy + dark. Maybe they don't come out if it's not dark enough
@@ -238,6 +266,9 @@ function Midway() {
 		<li>17:00 Dinner</li>
 		<li>18:00 Ship's store</li>
 	</ul>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page10_rttr.png"></Image>
+	</ImageContainer>
 
     <Heading> 2024-12-23 </Heading>
 	<H3> 1959 </H3>
@@ -245,6 +276,10 @@ function Midway() {
 	Another packed day. Wasn't very hungry in the morning - delighted to find congee. We counted sectors 12 + 16 - funny b/c we were just there yesterday (Radar Hill).
 	Bob was very happy with me (we did some naupaka "strike teams") + said I have a natural affinity for it. I was clearing out a burrow I had just collapsed when he said that,
 	so I asked - counting or collapsing? "Not mutually exclusive."
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page11_snipe.png"></Image>
+	</ImageContainer>
+
 	</Body>
 	<H3> 2035 </H3>
 	<Body>
@@ -252,6 +287,9 @@ function Midway() {
 	While I was waiting 4 cockroaches crawled on my legs. On the way back I saw my first centipede - seemed a foot long but was probably more like 8in. Also a ~4in black slug.
 	I also stopped at the generators to see the BOPE "dance party" (per Anna the biologist). Apparently they like the vibes, so there are just BOPEs everywhere around the generators.
 	</Body>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page11_bope.png"></Image>
+	</ImageContainer>
 
 	<Heading> 2024-12-24 </Heading>
 	<H3> 1709 </H3>
@@ -260,6 +298,9 @@ function Midway() {
 	but we covered a LOT! I stopped at Frigate Roost on my way home since it was close by. We were worried about the paint lasting until the 26th, and Caren liked my suggestion of using
 	a Gaia track as a safety measure.
 	</Body>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page12_brno.png"></Image>
+	</ImageContainer>
 
 	<Heading> 2024-12-25 </Heading>
 	<H3> 0106 </H3>
@@ -267,6 +308,9 @@ function Midway() {
 	Back from White Elephant after-party. Karaoke on the porch. Raining. Moli.
 	</Body>
 	<H3> 1044 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page12_moli.png"></Image>
+	</ImageContainer>
 	<Body>
 	Called family then spent the morning seawatching. Only stand out was a single distant BOPE.
 	</Body>
