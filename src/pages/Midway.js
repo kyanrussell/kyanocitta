@@ -141,7 +141,7 @@ function Midway() {
 	It's late and I should sleep. A lot happened today so let's go through it quick - first full day of counting - sector 48. We started with a practice round w/ dot verification.
 	We performed satisfactorily so we continued w/ the normal count. Bob + Caren (leaders) have a hilarious worried mom/ effusive dad dynamic.
 	Working near Bob is good for the ego  - lots of praise. Constant criticism (constructive) from Caren. I decided to stick to Caren as much as possible - gratified to hear fewer comments.
-	Compliments at the end. As a reward ( we really got much more comfortable) - they showed us the STAL nest. Geraldine + 1 juv. nearby. Jon gave talk in evening.
+	Compliments at the end. As a reward (we really got much more comfortable) - they showed us the STAL nest. Geraldine + 1 juv. nearby. Jon gave talk in evening.
 	We chatted about Brian Sullivan - "Sully" - old roommates (Jon was his boss) on San Clemente island. GTTA tip: check brackish seep SE side! Time for a quick shower - so sweaty.
 	</Body>
 
@@ -276,11 +276,11 @@ function Midway() {
 	Another packed day. Wasn't very hungry in the morning - delighted to find congee. We counted sectors 12 + 16 - funny b/c we were just there yesterday (Radar Hill).
 	Bob was very happy with me (we did some naupaka "strike teams") + said I have a natural affinity for it. I was clearing out a burrow I had just collapsed when he said that,
 	so I asked - counting or collapsing? "Not mutually exclusive."
+	</Body>
 	<ImageContainer>
 		<Image src="/kyanocitta/images/midway/page11_snipe.png"></Image>
 	</ImageContainer>
 
-	</Body>
 	<H3> 2035 </H3>
 	<Body>
 	Got back from the office (wifi). Linda has been at the vet ER with Goose for the last 3-4 hours for dizziness. Finally heard back that it's an inner ear infection. I feel relieved for now.
@@ -314,7 +314,13 @@ function Midway() {
 	<Body>
 	Called family then spent the morning seawatching. Only stand out was a single distant BOPE.
 	</Body>
+	<Body>
+	Interesting sight today: Dan + Anna were flying the drone and it was being mobbed by, of all things, a flock of kolea and several BTCUs. Weird...
+	</Body>
 	<H3> 2030 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page13_whte.png"></Image>
+	</ImageContainer>
 	<Body>
 	Wingspan and Christmas leftovers at Nikki's with Ashley, Lauren, Simone. Nikki made a really good orange cardamom infused vodka.
 	</Body>
@@ -328,14 +334,23 @@ function Midway() {
 	just landed on the beach and walked in through the naupaka. We went over and found his enormous footprints. Amazing! Tomorrow we are headed to Eastern Island. Seems like the entire island is heading over.
 	We packed sandwiches at Clipper after dinner. PB+J and roast beef (2 sandwiches, not one...).
 	</Body>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page13_phoebo.png"></Image>
+	</ImageContainer>
 
 	<Heading> 2024-12-27 </Heading>
 	<H3> 1905 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page14_mabo.png"></Image>
+	</ImageContainer>
 	<Body>
 	Very long day as predicted. We finished Sector 8 on Eastern and got most of 9 done with just a sliver left. Hopefully we can go back on Sunday to bird. Saw a MABO chick all on its own.
 	One hybrid albatross. One GRFR w/ armpit tabs, plus a young bird in a naupaka. Tried some pickleweed leaves on Caren's suggestion - surprisingly delicious (and salty). The front of the boat
 	we took folds out for wet landings - fun. An old sentry gun greeted us at the dock. Also found the WTTR chick Nikki told us about (in a tree cavity near her house).
 	</Body>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page14_wttr.png"></Image>
+	</ImageContainer>
 
 	<Heading> 2024-12-28 </Heading>
 	<H3> 2050 </H3>
@@ -347,12 +362,15 @@ function Midway() {
 
 	<Heading> 2024-12-29 </Heading>
 	<H3> 2013 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page15_pueo.png"></Image>
+	</ImageContainer>
 	<Body>
 	Forgot to mention we checked out the BOPE dance party last night. There were perhaps 3x as many as last time. Two flew at my headlamp and landed on me - one perched on my shoulder for a few minutes.
 	So cute. Today was CBC day. As was previously hinted, I was assigned catchment by Jon. Lisa and I were successful in photographing the COSN! Lisa walked around while I sat with the sun at my back with camera ready.
 	We then walked out to Frigate Point with Jon, Nikki, Ken. Beautiful "albatross highway" - constant stream along the beach. We then went to Eastern Island after brunch. Dan + Anna saw a first-cycle gull
 	at the spit on Friday so that was on everyone's minds. We saw a pair of RTTRs displaying (also a pair selecting a nest site right outside Clipper House during lunch!). We saw a flock of Sanderlings - Hunakai - fly by
-	the beach. On our way to the seep, we startled a Pueo! SEOW was in the naupaka. Flew off and movved by WHTE. Such a cool find! Saw some BRBO imms. being fed, a MABO chick, RFBO (dark morphs). Lots of GRFRs.
+	the beach. On our way to the seep, we startled a Pueo! SEOW was in the naupaka. Flew off and mobbed by WHTE. Such a cool find! Saw some BRBO imms. being fed, a MABO chick, RFBO (dark morphs). Lots of GRFRs.
 	Later we heard that the gull was seen on North Beach Sand island...
 	</Body>
 
@@ -364,6 +382,9 @@ function Midway() {
 	the only species that nests in Naupaka; WTTR are basically reliant on the ironwoods here.
 	</Body>
 
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page16_bfal.png"></Image>
+	</ImageContainer>
 	<Body>
 	"A large black bird the size of a turkey, found mostly on the islands of Nihoa and Kaula. A kind of fishing eagle."
 	</Body>
@@ -373,6 +394,9 @@ function Midway() {
 
 	<Heading> 2024-12-31 </Heading>
 	<H3> 1750 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page17_moli.png"></Image>
+	</ImageContainer>
 	<Body>
 	Very long day on Eastern. The leaders moved Ken onto the other team and I think everyone on our team was happier for it. He's difficult to work with - don't want to add much more than that. We finished off the sliver of
 	Sector 9 (ended up taking an hour - larger than expected). We then worked on Sector 2. We tackled it along with the other team from opposite sides. I was drawing the line when we met. We decided to make a mega-team to
@@ -393,35 +417,131 @@ function Midway() {
 	the lukewarm hot tub that followed. Resolutions - do what I want - on rec of Nikki/Ashley. Woke up to rainbow being eaten by yellow cloud on dark blue sky. Madeleines for breakfast. Snyder puts me in thoughtful mood. Day off -
 	hope to take a break from birding/photography and paint instead.
 	</Body>
-
 	<H3> 1530 </H3>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page17_iwa.png"></Image>
+	</ImageContainer>
 
-	<H3> 1700 </H3>
+	<H3> 1700 </H3>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page18_bope_mate.png"></Image>
+	</ImageContainer>
+
 	<Body>
 	Hangover gradually went away, thanks to Ashley's ibuprofen. Called family in the afternoon. Snuck in a seawatch off SE point looking south - strong southerlies today. Spotted WTSH - nice! Long-tailed, easy flight. Writing at
 	Clipper House with Thai tea + canaries - waiting for others. Took a walk to Frigate Roost. WHTEs kept flying in front of my scope while I was trying to seawatch.
 	</Body>
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page18_tubenoses.png"></Image>
+	</ImageContainer>
 
 	<Heading> 2025-01-02 </Heading>
 	<H3> 1638 </H3>
 	<Body>
 	Rain off and on all day today. Counted Sector 34 (and completed it!). Pretty sad - lots of dead birds (~20?). The mice in this specific area have begun biting the moli for food (not sure if eating flesh or drinking blood - or both).
 	I'm not sure what kills the birds - infection, blood loss, etc? In any case there was an unsuccessful mouse eradication project (last year?). This is the first case since then. The team was pretty rattled, especially Bob + Caren.
-	But we got the sector done.  I'm looking forward to tonight's presentations re: Rwenzori + Antarctic as topics by Caroline, Joe, Carrie. 
-	</Body>
+	But we got the sector done.  I'm looking forward to tonight's presentations re: Rwenzori + Antarctic as topics by Caroline, Joe, Carrie.
+	</Body>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page18_bope_walk.png"></Image>
+	</ImageContainer>
 
-	<Heading> 2025-01-03 </Heading>
+
+	<Heading> 2025-01-03 </Heading>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page19_noddy.png"></Image>
+	</ImageContainer>
+
 	<H3> 1944 </H3>
 	<Body>
 	Teams were switched around again today. We completed Sectors 34, 40, and worked on 37. All near the inner harbor - "the armpit of the island" per Louise. Generator + fuel tanks loud + smelly.	Simone was pretty sure she saw a PEFA
-	chase some shorebirds today near Clipper House. I'm inclined to trust her completely dsince she's a falconer... We spent all our breaks looking for it unsuccessfully. Looking forward to seeing it...!
-	</Body>
+	chase some shorebirds today near Clipper House. I'm inclined to trust her completely since she's a falconer... We spent all our breaks looking for it unsuccessfully. Looking forward to seeing it...!
+	</Body>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page19_whte.png"></Image>
+	</ImageContainer>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page19_bfal.png"></Image>
+	</ImageContainer>
 
-	<Heading> 2025-01-04 </Heading>
+
+
+	<Heading> 2025-01-04 </Heading>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page20_moli.png"></Image>
+	</ImageContainer>
+	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page20_stump.png"></Image>
+	</ImageContainer>
+
 	<H3> 1650 </H3>
 	<Body>
-	Coutned Sectors 37, 42, + 50. 37 + 42 complete. Saw a silvery moli and a patchy one. There were lots of ka'upu in 42 nowhere near the shore - I was told that that section used to be the shoreline before the landfill was added to expand
+	Counted Sectors 37, 42, + 50. 37 + 42 complete. Saw a silvery moli and a patchy one. There were lots of ka'upu in 42 nowhere near the shore - I was told that that section used to be the shoreline before the landfill was added to expand
 	the runway. Racial memory - site fidelity.
+	</Body>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page20_bfal.png"></Image>
+	</ImageContainer>
+
+
+	<Heading> 2025-01-05 </Heading>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page21_skull.png"></Image>
+	</ImageContainer>
+
+	<H3> 1934 </H3>
+	<Body>
+	Fire truck rides at 0800. Chris told us a funny story about how the airfield lights are remortely controllable by pilots, and that it took him a while to realize why the lights randomly turned on at night - bored pilots overhead. Black noddy photography session post-brunch. These birds have black - not orange - feet, unlike what my field guide promises for the Hawaiian subspecies. Necropsy of moli and nunulu after - chicken for dinner. Just double-checked Howell + Zufelt and indeed we have Pacific BLNO, not Hawaiian BLNO!
+	</Body>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page21_neuston.png"></Image>
+	</ImageContainer>
+
+
+
+	<Heading> 2025-01-06 </Heading>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page22_bope.png"></Image>
+	</ImageContainer>
+
+	<H3> 1233 </H3>
+	<Body>
+	We finished Sectors 21 + 23 today in horrible weather. The leaders gave us the rest of the day off due to wind - the remaining sectors all have too many trees. Louise paid me a compliment and said "you're a very patient lad keeping your eye on the ball - I am aware" - referring to the difficulties we've had working with Ken. I told her I appreciate it - which I do b/c it really  helps to know that everyone is on the same page and just trying to get through it since we're stuck with him.
+	</Body>
+
+	<Heading> 2025-01-07 </Heading>
+	<H3> 1652 </H3>
+	<Body>
+	We had the morning off due to continued high winds, which gradually died down in the afternoon. Simone's 40th birthday is today, and she found a rolling pin glass ball! I slept in this morning. After lunch we piled into the golf carts to count Sector 1. While doing so we spotted a gull attending a carcass, which turned out to be a beaked whale sp.! We radioed in the whale and all the biologists showed up! Excited to find out what species. Linda's first day of partial hospitalization was today. She said it went okay but as she feared it doesn't seem ot be what she needs. I hope she gets what she needs.
+	</Body>	
+	<ImageContainer>
+		<Image src="/kyanocitta/images/midway/page22_whale.png"></Image>
+	</ImageContainer>
+
+
+	<Heading> 2025-01-08 </Heading>
+	<H3> 1916 </H3>
+	<Body>
+	Nonstop walking on Eastern Island today. Chafing. We "completed" Sectors 4 + 5, with a slice of 10. "Completed" because I was on beach duty, but ran into several monk seals. We'll have to come back on Friday to finish it up. Big honu on the beach when we landed - barely lifted an eye. Lots of 'iwa too. We're off to bird the Golden Bachelorette at Midway House now...
+	</Body>
+
+	<Heading> 2025-01-09 </Heading>
+	<H3> 2156 </H3>
+	<Body>
+	Ready for bed. We completed Sector 24. Mixed news from Linda re: Goose at lunch: "Overall fine" + "Vet is extremely concerned." It got to me during the afternoon count and I cried. They let me leave early. Ashley was very helpful. Talked to Linda some more and it looks hopeful. I talked to Morgan about swapping a plane seat and that seems to be an option. Beautiful weather + sunset. Everyone is super nice. Very lucky.
+	</Body>
+
+	<Heading> 2025-01-10 </Heading>
+	<H3> 2058 </H3>
+	<Body>
+	TRSP calls on the way to breakfast. First order of business on Eastern - complete Sector 4. Picked up ~120 birds - monk seals shuffled around. We then completed Sectors 1 + Spit -> Eastern is done! Too bad because I liked going there.. We saw another gull + got and ID from Marshall Iliff on the 12/31 bird - Kamchatka gull! Exciting stuff, though Jon's not convinced. Bob was pretty happy about securing 5th. We also found a pufferfish on the beach - about the size of a football.
+	</Body>
+
+	<Heading> 2025-01-11 </Heading>
+	<H3> 2132 </H3>
+	<Body>
+	Counted Sectors 2 + 50 today. 50 was just the tiny sliver bordering 2. 2 was a bit of a slog with the widest naupaka mazes yet, but we got it done. Saw what I think was an old RTTR chick on a nest (still had some gray flecking on the nape). Gave my Pinos presentation - went well.
 	</Body>
 
 
