@@ -150,17 +150,6 @@ function Blog() {
             <INaturalistWidget observationId={285370927}/>,
         ]}/>
 
-        <Title>Watsonville Thick-billed Kingbird</Title>
-        <DateHeading>2025-03-09</DateHeading>
-        <INaturalistWidget observationId={264731238}></INaturalistWidget>
-        <Body>
-        Last night I did a double-take while looking at recent iNaturalist observations for the Central Coast. A kingbird with a
-        large bill.. Something that I'd never seen in person before but spent hours studying and searching for in Arizona -
-        specifically last May (2024) when we visited the Paton Center - a Thick-billed kingbird! I checked eBird and there it was -
-        found by Max Ferrero on March 8, 2025 on Peckham Road. Funnily enough, I had just driven on this road the previous week on
-        the way to Mount Madonna. We probably cruised right past it!
-        </Body>
-
         <Title>Heart of Ventana</Title>
         <DateHeading>2025-04-03</DateHeading>
         <Body>
@@ -226,6 +215,17 @@ function Blog() {
         <ImageContainer>
           <Image src='/kyanocitta/images/ventana_maps/tree_graph.jpeg' alt="" />
         </ImageContainer>
+
+        <Title>Watsonville Thick-billed Kingbird</Title>
+        <DateHeading>2025-03-09</DateHeading>
+        <INaturalistWidget observationId={264731238}></INaturalistWidget>
+        <Body>
+        Last night I did a double-take while looking at recent iNaturalist observations for the Central Coast. A kingbird with a
+        large bill.. Something that I'd never seen in person before but spent hours studying and searching for in Arizona -
+        specifically last May (2024) when we visited the Paton Center - a Thick-billed kingbird! I checked eBird and there it was -
+        found by Max Ferrero on March 8, 2025 on Peckham Road. Funnily enough, I had just driven on this road the previous week on
+        the way to Mount Madonna. We probably cruised right past it!
+        </Body>
 
 
       </BlogPostContainer>
