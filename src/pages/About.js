@@ -1,4 +1,5 @@
 import { BlogPostContainer, Title, Body} from 'components/Styles'
+import { iNaturalistGallery, INaturalistWidget, INaturalistUserObservations } from 'components/iNaturalist';
 
 function About() {
   return (
@@ -16,6 +17,7 @@ function About() {
 	    <Body>
 	    	Questions or feedback can be directed to <a href="mailto:kyansrussell@gmail.com">kyansrussell@gmail.com</a>.
 	    </Body>
+	    <INaturalistUserObservations user_name={'kyanocitta'}/>
     </BlogPostContainer>
   );
 }

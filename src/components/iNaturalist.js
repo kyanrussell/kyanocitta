@@ -6,7 +6,7 @@ const ComparisonGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-template-rows: masonry;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.53rem;
   max-width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
@@ -54,6 +54,47 @@ export const Caption = styled.div`
   }
 `;
 
+export const INaturalistUserObservations = ({ user_name }) => {
+  console.log(user_name);
+  const [imageIds, setImageIds] = useState(null);
+  const observationUrl = `https://api.inaturalist.org/v1/observations?user_id=${user_name}`;
+
+  useEffect(() => {
+    const fetchObservation = async () => {
+      try {
+        const response = await fetch(`https://api.inaturalist.org/v1/observations?user_id=${user_name}`);
+        const data = await response.json();
+        
+        if (data.results.length > 0) {
+          setImageIds( 
+            data.results.map(
+              (result) => (
+                result.id
+              )
+            ).slice(0, 10)
+          );
+        }
+      } catch (error) {
+        console.error("Error fetching iNaturalist data:", error);
+      }
+    };
+
+    fetchObservation();
+  }, [user_name]);
+
+  if (!imageIds) return <p>Loading...</p>;
+
+  return (
+      <INaturalistGallery
+          widgets={imageIds.map((id) => (
+              <React.Fragment key={id}>
+                  <INaturalistWidget observationId={id} />
+              </React.Fragment>
+          ))}
+      ></INaturalistGallery>
+  );
+};
+
 export const INaturalistGallery = ({ widgets }) => {
   return (
     <ComparisonGrid>
@@ -62,7 +103,7 @@ export const INaturalistGallery = ({ widgets }) => {
   );
 };
 
-const INaturalistWidget = ({ observationId }) => {
+export const INaturalistWidget = ({ observationId }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [taxaName, setTaxaName] = useState(null);
   const observationUrl = `https://www.inaturalist.org/observations/${observationId}`;
