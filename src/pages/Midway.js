@@ -378,7 +378,7 @@ function Midway() {
 	<H3> 1913 </H3>
 	<Body>
 	Everyone was grouchy today, maybe mostly me. We were supposed to go to Eastern and just as we were loading our bags onto the boat we were told the counters are going tomorrow instead. Not sure why. We counted Sector 7
-	and a bit of 50. 7 was full of deep burrows = we set a record for crashes. We ate lunch on the beach since we were all packed for Eastern. Very relaxing - and we needed it. Simone found a RTRT chick - Jon said they're
+	and a bit of 50. 7 was full of deep burrows - we set a record for crashes. We ate lunch on the beach since we were all packed for Eastern. Very relaxing - and we needed it. Simone found a RTTR chick - Jon said they're
 	the only species that nests in Naupaka; WTTR are basically reliant on the ironwoods here.
 	</Body>
 
@@ -400,7 +400,7 @@ function Midway() {
 	<Body>
 	Very long day on Eastern. The leaders moved Ken onto the other team and I think everyone on our team was happier for it. He's difficult to work with - don't want to add much more than that. We finished off the sliver of
 	Sector 9 (ended up taking an hour - larger than expected). We then worked on Sector 2. We tackled it along with the other team from opposite sides. I was drawing the line when we met. We decided to make a mega-team to
-	finish it off. We ended up in a tricky situation where we were following two lines I drew. The lines were pretty squirrelly and people got really foncused. Luckily I had the big picture in my head and tried to stay confident
+	finish it off. We ended up in a tricky situation where we were following two lines I drew. The lines were pretty squirrelly and people got really confused. Luckily I had the big picture in my head and tried to stay confident
 	- and it worked out. Everyone congratulated me for keeping things under control. Greg said I make a natural count leader.
 	</Body>
 
@@ -492,7 +492,7 @@ function Midway() {
 
 	<H3> 1934 </H3>
 	<Body>
-	Fire truck rides at 0800. Chris told us a funny story about how the airfield lights are remortely controllable by pilots, and that it took him a while to realize why the lights randomly turned on at night - bored pilots overhead. Black noddy photography session post-brunch. These birds have black - not orange - feet, unlike what my field guide promises for the Hawaiian subspecies. Necropsy of moli and nunulu after - chicken for dinner. Just double-checked Howell + Zufelt and indeed we have Pacific BLNO, not Hawaiian BLNO!
+	Fire truck rides at 0800. Chris told us a funny story about how the airfield lights are remotely controllable by pilots, and that it took him a while to realize why the lights randomly turned on at night - bored pilots overhead. Black noddy photography session post-brunch. These birds have black - not orange - feet, unlike what my field guide promises for the Hawaiian subspecies. Necropsy of moli and nunulu after - chicken for dinner. Just double-checked Howell + Zufelt and indeed we have Pacific BLNO, not Hawaiian BLNO!
 	</Body>	
 	<ImageContainer>
 		<Image src="/kyanocitta/images/midway/page21_neuston.png"></Image>
@@ -513,7 +513,7 @@ function Midway() {
 	<Heading> 2025-01-07 </Heading>
 	<H3> 1652 </H3>
 	<Body>
-	We had the morning off due to continued high winds, which gradually died down in the afternoon. Simone's 40th birthday is today, and she found a rolling pin glass ball! I slept in this morning. After lunch we piled into the golf carts to count Sector 1. While doing so we spotted a gull attending a carcass, which turned out to be a beaked whale sp.! We radioed in the whale and all the biologists showed up! Excited to find out what species. Linda's first day of partial hospitalization was today. She said it went okay but as she feared it doesn't seem ot be what she needs. I hope she gets what she needs.
+	We had the morning off due to continued high winds, which gradually died down in the afternoon. Simone's 40th birthday is today, and she found a rolling pin glass ball! I slept in this morning. After lunch we piled into the golf carts to count Sector 1. While doing so we spotted a gull attending a carcass, which turned out to be a beaked whale sp.! We radioed in the whale and all the biologists showed up! Excited to find out what species. Linda's first day of partial hospitalization was today. She said it went okay but as she feared it doesn't seem to be what she needs. I hope she gets what she needs.
 	</Body>	
 	<ImageContainer>
 		<Image src="/kyanocitta/images/midway/page22_whale.png"></Image>
