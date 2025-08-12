@@ -21,6 +21,34 @@ function Blog() {
   return (
       <BlogPostContainer>
 
+
+        <Title>Shorebirding in Early August</Title>
+        <DateHeading>2025-08-09</DateHeading>
+        <Body>
+        A "Shorebird Big Day" was something Bill and I had idly talked about before, but today we haphazardly decided to put it to the test. We focused our efforts on four habitats: inland ponds, Elkhorn Slough, the Pajaro River mouth, and the rocky shores of the Peninsula. At the ponds, we noted quite a few juvenile birds and viewed our only Wilson's phalaropes, Long-billed dowitcher, and Spotted sandpiper. As we left, we ran into Steve Tucker and joked that we would see him soon when he found something rare that we missed. Of course, shortly thereafter he reported both a Solitary sandpiper and Semipalmated sandpiper.
+        </Body>
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={305256292}/>,
+            <INaturalistWidget observationId={305256285}/>,
+            <INaturalistWidget observationId={305256282}/>,
+        ]}/>
+        <Body>
+        By that point, we were enjoying a bounty of shorebirds at Jetty Road, including a migrant Ruddy turnstone, some very bright Short-billed dowitchers, and Black-bellied plovers. Three Black skimmers wowed us with a display of synchronized feeding flights. We then made our way to Kirby Park at the far end of the slough where we saw several Lesser yellowlegs, plus some Least terns! At Zmudowski Beach, we picked up Snowy plovers and American avocets. To find the remaining rockpipers, we made our way to the Peninsula, where we viewed Black oystercatchers, Black turnstones, Wandering Tattlers, Surfbirds, plus the continuing Harlequin drake.
+        </Body>
+
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={305256277}/>,
+            <INaturalistWidget observationId={305256281}/>,
+            <INaturalistWidget observationId={305256270}/>,
+            <INaturalistWidget observationId={305256263}/>,
+            <INaturalistWidget observationId={305256239}/>,
+            <INaturalistWidget observationId={305256269}/>,            
+        ]}/>
+
+        <Body>
+        The remaining species were seen at multiple locations each: Least sandpiper, Western sandpiper, Semipalmated plover, Sanderling, Greater yellowlegs, Whimbrel, Willet, Marbled godwit, Black-necked stilt, Long-billed curlew, and Killdeer. This adds up to a grand total of twenty-five species. There were two somewhat expected species that we did not observe: Red knot and Red phalarope. Later in the month, Dunlin, Baird's sandpiper, Pectoral sandpiper, and Pacific golden-plover should be expected as well. In any case, 25 seems to be a good baseline number to compare against!
+        </Body>
+
         <Title>Sargent's Cypress on the South Coast</Title>
         <DateHeading>2025-07-07</DateHeading>
         <Body>
