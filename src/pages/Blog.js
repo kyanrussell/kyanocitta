@@ -21,6 +21,70 @@ function Blog() {
   return (
       <BlogPostContainer>
 
+        <Title>Leucistic Western Sandpiper</Title>
+        <DateHeading>2025-08-28</DateHeading>
+        <INaturalistWidget observationId={309984395}></INaturalistWidget>
+        <Body>
+        This stunning shorebird appears to be a Western Sandpiper by structure. I was surprised to see the orange bare parts combined with the black eye.
+        </Body>
+
+        <Title>Goose-beaked Whales off Point Lobos</Title>
+        <DateHeading>2025-08-24</DateHeading>
+        <EBirdVideo mediaUrl='https://macaulaylibrary.org/asset/640825684'></EBirdVideo>
+        <Body>
+        The following is a trip report I wrote for a Monterey Seabirds pelagic trip in late August.
+        </Body>
+        <Body>
+        
+        The second Monterey Seabirds trip of the fall 2025 season was led and spotted by Tom and Beth Hamel, Catherine Webb, Fred Hochstaedter, Dane McDermott, Mark Kudrav, and Kyan Russell.
+        </Body>
+        <Body>
+
+        We had beautiful weather all day, with light winds and swell coming from the west. It was mostly overcast but clear visibility, though the sun eventually came out in the afternoon.
+        </Body>
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={309077290}/>,
+            <INaturalistWidget observationId={309077268}/>,
+            <INaturalistWidget observationId={309077269}/>,
+        ]}/>
+        <Body>
+
+        Given the conditions, we decided to head south. We soon encountered large rafts of SOOTY SHEARWATERS with small numbers of PINK-FOOTED SHEARWATERS mixed in. Searching eventually rewarded us with a few BULLER'S SHEARWATERS, an exciting and beautiful lifer for some on board! A pair of SABINE'S GULLS were also spotted sitting on the water, and allowed close views.
+
+        </Body>
+        <Body>
+        Catherine Webb called out a passerine that turned out to be a TOWNSEND'S WARBLER! This weary migrant seemed uncertain whether to land on the boat - but it eventually headed for shore without stopping.
+
+        </Body>
+        <Body>
+        Jaeger numbers were up from the previous trip, with a total of eight individuals. Two were adult POMARINE JAEGERS with full spoons, and two PARASITIC JAEGERS showed off their aerial skills in chasing various tern species. As we watched the dogfight, our attention was quickly shifted as someone called out a pair of small whales.
+
+        </Body>
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={309077270}/>,
+            <INaturalistWidget observationId={309077307}/>,
+            <INaturalistWidget observationId={309077306}/>,
+        ]}/>
+        <Body>
+        These whales ended up being the best bird of the trip - a pair of GOOSE-BEAKED (CUVIER'S) WHALES! These small cetaceans offered amazing views as they sat breathing at the surface for what felt like several minutes. We were able to get close views of their yellowish heads, and a passenger even got some amazing digiscoped video footage! What was most surprising about this rare sighting was how close to shore we were. After several breaths, the pair eventually dove. While waiting for them to resurface, an ASHY STORM-PETREL flew straight at us and made a close pass.
+
+        </Body>
+        <Body>
+        We then got word of a pod of ORCAS being spotted in the bay, and so we decided to head in that direction. Dane McDermott got a fleeting look at this group, but we were not able to get closer views after they dove.
+
+        </Body>
+        <INaturalistGallery widgets = {[
+            <INaturalistWidget observationId={309077278}/>,
+            <INaturalistWidget observationId={309077279}/>,
+            <INaturalistWidget observationId={309077308}/>,
+        ]}/>
+        <Body>
+        Non-avian sightings also included a couple FUR SEALS, BLUE SHARKS, MOLA MOLA, and HUMPBACK WHALES. We also had good views of some unusually slow-moving DALL'S PORPOISES - typically this porpoise is only identifiable by the distinct spray it makes as it sprints through the water.
+
+        </Body>
+        <Body>
+        All in all another beautiful trip in amazing conditions!
+        </Body>
 
         <Title>Shorebirding in Early August</Title>
         <DateHeading>2025-08-09</DateHeading>
