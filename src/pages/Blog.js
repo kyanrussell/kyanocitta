@@ -21,6 +21,34 @@ function Blog() {
   return (
       <BlogPostContainer>
 
+        <Title>Identifying Rufous vs Allen's Hummingbirds in California</Title>
+        <DateHeading>2026-02-27</DateHeading>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ruhu_vs_anhu/page1.jpg' alt="" />
+        </ImageContainer>
+        <Body>
+        A green and orange hummingbird zips by with the distinctive sound of a tiny chainsaw. But what species is it? Only adult male Rufous Hummingbirds have fully orange backs. But some Rufous, and all Allen's, have green on their backs!
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ruhu_vs_anhu/page2.jpg' alt="" />
+        </ImageContainer>
+        <Body>
+        It it possible to identify these species by the shape of their tail feathers! R5 is thinner and pointiner on Allen's, while R2 on Rufous has a notched or concave tip. But unless you are lucky with a camera, this feature is pretty much impossible to observe...
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ruhu_vs_anhu/page3.jpg' alt="" />
+        </ImageContainer>
+                <Body>
+        Luckily, differences in breeding distribution can help you make an educated guess depending on location and time of year. In Monterey County, Allen's arrive and depart earlier, while Rufous is missing in June and July. However, most immature or female birds can not be identified.
+        </Body>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ruhu_vs_anhu/page4.jpg' alt="" />
+        </ImageContainer>
+        <ImageContainer>
+          <Image src='/kyanocitta/images/ruhu_vs_anhu/page5.jpg' alt="" />
+        </ImageContainer>
+
+
         <Title>Leucistic Western Sandpiper</Title>
         <DateHeading>2025-08-28</DateHeading>
         <INaturalistWidget observationId={309984395}></INaturalistWidget>
