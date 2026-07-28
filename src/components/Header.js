@@ -157,6 +157,7 @@ const Header = () => {
             <DropButton>More ▼</DropButton>
             <DropdownContent>
               <li><Link to="/about"> About </Link></li>
+              <li><Link to="/ebird-geoguessr"> eBird GeoGuessr </Link></li>
             </DropdownContent>
           </DropdownWrapper>
         </NavList>

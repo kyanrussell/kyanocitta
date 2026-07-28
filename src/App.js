@@ -16,6 +16,7 @@ import Guide from 'pages/seawatch/Guide';
 import CompareSpecies from 'pages/seawatch/ComparePage';
 import Calendar from 'pages/seawatch/Calendar';
 import Highlights from 'pages/seawatch/HallOfFame';
+import EBirdGeoGuessr from 'pages/EBirdGeoGuessr';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/seawatch/compare" element={<CompareSpecies />} />
         <Route path="/seawatch/calendar" element={<Calendar />} />
         <Route path="/seawatch/highlights" element={<Highlights />} />
+        <Route path="/ebird-geoguessr" element={<EBirdGeoGuessr />} />
       </Routes>
     </div>
   );
