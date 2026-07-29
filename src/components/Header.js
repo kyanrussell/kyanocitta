@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useHeader } from "../HeaderContext";
 
 const gitSha = process.env.REACT_APP_GIT_SHA || "unknown";
 
@@ -107,16 +108,18 @@ const DropdownWrapper = styled.div`
 `;
 
 const Header = () => {
+  const { collapsed } = useHeader();
   return (
     <HeaderContainer>
-      {/* Banner Image */}
-      <Banner>
-        <BannerImage src="https://inaturalist-open-data.s3.amazonaws.com/photos/429421290/original.jpeg" alt="Banner" />
-        <BannerTitle>
-          <Logo src="/kyanocitta/images/stja_round.png" alt="Logo" />
-          kyanocitta
-        </BannerTitle>
-      </Banner>
+      {!collapsed && (
+        <Banner>
+          <BannerImage src="https://inaturalist-open-data.s3.amazonaws.com/photos/429421290/original.jpeg" alt="Banner" />
+          <BannerTitle>
+            <Logo src="/kyanocitta/images/stja_round.png" alt="Logo" />
+            kyanocitta
+          </BannerTitle>
+        </Banner>
+      )}
 
       {/* Navigation Bar */}
       <Nav>
