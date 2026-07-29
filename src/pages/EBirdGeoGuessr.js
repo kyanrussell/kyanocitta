@@ -36,21 +36,26 @@ const hotspotCache = {};
 
 async function getRegionHotspots(region) {
   if (hotspotCache[region]) return hotspotCache[region];
-  // Store the promise immediately to prevent duplicate concurrent fetches
-  const promise = queuedFetch(
-    `https://api.ebird.org/v2/ref/hotspot/${region}?fmt=json`,
-    { headers: { "X-eBirdApiToken": ebirdKey } }
-  ).then(async (r) => {
-    if (r.status === 429 || !r.ok) {
-      delete hotspotCache[region]; // clear so next call retries
-      return [];
+  const promise = (async () => {
+    while (true) {
+      const r = await queuedFetch(
+        `https://api.ebird.org/v2/ref/hotspot/${region}?fmt=json`,
+        { headers: { "X-eBirdApiToken": ebirdKey } }
+      );
+      if (r.status === 429) {
+        console.log(`[eBird] hotspot/${region} rate limited, retrying...`);
+        continue;
+      }
+      if (!r.ok) { hotspotCache[region] = []; return []; }
+      const spots = await r.json();
+      const filtered = spots.filter((h) => h.numChecklistsAllTime >= 50 && h.numSpeciesAllTime >= 20);
+      // keep a random sample — no need to hold thousands in memory
+      const sample = filtered.sort(() => Math.random() - 0.5).slice(0, 100);
+      hotspotCache[region] = sample;
+      console.log(`[eBird] cached ${sample.length}/${filtered.length} hotspots for ${region}`);
+      return sample;
     }
-    const spots = await r.json();
-    const filtered = spots.filter((h) => h.numChecklistsAllTime >= 50 && h.numSpeciesAllTime >= 20);
-    hotspotCache[region] = filtered; // replace promise with resolved array
-    console.log(`[eBird] cached ${filtered.length} hotspots for ${region}`);
-    return filtered;
-  }).catch(() => { delete hotspotCache[region]; return []; });
+  })();
   hotspotCache[region] = promise;
   return promise;
 }
@@ -111,18 +116,22 @@ const seenSubIds = new Set();
 
 // Serialize all eBird requests — one in flight at a time with a global backoff
 let requestQueue = Promise.resolve();
-let globalDelay = 1500;
+let globalDelay = 500;
+let abortController = new AbortController();
 
 function queuedFetch(url, opts) {
-  const p = requestQueue.then(() => fetch(url, opts).then((r) => {
-    if (r.status === 429) {
-      globalDelay = Math.min(globalDelay * 2, 30000);
-      console.log(`[eBird] queue backing off to ${globalDelay}ms`);
-    } else {
-      globalDelay = Math.max(1500, globalDelay * 0.9);
-    }
-    return r;
-  }));
+  const p = requestQueue.then(() => {
+    const signal = abortController.signal;
+    return fetch(url, { ...opts, signal }).then((r) => {
+      if (r.status === 429) {
+        globalDelay = Math.min(globalDelay * 1.5, 5000);
+        console.log(`[eBird] queue backing off to ${globalDelay}ms`);
+      } else {
+        globalDelay = Math.max(500, globalDelay * 0.9);
+      }
+      return r;
+    });
+  });
   requestQueue = p.then(
     () => new Promise((res) => setTimeout(res, globalDelay)),
     () => new Promise((res) => setTimeout(res, globalDelay))
@@ -130,27 +139,32 @@ function queuedFetch(url, opts) {
   return p;
 }
 
-// Fetch full taxonomy once and cache it for the session
+
 let taxonomyCache = null;
 async function getTaxonomy() {
   if (!taxonomyCache) {
-    const t0 = performance.now();
-    const attempt = async () => {
-      const r = await queuedFetch(
-        "https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json",
-        { headers: { "X-eBirdApiToken": ebirdKey } }
-      );
-      if (r.status === 429) {
-        console.log("[eBird] taxonomy rate limited, retrying...");
-        await new Promise((res) => setTimeout(res, globalDelay));
-        return attempt();
+    taxonomyCache = (async () => {
+      while (true) {
+        try {
+          console.log("[eBird] fetching taxonomy...");
+          const r = await fetch(
+            "https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json",
+            { headers: { "X-eBirdApiToken": ebirdKey } }
+          );
+          if (!r.ok) {
+            console.log(`[eBird] taxonomy failed (${r.status}), retrying...`);
+            await new Promise((res) => setTimeout(res, 2000));
+            continue;
+          }
+          const data = await r.json();
+          console.log(`[eBird] taxonomy ready (${data.length} species)`);
+          return Object.fromEntries(data.map((t) => [t.speciesCode, t.comName]));
+        } catch (e) {
+          console.log("[eBird] taxonomy network error, retrying...", e.message);
+          await new Promise((res) => setTimeout(res, 2000));
+        }
       }
-      if (!r.ok) throw new Error(`Taxonomy fetch failed: ${r.status}`);
-      const data = await r.json();
-      console.log(`[eBird] taxonomy fetched in ${((performance.now() - t0) / 1000).toFixed(2)}s (${data.length} species)`);
-      return Object.fromEntries(data.map((t) => [t.speciesCode, t.comName]));
-    };
-    taxonomyCache = attempt().catch((e) => { taxonomyCache = null; throw e; });
+    })();
   }
   return taxonomyCache;
 }
@@ -172,59 +186,63 @@ function fetchRandomChecklist(retryDelay = 300) {
 
 async function _fetchRandomChecklist(retryDelay = 300) {
   const t0 = performance.now();
-  for (let attempts = 0; attempts < 15; attempts++) {
-    if (attempts > 0) await new Promise((r) => setTimeout(r, retryDelay));
-    console.log(`[eBird] attempt ${attempts + 1}`);
+  for (let regionAttempts = 0; regionAttempts < 10; regionAttempts++) {
+    if (regionAttempts > 0) await new Promise((r) => setTimeout(r, retryDelay));
 
     const region = REGIONS[Math.floor(Math.random() * REGIONS.length)];
     const spots = await getRegionHotspots(region);
     if (!spots.length) { console.log(`[eBird] no qualified hotspots in ${region}, retrying`); continue; }
 
-    // Weighted by sqrt(numChecklistsAllTime)
-    const totalWeight = spots.reduce((s, h) => s + Math.sqrt(h.numChecklistsAllTime), 0);
-    let pick = Math.random() * totalWeight;
-    const hotspot = spots.find((h) => (pick -= Math.sqrt(h.numChecklistsAllTime)) <= 0) ?? spots[0];
+    // Try up to 3 hotspots from this region before switching regions
+    for (let hotspotAttempts = 0; hotspotAttempts < 10; hotspotAttempts++) {
+      console.log(`[eBird] region ${region}, hotspot attempt ${hotspotAttempts + 1}`);
 
-    const count = hotspot.numChecklistsAllTime;
-    const offset = Math.floor(Math.random() * Math.max(1, count - 200));
-    const listRes = await timed(`lists/${hotspot.locId} (${region})`, () =>
-      queuedFetch(
-        `https://api.ebird.org/v2/product/lists/${hotspot.locId}?maxResults=200&offset=${offset}`,
-        { headers: { "X-eBirdApiToken": ebirdKey } }
-      )
-    );
-    if (listRes.status === 429) continue;
-    if (!listRes.ok) continue;
-    const list = await listRes.json();
-    if (!list.length) { console.log(`[eBird] empty list at offset, retrying`); continue; }
-    console.log(`[eBird] got ${list.length} checklists from ${hotspot.locName}`);
+      const totalWeight = spots.reduce((s, h) => s + Math.sqrt(h.numChecklistsAllTime), 0);
+      let pick = Math.random() * totalWeight;
+      const hotspot = spots.find((h) => (pick -= Math.sqrt(h.numChecklistsAllTime)) <= 0) ?? spots[0];
 
-    for (const item of list) {
-      const subId = item.subId;
-      if (seenSubIds.has(subId)) { console.log(`[eBird] ${subId} already seen, skipping`); continue; }
-
-      const detailRes = await timed(`checklist/${subId}`, () =>
+      const count = hotspot.numChecklistsAllTime;
+      const offset = Math.floor(Math.random() * Math.max(1, count - 200));
+      const listRes = await timed(`lists/${hotspot.locId} (${region})`, () =>
         queuedFetch(
-          `https://api.ebird.org/v2/product/checklist/view/${subId}`,
+          `https://api.ebird.org/v2/product/lists/${hotspot.locId}?maxResults=200&offset=${offset}`,
           { headers: { "X-eBirdApiToken": ebirdKey } }
         )
       );
-      if (detailRes.status === 429) continue;
-      if (!detailRes.ok) continue;
-      const detail = await detailRes.json();
+      if (listRes.status === 429) continue;
+      if (!listRes.ok) continue;
+      const list = await listRes.json();
+      if (!list.length) { console.log(`[eBird] empty list at offset`); continue; }
+      console.log(`[eBird] got ${list.length} checklists from ${hotspot.locName}`);
 
-      if (!detail.allObsReported) { console.log(`[eBird] ${subId} not complete, skipping`); continue; }
-      if (detail.obs.length < 5) { console.log(`[eBird] ${subId} only ${detail.obs.length} species, skipping`); continue; }
+      for (const item of list) {
+        const subId = item.subId;
+        if (seenSubIds.has(subId)) continue;
 
-      seenSubIds.add(detail.subId);
-      const nameMap = await getTaxonomy();
-      detail.obs = detail.obs.map((o) => ({ ...o, comName: nameMap[o.speciesCode] ?? o.speciesCode }));
-      console.log(`[eBird] round ready in ${((performance.now() - t0) / 1000).toFixed(2)}s total — ${detail.obs.length} species at ${hotspot.locName}`);
-      return { hotspot, detail };
+        const detailRes = await timed(`checklist/${subId}`, () =>
+          queuedFetch(
+            `https://api.ebird.org/v2/product/checklist/view/${subId}`,
+            { headers: { "X-eBirdApiToken": ebirdKey } }
+          )
+        );
+        if (detailRes.status === 429) continue;
+        if (!detailRes.ok) continue;
+        const detail = await detailRes.json();
+
+        if (!detail.allObsReported) { console.log(`[eBird] ${subId} not complete, skipping`); continue; }
+        if (detail.obs.length < 5) { console.log(`[eBird] ${subId} only ${detail.obs.length} species, skipping`); continue; }
+
+        seenSubIds.add(detail.subId);
+        const nameMap = await getTaxonomy();
+        detail.obs = detail.obs.map((o) => ({ ...o, comName: nameMap[o.speciesCode] ?? o.speciesCode }));
+        console.log(`[eBird] round ready in ${((performance.now() - t0) / 1000).toFixed(2)}s total — ${detail.obs.length} species at ${hotspot.locName}`);
+        return { hotspot, detail };
+      }
+      console.log(`[eBird] no valid checklist in batch from ${hotspot.locName}`);
     }
-    console.log(`[eBird] no valid checklist in batch, retrying`);
+    console.log(`[eBird] exhausted hotspot attempts for ${region}, switching region`);
   }
-  throw new Error("Could not find a complete checklist after 15 attempts");
+  throw new Error("Could not find a complete checklist after 10 attempts");
 }
 
 // --- Styled Components ---
@@ -484,7 +502,15 @@ export default function EBirdGeoGuessr() {
     if (isMobile) setCollapsed(true);
     return () => {
       setCollapsed(false);
-      clearTimeout(prefetchTimerRef.current);
+      abortController.abort();
+      abortController = new AbortController();
+      requestQueue = Promise.resolve();
+      fetchChain = Promise.resolve();
+      prefetchQueueRef.current = [];
+      // clear any pending (unresolved promise) hotspot cache entries
+      for (const key of Object.keys(hotspotCache)) {
+        if (typeof hotspotCache[key]?.then === "function") delete hotspotCache[key];
+      }
     };
   }, [setCollapsed]);
   const [checklist, setChecklist] = useState(null);
@@ -496,42 +522,44 @@ export default function EBirdGeoGuessr() {
   const [round, setRound] = useState(0);
   const [results, setResults] = useState([]);
   const [gameOver, setGameOver] = useState(false);
-  const prefetchRef = React.useRef(null);
-  const prefetchTimerRef = React.useRef(null);
+  const prefetchQueueRef = React.useRef([]);
 
   const totalScore = results.reduce((s, r) => s + r.pts, 0);
+
+  const fillPrefetchQueue = useCallback(() => {
+    const q = prefetchQueueRef.current;
+    while (q.length < 4) {
+      const p = fetchRandomChecklist();
+      p.catch(() => {});
+      q.push(p);
+    }
+  }, []);
 
   const loadRound = useCallback(async (currentRound = 0) => {
     setLoading(true);
     setError(null);
+    console.log(`[eBird] loadRound(${currentRound}), queue=${prefetchQueueRef.current.length}`);
     try {
-      const promise = prefetchRef.current ?? fetchRandomChecklist();
-      prefetchRef.current = null;
+      const q = prefetchQueueRef.current;
+      const promise = q.length > 0 ? q.shift() : fetchRandomChecklist();
       const { hotspot: hs, detail } = await promise;
       setHotspot(hs);
       setChecklist(detail);
       setGuess(null);
       setSubmitted(false);
-      if (currentRound < TOTAL_ROUNDS - 1) {
-        const startDelay = currentRound === 0 ? 5000 : 3000;
-        const p = new Promise((resolve, reject) =>
-          setTimeout(() => fetchRandomChecklist(1500).then(resolve, reject), startDelay)
-        );
-        p.catch(() => {});
-        prefetchRef.current = p;
-      }
+      fillPrefetchQueue();
     } catch (e) {
-      prefetchRef.current = null;
       setError(e.message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [fillPrefetchQueue]);
 
   const initialLoadDone = React.useRef(false);
   useEffect(() => {
     if (savedKey && !initialLoadDone.current) {
       initialLoadDone.current = true;
+      getTaxonomy().catch(() => {});
       loadRound();
     }
   }, [loadRound, savedKey]);
@@ -550,6 +578,12 @@ export default function EBirdGeoGuessr() {
     const nextRound = round + 1;
     if (nextRound >= TOTAL_ROUNDS) {
       setGameOver(true);
+      // prefetch round 1 of the next game while user is on summary screen
+      if (prefetchQueueRef.current.length === 0) {
+        const p = fetchRandomChecklist();
+        p.catch(() => {});
+        prefetchQueueRef.current.push(p);
+      }
     } else {
       setRound(nextRound);
       loadRound(nextRound);
@@ -561,16 +595,22 @@ export default function EBirdGeoGuessr() {
     if (!trimmed) return;
     localStorage.setItem(LS_KEY, trimmed);
     ebirdKey = trimmed;
-    setSavedKey(trimmed);
+    initialLoadDone.current = true;
+    getTaxonomy().catch(() => {});
     loadRound();
+    setSavedKey(trimmed);
   };
 
   const handlePlayAgain = () => {
     seenSubIds.clear();
+    // reset the fetch chain so loadRound doesn't wait behind abandoned prefetches
+    fetchChain = Promise.resolve();
+    // keep at most the one prefetched round-1 promise, discard the rest
+    prefetchQueueRef.current = prefetchQueueRef.current.slice(0, 1);
     setRound(0);
     setResults([]);
     setGameOver(false);
-    loadRound();
+    loadRound(0);
   };
 
   if (!savedKey) {
@@ -647,7 +687,7 @@ export default function EBirdGeoGuessr() {
         </button>
       </Subtitle>
 
-      {loading && <LoadingMsg>Loading checklist</LoadingMsg>}
+      {loading && <LoadingMsg>Loading checklists</LoadingMsg>}
       {error && <LoadingMsg static style={{ color: "red", maxWidth: 320 }}>Error: {error} — <button onClick={loadRound}>retry</button></LoadingMsg>}
 
       {checklist && !loading && (
@@ -683,7 +723,7 @@ export default function EBirdGeoGuessr() {
           <MapWrapper>
             <MapContainer
               center={[20, 0]}
-              zoom={2}
+              zoom={1}
               style={{ height: "100%", width: "100%" }}
               worldCopyJump={false}
             >
