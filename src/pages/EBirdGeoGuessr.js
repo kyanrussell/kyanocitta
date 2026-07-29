@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useHeader } from "../HeaderContext";
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { MapContainer, TileLayer, Marker, Polyline, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -13,13 +13,46 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const EBIRD_KEY = "m9amn1136h7r";
+let ebirdKey = "";
 
-function randomLatLng() {
-  // Bias toward land/birded latitudes (-60 to 75) using uniform lng
-  const lat = Math.random() * 135 - 60;
-  const lng = Math.random() * 360 - 180;
-  return { lat, lng };
+// Well-birded countries/states with strong eBird coverage
+const REGIONS = [
+  "US-AL","US-AK","US-AZ","US-AR","US-CA","US-CO","US-CT","US-DE","US-FL",
+  "US-GA","US-ID","US-IL","US-IN","US-IA","US-KS","US-KY","US-LA","US-ME",
+  "US-MD","US-MA","US-MI","US-MN","US-MS","US-MO","US-MT","US-NE","US-NV",
+  "US-NH","US-NJ","US-NM","US-NY","US-NC","US-ND","US-OH","US-OK","US-OR",
+  "US-PA","US-RI","US-SC","US-SD","US-TN","US-TX","US-UT","US-VT","US-VA",
+  "US-WA","US-WV","US-WI","US-WY",
+  "CA-AB","CA-BC","CA-MB","CA-NB","CA-NL","CA-NS","CA-ON","CA-PE","CA-QC","CA-SK",
+  "MX","GT","BZ","HN","CR","PA","CO","EC","PE","BR","AR","CL","BO","VE","GY",
+  "GB","IE","FR","ES","PT","DE","NL","BE","DK","SE","NO","FI","IT","CH","AT",
+  "PL","CZ","HU","RO","HR","SI","SK","GR","BG","EE","LV","LT",
+  "MA","ZA","KE","TZ","UG","ET","GH","SN","NG","CM","NA","ZW","BW","MZ","MG",
+  "IN","NP","LK","BD","TH","MY","ID","PH","VN","KH","MM","CN","JP","KR","TW",
+  "AU","NZ","PG",
+];
+
+const hotspotCache = {};
+
+async function getRegionHotspots(region) {
+  if (hotspotCache[region]) return hotspotCache[region];
+  // Store the promise immediately to prevent duplicate concurrent fetches
+  const promise = queuedFetch(
+    `https://api.ebird.org/v2/ref/hotspot/${region}?fmt=json`,
+    { headers: { "X-eBirdApiToken": ebirdKey } }
+  ).then(async (r) => {
+    if (r.status === 429 || !r.ok) {
+      delete hotspotCache[region]; // clear so next call retries
+      return [];
+    }
+    const spots = await r.json();
+    const filtered = spots.filter((h) => h.numChecklistsAllTime >= 50 && h.numSpeciesAllTime >= 20);
+    hotspotCache[region] = filtered; // replace promise with resolved array
+    console.log(`[eBird] cached ${filtered.length} hotspots for ${region}`);
+    return filtered;
+  }).catch(() => { delete hotspotCache[region]; return []; });
+  hotspotCache[region] = promise;
+  return promise;
 }
 
 const guessIcon = new L.Icon({
@@ -76,67 +109,120 @@ function ClickHandler({ onMapClick, disabled }) {
 
 const seenSubIds = new Set();
 
+// Serialize all eBird requests — one in flight at a time with a global backoff
+let requestQueue = Promise.resolve();
+let globalDelay = 1500;
+
+function queuedFetch(url, opts) {
+  const p = requestQueue.then(() => fetch(url, opts).then((r) => {
+    if (r.status === 429) {
+      globalDelay = Math.min(globalDelay * 2, 30000);
+      console.log(`[eBird] queue backing off to ${globalDelay}ms`);
+    } else {
+      globalDelay = Math.max(1500, globalDelay * 0.9);
+    }
+    return r;
+  }));
+  requestQueue = p.then(
+    () => new Promise((res) => setTimeout(res, globalDelay)),
+    () => new Promise((res) => setTimeout(res, globalDelay))
+  );
+  return p;
+}
+
 // Fetch full taxonomy once and cache it for the session
 let taxonomyCache = null;
 async function getTaxonomy() {
   if (!taxonomyCache) {
-    taxonomyCache = fetch(
-      "https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json",
-      { headers: { "X-eBirdApiToken": EBIRD_KEY } }
-    )
-      .then((r) => r.json())
-      .then((data) => Object.fromEntries(data.map((t) => [t.speciesCode, t.comName])));
+    const t0 = performance.now();
+    const attempt = async () => {
+      const r = await queuedFetch(
+        "https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json",
+        { headers: { "X-eBirdApiToken": ebirdKey } }
+      );
+      if (r.status === 429) {
+        console.log("[eBird] taxonomy rate limited, retrying...");
+        await new Promise((res) => setTimeout(res, globalDelay));
+        return attempt();
+      }
+      if (!r.ok) throw new Error(`Taxonomy fetch failed: ${r.status}`);
+      const data = await r.json();
+      console.log(`[eBird] taxonomy fetched in ${((performance.now() - t0) / 1000).toFixed(2)}s (${data.length} species)`);
+      return Object.fromEntries(data.map((t) => [t.speciesCode, t.comName]));
+    };
+    taxonomyCache = attempt().catch((e) => { taxonomyCache = null; throw e; });
   }
   return taxonomyCache;
 }
 
-async function fetchRandomChecklist() {
+async function timed(label, fn) {
+  const t0 = performance.now();
+  const result = await fn();
+  console.log(`[eBird] ${label} — ${((performance.now() - t0) / 1000).toFixed(2)}s`);
+  return result;
+}
+
+let fetchChain = Promise.resolve();
+
+function fetchRandomChecklist(retryDelay = 300) {
+  const p = fetchChain.then(() => _fetchRandomChecklist(retryDelay));
+  fetchChain = p.then(() => {}, () => {});
+  return p;
+}
+
+async function _fetchRandomChecklist(retryDelay = 300) {
+  const t0 = performance.now();
   for (let attempts = 0; attempts < 15; attempts++) {
-    if (attempts > 0) await new Promise((r) => setTimeout(r, 300));
-    // Pick a random point and find nearby hotspots
-    const { lat, lng } = randomLatLng();
-    const hotspotRes = await fetch(
-      `https://api.ebird.org/v2/ref/hotspot/geo?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&dist=50&fmt=json`,
-      { headers: { "X-eBirdApiToken": EBIRD_KEY } }
-    );
-    if (hotspotRes.status === 429) throw new Error("eBird rate limit hit — please wait a minute and try again");
-    if (!hotspotRes.ok) continue;
-    const hotspots = await hotspotRes.json();
-    if (!hotspots.length) continue;
+    if (attempts > 0) await new Promise((r) => setTimeout(r, retryDelay));
+    console.log(`[eBird] attempt ${attempts + 1}`);
 
-    // Pick a hotspot weighted toward those with more checklists
-    const hotspot = hotspots[Math.floor(Math.random() * Math.min(hotspots.length, 5))];
+    const region = REGIONS[Math.floor(Math.random() * REGIONS.length)];
+    const spots = await getRegionHotspots(region);
+    if (!spots.length) { console.log(`[eBird] no qualified hotspots in ${region}, retrying`); continue; }
+
+    // Weighted by sqrt(numChecklistsAllTime)
+    const totalWeight = spots.reduce((s, h) => s + Math.sqrt(h.numChecklistsAllTime), 0);
+    let pick = Math.random() * totalWeight;
+    const hotspot = spots.find((h) => (pick -= Math.sqrt(h.numChecklistsAllTime)) <= 0) ?? spots[0];
+
     const count = hotspot.numChecklistsAllTime;
-    if (!count) continue;
-
-    const offset = Math.floor(Math.random() * count);
-    const listRes = await fetch(
-      `https://api.ebird.org/v2/product/lists/${hotspot.locId}?maxResults=1&offset=${offset}`,
-      { headers: { "X-eBirdApiToken": EBIRD_KEY } }
+    const offset = Math.floor(Math.random() * Math.max(1, count - 200));
+    const listRes = await timed(`lists/${hotspot.locId} (${region})`, () =>
+      queuedFetch(
+        `https://api.ebird.org/v2/product/lists/${hotspot.locId}?maxResults=200&offset=${offset}`,
+        { headers: { "X-eBirdApiToken": ebirdKey } }
+      )
     );
-    if (listRes.status === 429) throw new Error("eBird rate limit hit — please wait a minute and try again");
+    if (listRes.status === 429) continue;
     if (!listRes.ok) continue;
     const list = await listRes.json();
-    if (!list.length) continue;
+    if (!list.length) { console.log(`[eBird] empty list at offset, retrying`); continue; }
+    console.log(`[eBird] got ${list.length} checklists from ${hotspot.locName}`);
 
-    const subId = list[0].subId;
-    const detailRes = await fetch(
-      `https://api.ebird.org/v2/product/checklist/view/${subId}`,
-      { headers: { "X-eBirdApiToken": EBIRD_KEY } }
-    );
-    if (detailRes.status === 429) throw new Error("eBird rate limit hit — please wait a minute and try again");
-    if (!detailRes.ok) continue;
-    const detail = await detailRes.json();
+    for (const item of list) {
+      const subId = item.subId;
+      if (seenSubIds.has(subId)) { console.log(`[eBird] ${subId} already seen, skipping`); continue; }
 
-    if (!detail.allObsReported) continue;
-    if (detail.obs.length < 5) continue;
-    if (seenSubIds.has(detail.subId)) continue;
-    seenSubIds.add(detail.subId);
+      const detailRes = await timed(`checklist/${subId}`, () =>
+        queuedFetch(
+          `https://api.ebird.org/v2/product/checklist/view/${subId}`,
+          { headers: { "X-eBirdApiToken": ebirdKey } }
+        )
+      );
+      if (detailRes.status === 429) continue;
+      if (!detailRes.ok) continue;
+      const detail = await detailRes.json();
 
-    const nameMap = await getTaxonomy();
-    detail.obs = detail.obs.map((o) => ({ ...o, comName: nameMap[o.speciesCode] ?? o.speciesCode }));
+      if (!detail.allObsReported) { console.log(`[eBird] ${subId} not complete, skipping`); continue; }
+      if (detail.obs.length < 5) { console.log(`[eBird] ${subId} only ${detail.obs.length} species, skipping`); continue; }
 
-    return { hotspot, detail };
+      seenSubIds.add(detail.subId);
+      const nameMap = await getTaxonomy();
+      detail.obs = detail.obs.map((o) => ({ ...o, comName: nameMap[o.speciesCode] ?? o.speciesCode }));
+      console.log(`[eBird] round ready in ${((performance.now() - t0) / 1000).toFixed(2)}s total — ${detail.obs.length} species at ${hotspot.locName}`);
+      return { hotspot, detail };
+    }
+    console.log(`[eBird] no valid checklist in batch, retrying`);
   }
   throw new Error("Could not find a complete checklist after 15 attempts");
 }
@@ -289,11 +375,26 @@ const ScoreDisplay = styled.div`
   margin: 8px 0;
 `;
 
+const ellipsis = keyframes`
+  0%   { content: "."; }
+  33%  { content: ".."; }
+  66%  { content: "..."; }
+  100% { content: "."; }
+`;
+
 const LoadingMsg = styled.p`
   font-family: Arial, sans-serif;
   color: #555;
   text-align: center;
+  max-width: 100%;
   margin-top: 40px;
+
+  ${(p) => !p.static && css`
+    &::after {
+      content: ".";
+      animation: ${ellipsis} 1.2s steps(1, end) infinite;
+    }
+  `}
 `;
 
 const SummaryPage = styled.div`
@@ -338,12 +439,53 @@ const MaxScore = styled.div`
 
 const TOTAL_ROUNDS = 5;
 
+const LS_KEY = "ebird_api_key";
+
+const KeyScreen = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  min-height: calc(100vh - 25vh - 44px);
+  padding: 60px 16px;
+  font-family: Arial, sans-serif;
+`;
+
+const KeyInput = styled.input`
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 16px 0 8px;
+  box-sizing: border-box;
+`;
+
+const KeyHint = styled.p`
+  color: #888;
+  font-size: 0.8rem;
+  max-width: 340px;
+  text-align: center;
+  margin: 0 0 16px;
+`;
+
 export default function EBirdGeoGuessr() {
   const { setCollapsed } = useHeader();
+  const [savedKey, setSavedKey] = useState(() => localStorage.getItem(LS_KEY) ?? "");
+  const [keyInput, setKeyInput] = useState(savedKey);
+
+  useEffect(() => {
+    if (savedKey) ebirdKey = savedKey;
+  }, [savedKey]);
+
   useEffect(() => {
     const isMobile = window.innerWidth <= 700;
     if (isMobile) setCollapsed(true);
-    return () => setCollapsed(false);
+    return () => {
+      setCollapsed(false);
+      clearTimeout(prefetchTimerRef.current);
+    };
   }, [setCollapsed]);
   const [checklist, setChecklist] = useState(null);
   const [hotspot, setHotspot] = useState(null);
@@ -355,28 +497,44 @@ export default function EBirdGeoGuessr() {
   const [results, setResults] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const prefetchRef = React.useRef(null);
+  const prefetchTimerRef = React.useRef(null);
 
   const totalScore = results.reduce((s, r) => s + r.pts, 0);
 
-  const loadRound = useCallback(async () => {
+  const loadRound = useCallback(async (currentRound = 0) => {
     setLoading(true);
     setError(null);
-    setChecklist(null);
-    setHotspot(null);
-    setGuess(null);
-    setSubmitted(false);
     try {
-      const { hotspot: hs, detail } = await fetchRandomChecklist();
+      const promise = prefetchRef.current ?? fetchRandomChecklist();
+      prefetchRef.current = null;
+      const { hotspot: hs, detail } = await promise;
       setHotspot(hs);
       setChecklist(detail);
+      setGuess(null);
+      setSubmitted(false);
+      if (currentRound < TOTAL_ROUNDS - 1) {
+        const startDelay = currentRound === 0 ? 5000 : 3000;
+        const p = new Promise((resolve, reject) =>
+          setTimeout(() => fetchRandomChecklist(1500).then(resolve, reject), startDelay)
+        );
+        p.catch(() => {});
+        prefetchRef.current = p;
+      }
     } catch (e) {
+      prefetchRef.current = null;
       setError(e.message);
     } finally {
       setLoading(false);
     }
   }, []);
 
-  useEffect(() => { loadRound(); }, [loadRound]);
+  const initialLoadDone = React.useRef(false);
+  useEffect(() => {
+    if (savedKey && !initialLoadDone.current) {
+      initialLoadDone.current = true;
+      loadRound();
+    }
+  }, [loadRound, savedKey]);
 
   const handleSubmit = () => {
     if (!guess) return;
@@ -394,8 +552,17 @@ export default function EBirdGeoGuessr() {
       setGameOver(true);
     } else {
       setRound(nextRound);
-      loadRound();
+      loadRound(nextRound);
     }
+  };
+
+  const handleSaveKey = () => {
+    const trimmed = keyInput.trim();
+    if (!trimmed) return;
+    localStorage.setItem(LS_KEY, trimmed);
+    ebirdKey = trimmed;
+    setSavedKey(trimmed);
+    loadRound();
   };
 
   const handlePlayAgain = () => {
@@ -405,6 +572,31 @@ export default function EBirdGeoGuessr() {
     setGameOver(false);
     loadRound();
   };
+
+  if (!savedKey) {
+    return (
+      <KeyScreen>
+        <Title>eBird GeoGuessr</Title>
+        <p style={{ maxWidth: 340, textAlign: "center", color: "#555", margin: "12px 0 0" }}>
+          This game uses the eBird API. Enter your personal API key so requests use your own quota.
+        </p>
+        <KeyInput
+          type="text"
+          placeholder="e.g. a1b2c3d4e5f6"
+          value={keyInput}
+          onChange={(e) => setKeyInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSaveKey()}
+          autoFocus
+        />
+        <KeyHint>
+          Free key at <a href="https://ebird.org/api/keygen" target="_blank" rel="noreferrer">ebird.org/api/keygen</a>. Saved in your browser only.
+        </KeyHint>
+        <Button style={{ maxWidth: 340 }} onClick={handleSaveKey} disabled={!keyInput.trim()}>
+          Start playing
+        </Button>
+      </KeyScreen>
+    );
+  }
 
   const actualLat = hotspot?.lat;
   const actualLng = hotspot?.lng;
@@ -446,10 +638,17 @@ export default function EBirdGeoGuessr() {
       <Title>eBird GeoGuessr</Title>
       <Subtitle>
         Round {round + 1} of {TOTAL_ROUNDS} &nbsp;|&nbsp; score: {totalScore.toLocaleString()}
+        &nbsp;|&nbsp;{" "}
+        <button
+          onClick={() => { localStorage.removeItem(LS_KEY); setSavedKey(""); setKeyInput(""); }}
+          style={{ background: "none", border: "none", color: "#888", fontSize: "0.75rem", cursor: "pointer", textDecoration: "underline", padding: 0 }}
+        >
+          change key
+        </button>
       </Subtitle>
 
-      {loading && <LoadingMsg>Loading checklist...</LoadingMsg>}
-      {error && <LoadingMsg style={{ color: "red" }}>Error: {error} — <button onClick={loadRound}>retry</button></LoadingMsg>}
+      {loading && <LoadingMsg>Loading checklist</LoadingMsg>}
+      {error && <LoadingMsg static style={{ color: "red", maxWidth: 320 }}>Error: {error} — <button onClick={loadRound}>retry</button></LoadingMsg>}
 
       {checklist && !loading && (
         <GameArea>
